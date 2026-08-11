@@ -306,26 +306,84 @@
 
   /* ---------- SERVICES ---------- */
   .services{background:var(--marfim);}
-  .services-head{padding-bottom:70px;}
-  .services-head p{max-width:460px;font-size:15px;line-height:1.7;color:#6b6b6b;margin-top:18px;}
+  .services-head{padding-bottom:50px;}
+  .services-head p{max-width:520px;font-size:15px;line-height:1.7;color:#6b6b6b;margin-top:18px;}
 
-  .service-row{padding:56px 0;border-bottom:1px solid rgba(90,30,45,.08);}
-  .service-row.on-dark{background:var(--bordo);border-bottom-color:rgba(247,243,238,.1);}
-  .service-row .row-inner{
-    display:grid;grid-template-columns:.62fr 1.38fr;gap:56px;align-items:start;
+  .services-block{padding:64px 0 10px;}
+  .block-head{margin-bottom:44px;}
+  .block-head .block-num{
+    font-family:'Playfair Display',serif;font-size:15px;color:var(--dourado);
+    letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;
   }
-  .service-row h3{
-    font-family:'Playfair Display',serif;font-weight:600;font-size:26px;
-    color:var(--bordo);line-height:1.25;
+  .block-head h3{
+    font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(26px,3vw,34px);
+    color:var(--bordo);
   }
-  .service-row.on-dark h3{color:var(--marfim);}
-  .service-row p{font-size:14.5px;line-height:1.8;color:#555;max-width:620px;}
-  .service-row.on-dark p{color:#EFE3DA;}
-  .service-row p strong{color:var(--bordo);font-weight:600;}
-  .service-row.on-dark p strong{color:var(--dourado);font-weight:600;}
-  .service-row .btn-small{margin-top:22px;}
-  .service-row.on-dark .btn-small{border-color:var(--marfim);color:var(--marfim);}
-  .service-row.on-dark .btn-small:hover{background:var(--marfim);color:var(--bordo);}
+  .services-block.on-dark{background:var(--bordo);}
+  .services-block.on-dark .block-head h3{color:var(--marfim);}
+
+  .service-card{
+    border:1px solid var(--taupe);background:#FFFFFF;
+    padding:40px 38px;margin-bottom:26px;
+  }
+  .services-block.on-dark .service-card{
+    background:transparent;border-color:rgba(247,243,238,.28);
+  }
+
+  .service-meta{
+    font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dourado);
+    margin-bottom:14px;
+  }
+  .service-card h4{
+    font-family:'Playfair Display',serif;font-weight:600;font-size:27px;color:var(--bordo);
+    margin-bottom:12px;line-height:1.2;
+  }
+  .services-block.on-dark .service-card h4{color:var(--marfim);}
+
+  .service-def{
+    font-family:'Playfair Display',serif;font-style:italic;font-size:17px;line-height:1.6;
+    color:#555;margin-bottom:28px;max-width:760px;
+  }
+  .services-block.on-dark .service-def{color:#EAD9C9;}
+
+  .service-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-bottom:26px;}
+  .service-cols .col-label{
+    font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe);
+    margin-bottom:12px;
+  }
+  .services-block.on-dark .service-cols .col-label{color:rgba(247,243,238,.5);}
+  .service-cols ul{list-style:none;}
+  .service-cols li{
+    font-size:14px;line-height:1.65;color:#555;padding-left:14px;position:relative;margin-bottom:9px;
+  }
+  .services-block.on-dark .service-cols li{color:#EFE3DA;}
+  .service-cols li::before{
+    content:'';position:absolute;left:0;top:8px;width:4px;height:1px;background:var(--dourado);
+  }
+
+  .service-format{
+    font-size:13.5px;line-height:1.6;color:#666;margin-bottom:22px;
+    padding-top:20px;border-top:1px solid #EFE9E2;
+  }
+  .services-block.on-dark .service-format{color:#D9C4B7;border-top-color:rgba(247,243,238,.15);}
+  .service-format .col-label{
+    font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe);
+    display:block;margin-bottom:8px;
+  }
+  .services-block.on-dark .service-format .col-label{color:rgba(247,243,238,.5);}
+
+  .service-ai{
+    border-left:2px solid var(--dourado);padding:4px 0 4px 18px;margin-bottom:26px;
+  }
+  .service-ai .ai-tag{
+    font-size:10px;letter-spacing:.12em;color:var(--dourado);font-weight:600;margin-bottom:5px;display:block;
+  }
+  .service-ai p{font-size:13.5px;line-height:1.65;color:#555;}
+  .services-block.on-dark .service-ai p{color:#EFE3DA;}
+
+  .service-card .btn-small{margin-top:4px;}
+  .services-block.on-dark .service-card .btn-small{border-color:var(--marfim);color:var(--marfim);}
+  .services-block.on-dark .service-card .btn-small:hover{background:var(--marfim);color:var(--bordo);}
 
   .services-footnote{
     padding:64px 0 20px;border-top:1px solid var(--taupe);margin-top:24px;
@@ -413,7 +471,7 @@
     .sobre-photo{max-width:420px;margin:0 auto;}
     .about .wrap{grid-template-columns:1fr;gap:40px;}
     .about-photo-col{position:static;max-width:340px;margin:0 auto;text-align:center;}
-    .service-row .row-inner{grid-template-columns:1fr;gap:16px;}
+    .service-cols{grid-template-columns:1fr;gap:20px;}
     .pilares-grid{grid-template-columns:1fr;}
     .feedback-grid{grid-template-columns:1fr;}
   }
@@ -423,7 +481,8 @@
     .nav-cta{display:none;}
     .nav-toggle{display:flex;}
     section{padding:100px 0;}
-    .service-row{padding:40px 0;}
+    .service-card{padding:30px 24px;}
+    .services-block{padding:44px 0 10px;}
     footer{padding:110px 0 40px;}
   }
 </style>
@@ -537,111 +596,254 @@
   <div class="wrap services-head">
     <p class="eyebrow reveal">Serviços</p>
     <h2 class="section-title reveal reveal-d1">Como a Cali atua</h2>
-    <p class="reveal reveal-d2">Dez frentes, uma só direção: transformar pessoas em vantagem estratégica do negócio.</p>
+    <p class="reveal reveal-d2">Sete serviços, em dois blocos: acompanhamento recorrente e projetos de escopo fechado.</p>
   </div>
 
-  <div class="service-row">
-    <div class="wrap row-inner">
-      <h3 class="reveal">Diagnóstico Executivo de People</h3>
-      <div class="reveal reveal-d1">
-        <p>Para empresas que já sentem o impacto da gestão de pessoas no resultado, na cultura e na tomada de decisão — mas ainda sem clareza objetiva sobre onde estão os desvios e as prioridades. Entrega uma <strong>leitura estratégica da organização</strong>, com devolutiva executiva, riscos críticos e direcionamentos para os próximos movimentos.</p>
-        <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20o%20Diagn%C3%B3stico%20Executivo%20de%20People%20da%20Cali." target="_blank" rel="noopener" class="btn btn-small">Fale com a Patrícia <span class="arrow">→</span></a>
-      </div>
+  <!-- BLOCO 1 — RECORRENTES -->
+  <div class="services-block on-dark">
+    <div class="wrap block-head">
+      <p class="block-num reveal">Bloco 1 — Recorrentes</p>
     </div>
-  </div>
+    <div class="wrap">
 
-  <div class="service-row on-dark">
-    <div class="wrap row-inner">
-      <h3 class="reveal">Assessoria Estratégica Mensal</h3>
-      <div class="reveal reveal-d1">
-        <p>Para empresas que não podem mais tratar a gestão de pessoas de forma reativa ou pulverizada. Oferece <strong>apoio contínuo à liderança</strong> para estruturar decisões, organizar prioridades e sustentar a evolução da cultura, da estrutura e da governança de pessoas — sem compor uma estrutura interna sênior dedicada a isso.</p>
+      <div class="service-card reveal">
+        <p class="service-meta">Recorrente · Contrato mínimo de 6 meses</p>
+        <h4>Assessoria Estratégica Mensal</h4>
+        <p class="service-def">O modelo HR retainer / fractional HR / HR as a Service: acesso contínuo a RH sênior por valor mensal fixo, sem o custo de contratar um funcionário full-time.</p>
+        <div class="service-cols">
+          <div>
+            <p class="col-label">Pra quem é</p>
+            <ul>
+              <li>Empresas de 20 a 200 colaboradores em crescimento, reestruturação ou ganho de escala.</li>
+              <li>Empresas que já sentem o impacto da gestão de pessoas no resultado, mas ainda tratam o tema de forma reativa ou pulverizada.</li>
+            </ul>
+          </div>
+          <div>
+            <p class="col-label">O que entrega</p>
+            <ul>
+              <li>Consultora que conhece o negócio a fundo, com continuidade e contexto.</li>
+              <li>Reuniões estratégicas quinzenais com founders/diretoria, leitura mensal de indicadores.</li>
+              <li>Apoio direto à liderança em decisões críticas de people (promoção, estrutura, desligamento sensível).</li>
+              <li>Ajuste ou desenho de 1 política/processo por trimestre.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-format">
+          <span class="col-label">Formato</span>
+          Presencial — até 2h de visita/mês inclusas (região metropolitana de Curitiba), deslocamento à parte — ou 100% remoto, com a mesma estrutura e qualidade.
+        </div>
+        <div class="service-ai">
+          <span class="ai-tag">Apoio de IA</span>
+          <p>Leitura mensal de indicadores organizada com apoio de IA antes de cada reunião — o tempo com a liderança é 100% decisão, não montagem de relatório.</p>
+        </div>
         <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20Assessoria%20Estrat%C3%A9gica%20Mensal%20da%20Cali." target="_blank" rel="noopener" class="btn btn-small">Fale com a Patrícia <span class="arrow">→</span></a>
       </div>
-    </div>
-  </div>
 
-  <div class="service-row">
-    <div class="wrap row-inner">
-      <h3 class="reveal">Projeto de Cultura e Direção</h3>
-      <div class="reveal reveal-d1">
-        <p>Para empresas que cresceram sem consolidar sua identidade organizacional, ou que já percebem distância entre o discurso e a prática das lideranças. Estrutura os <strong>fundamentos que sustentam</strong> a forma como a empresa decide, lidera e se posiciona.</p>
-        <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20o%20Projeto%20de%20Cultura%20e%20Dire%C3%A7%C3%A3o%20da%20Cali." target="_blank" rel="noopener" class="btn btn-small">Fale com a Patrícia <span class="arrow">→</span></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="service-row on-dark">
-    <div class="wrap row-inner">
-      <h3 class="reveal">Projeto de Estrutura e Gestão</h3>
-      <div class="reveal reveal-d1">
-        <p>Para empresas em que o crescimento expôs confusão de papéis, sobreposição de responsabilidades e baixa previsibilidade na operação. Redesenha a <strong>arquitetura interna</strong>, delimitando papéis e fortalecendo a lógica de gestão.</p>
-        <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20o%20Projeto%20de%20Estrutura%20e%20Gest%C3%A3o%20da%20Cali." target="_blank" rel="noopener" class="btn btn-small">Fale com a Patrícia <span class="arrow">→</span></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="service-row">
-    <div class="wrap row-inner">
-      <h3 class="reveal">Programa de Liderança Sob Medida</h3>
-      <div class="reveal reveal-d1">
-        <p>Para empresas que querem elevar o nível da liderança com profundidade e aderência ao contexto real — não com treinamentos genéricos. Transforma liderança em <strong>prática qualificada de gestão</strong>, com temas como conversas difíceis, accountability e tomada de decisão.</p>
-        <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20o%20Programa%20de%20Lideran%C3%A7a%20Sob%20Medida%20da%20Cali." target="_blank" rel="noopener" class="btn btn-small">Fale com a Patrícia <span class="arrow">→</span></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="service-row on-dark">
-    <div class="wrap row-inner">
-      <h3 class="reveal">Mentoria para Profissionais de RH</h3>
-      <div class="reveal reveal-d1">
-        <p>Para profissionais de RH que querem amadurecer sua atuação e ampliar a visão estratégica sobre pessoas e negócio. Oferece <strong>leitura técnica e provocação estratégica</strong> para sair de uma atuação operacional e assumir postura mais analítica e executiva.</p>
+      <div class="service-card reveal reveal-d1">
+        <p class="service-meta">Recorrente · Sugestão de partida: 3 meses</p>
+        <h4>Mentoria para Profissionais de RH</h4>
+        <p class="service-def">Desenvolvimento individual e estratégico para profissionais de RH que querem sair do operacional e assumir atuação mais madura, analítica e executiva.</p>
+        <div class="service-cols">
+          <div>
+            <p class="col-label">Pra quem é</p>
+            <ul>
+              <li>Profissionais de RH em transição de carreira.</li>
+              <li>Lideranças de RH em novo cargo.</li>
+              <li>Consultores de RH em crescimento.</li>
+            </ul>
+          </div>
+          <div>
+            <p class="col-label">O que entrega</p>
+            <ul>
+              <li>Clareza de posicionamento profissional e plano de desenvolvimento individual.</li>
+              <li>Discussão de casos reais trazidos pelo mentorado.</li>
+              <li>Orientação sobre tomada de decisão, posicionamento e desenho de soluções.</li>
+              <li>Acompanhamento da evolução ao longo dos ciclos.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-format">
+          <span class="col-label">Formato</span>
+          Sessões 1:1 virtuais, quinzenais ou mensais, de 60 a 90 minutos — 100% remoto.
+        </div>
         <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20Mentoria%20para%20Profissionais%20de%20RH%20da%20Cali." target="_blank" rel="noopener" class="btn btn-small">Fale com a Patrícia <span class="arrow">→</span></a>
       </div>
+
     </div>
   </div>
 
-  <div class="service-row">
-    <div class="wrap row-inner">
-      <h3 class="reveal">Shadowing de Liderança</h3>
-      <div class="reveal reveal-d1">
-        <p>Para founders e líderes que querem entender com precisão como sua liderança se manifesta na prática. Observação estruturada em <strong>contexto real</strong>, com devolutiva técnica sobre comunicação, decisão e presença executiva.</p>
+  <!-- BLOCO 2 — PROJETOS -->
+  <div class="services-block">
+    <div class="wrap block-head">
+      <p class="block-num reveal">Bloco 2 — Projetos</p>
+    </div>
+    <div class="wrap">
+
+      <div class="service-card reveal">
+        <p class="service-meta">Projeto · 4 a 6 semanas</p>
+        <h4>Diagnóstico Executivo de People</h4>
+        <p class="service-def">Leitura estratégica da casa: onde a gestão de pessoas está hoje, quais são os riscos mais críticos e quais movimentos vêm primeiro.</p>
+        <div class="service-cols">
+          <div>
+            <p class="col-label">Pra quem é</p>
+            <ul>
+              <li>Empresas que já percebem o impacto da gestão de pessoas em resultado, clima e operação, mas não têm clareza de por onde começar.</li>
+            </ul>
+          </div>
+          <div>
+            <p class="col-label">O que entrega</p>
+            <ul>
+              <li>Entrevistas com liderança-chave e análise documental.</li>
+              <li>Leitura dos indicadores disponíveis.</li>
+              <li>Relatório executivo com mapa de riscos e prioridades de 90 dias.</li>
+              <li>Reunião de devolutiva com a liderança.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-format">
+          <span class="col-label">Formato</span>
+          Entrevistas remotas ou presenciais — 1 visita presencial inclusa para as entrevistas-chave, demais etapas remotas.
+        </div>
+        <div class="service-ai">
+          <span class="ai-tag">Apoio de IA</span>
+          <p>Cruzamento de indicadores e síntese de entrevistas apoiados por IA, o que acelera a entrega sem reduzir a profundidade da leitura.</p>
+        </div>
+        <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20o%20Diagn%C3%B3stico%20Executivo%20de%20People%20da%20Cali." target="_blank" rel="noopener" class="btn btn-small">Fale com a Patrícia <span class="arrow">→</span></a>
+      </div>
+
+      <div class="service-card reveal reveal-d1">
+        <p class="service-meta">Projeto + acompanhamento · 4 a 12 semanas</p>
+        <h4>Projeto de Cultura e Direção</h4>
+        <p class="service-def">Diagnóstico e redesenho da cultura organizacional alinhado à estratégia do negócio — revela o que acontece por baixo das estruturas formais.</p>
+        <div class="service-cols">
+          <div>
+            <p class="col-label">Pra quem é</p>
+            <ul>
+              <li>CEOs, boards e times executivos em transformação, integração pós-M&amp;A, reestruturação ou com desalinhamento entre cultura e estratégia.</li>
+            </ul>
+          </div>
+          <div>
+            <p class="col-label">O que entrega</p>
+            <ul>
+              <li>Leitura clara da cultura atual — forças e riscos.</li>
+              <li>Definição da cultura desejada traduzida em comportamento.</li>
+              <li>Mapa de prioridades e roadmap de 90 dias e de 6 a 12 meses, com KPIs.</li>
+              <li>Alinhamento da liderança durante toda a jornada.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-format">
+          <span class="col-label">Formato</span>
+          Survey quantitativo + entrevistas + grupos focais + workshops de co-criação com a liderança.
+        </div>
+        <div class="service-ai">
+          <span class="ai-tag">Apoio de IA</span>
+          <p>Leitura qualitativa de entrevistas e respostas abertas de survey organizada com apoio de IA, identificando padrão mais rápido do que leitura manual.</p>
+        </div>
+        <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20o%20Projeto%20de%20Cultura%20e%20Dire%C3%A7%C3%A3o%20da%20Cali." target="_blank" rel="noopener" class="btn btn-small">Fale com a Patrícia <span class="arrow">→</span></a>
+      </div>
+
+      <div class="service-card reveal">
+        <p class="service-meta">Projeto · 4 a 8 semanas</p>
+        <h4>Shadowing de Liderança</h4>
+        <p class="service-def">Mergulho em como a liderança realmente se comporta na prática: reuniões, conversas, decisões, conflitos, condução do dia a dia.</p>
+        <div class="service-cols">
+          <div>
+            <p class="col-label">Pra quem é</p>
+            <ul>
+              <li>Founders, diretores e gestores que querem feedback qualificado sobre a própria forma de liderar — não mais um treinamento teórico.</li>
+            </ul>
+          </div>
+          <div>
+            <p class="col-label">O que entrega</p>
+            <ul>
+              <li>Observação estruturada de situações reais de liderança.</li>
+              <li>Análise técnica de padrões de comportamento, comunicação, decisão e gestão de conflito.</li>
+              <li>Devolutiva individual com leitura franca e recomendações concretas.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-format">
+          <span class="col-label">Formato</span>
+          Presencial — recomendado, é a essência do serviço. Deslocamento cobrado à parte.
+        </div>
+        <div class="service-ai">
+          <span class="ai-tag">Apoio de IA</span>
+          <p>Síntese da observação organizada com apoio de IA antes da devolutiva, garantindo que o retorno seja estruturado e não apenas impressão solta.</p>
+        </div>
         <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20o%20Shadowing%20de%20Lideran%C3%A7a%20da%20Cali." target="_blank" rel="noopener" class="btn btn-small">Fale com a Patrícia <span class="arrow">→</span></a>
       </div>
-    </div>
-  </div>
 
-  <div class="service-row on-dark">
-    <div class="wrap row-inner">
-      <h3 class="reveal">Palestras Estratégicas</h3>
-      <div class="reveal reveal-d1">
-        <p>Para empresas e eventos que buscam conteúdo denso e aplicável sobre liderança, cultura e gestão de pessoas. Provoca <strong>reflexão de alto nível</strong>, com conexão prática aos desafios reais das organizações.</p>
-        <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20Palestras%20Estrat%C3%A9gicas%20da%20Cali." target="_blank" rel="noopener" class="btn btn-small">Fale com a Patrícia <span class="arrow">→</span></a>
+      <div class="service-card reveal reveal-d1">
+        <p class="service-meta">Projeto pontual · Antecedência mínima de 4 semanas</p>
+        <h4>Treinamentos &amp; Palestras</h4>
+        <p class="service-def">Guarda-chuva de três formatos — Palestra Estratégica (evento único), Treinamento Personalizado (1 a 6 encontros) e Programa de Liderança Sob Medida (trilha de 4 a 10 encontros).</p>
+        <div class="service-cols">
+          <div>
+            <p class="col-label">Pra quem é</p>
+            <ul>
+              <li>Empresas com necessidade pontual de desenvolvimento de liderança, comunicação, gestão de performance ou cultura.</li>
+            </ul>
+          </div>
+          <div>
+            <p class="col-label">O que entrega</p>
+            <ul>
+              <li>Diagnóstico rápido da dor que o treinamento precisa endereçar.</li>
+              <li>Desenho de conteúdo sob medida — não é curso de prateleira.</li>
+              <li>Condução ao vivo, presencial ou online.</li>
+              <li>Materiais de apoio e proposta de aplicação prática.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-format">
+          <span class="col-label">Formato</span>
+          Palestra (60 a 90 min), workshop (meio-dia a dia inteiro) ou trilha multi-encontro (Programa de Liderança) — presencial ou online.
+        </div>
+        <div class="service-ai">
+          <span class="ai-tag">Apoio de IA</span>
+          <p>Desenho de conteúdo customizado ao contexto do cliente acelerado por IA, sem abrir mão da facilitação ao vivo ser 100% conduzida por Patrícia.</p>
+        </div>
+        <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20Treinamentos%20%26%20Palestras%20da%20Cali." target="_blank" rel="noopener" class="btn btn-small">Fale com a Patrícia <span class="arrow">→</span></a>
       </div>
-    </div>
-  </div>
 
-  <div class="service-row">
-    <div class="wrap row-inner">
-      <h3 class="reveal">Treinamentos Personalizados</h3>
-      <div class="reveal reveal-d1">
-        <p>Para empresas que precisam desenvolver competências específicas, sem se contentar com conteúdo genérico. Construído a partir da <strong>demanda concreta da empresa</strong>, com forte potencial de absorção e aplicação.</p>
-        <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20os%20Treinamentos%20Personalizados%20da%20Cali." target="_blank" rel="noopener" class="btn btn-small">Fale com a Patrícia <span class="arrow">→</span></a>
+      <div class="service-card reveal">
+        <p class="service-meta">Projeto + acompanhamento · Diagnóstico 3-6 sem. / Programa 6-12 meses</p>
+        <h4>Marca Empregadora</h4>
+        <p class="service-def">Define, ativa e sustenta o Employer Value Proposition (EVP) — o conjunto de razões pelas quais as pessoas escolhem trabalhar, e continuar trabalhando, na empresa.</p>
+        <div class="service-cols">
+          <div>
+            <p class="col-label">Pra quem é</p>
+            <ul>
+              <li>Empresas com alta rotatividade em cargos-chave, em fase de escalar contratação, com marca empregadora fraca ou negativa, ou em transformação (M&amp;A, rebranding, mudança de cultura).</li>
+            </ul>
+          </div>
+          <div>
+            <p class="col-label">O que entrega</p>
+            <ul>
+              <li>Diagnóstico da marca empregadora atual — percepção interna e externa, reviews (Glassdoor/Indeed).</li>
+              <li>Definição do EVP: propósito, pilares e atributos únicos.</li>
+              <li>Personas de candidato e mapa de canais de atração.</li>
+              <li>Plano de ativação: campanhas, conteúdo empregador, embaixadores de marca.</li>
+              <li>Painel de KPIs de marca empregadora com linha de base.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-format">
+          <span class="col-label">Formato</span>
+          4 fases: Diagnóstico (workshops, pesquisa de percepção, análise de concorrência de talentos) · Estratégia (EVP, personas) · Ativação (campanhas, conteúdo, embaixadores) · Sustentação (painel de indicadores).
+        </div>
+        <div class="service-ai">
+          <span class="ai-tag">Apoio de IA</span>
+          <p>Painel de KPIs de marca empregadora alimentado e lido com apoio de IA — a marca é monitorada continuamente, não só revisitada a cada relatório trimestral.</p>
+        </div>
+        <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20Marca%20Empregadora%20da%20Cali." target="_blank" rel="noopener" class="btn btn-small">Fale com a Patrícia <span class="arrow">→</span></a>
       </div>
-    </div>
-  </div>
 
-  <div class="service-row on-dark">
-    <div class="wrap row-inner">
-      <h3 class="reveal">People Analytics e Indicadores</h3>
-      <div class="reveal reveal-d1">
-        <p>Para empresas que precisam sair da percepção isolada e construir uma <strong>camada analítica</strong> para apoiar decisões. Transforma dado em critério, indicador em inteligência.</p>
-        <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20People%20Analytics%20e%20Indicadores%20da%20Cali." target="_blank" rel="noopener" class="btn btn-small">Fale com a Patrícia <span class="arrow">→</span></a>
-      </div>
     </div>
   </div>
 
   <div class="wrap">
-    <p class="services-footnote reveal">O prazo, a profundidade e o formato de cada serviço variam conforme o porte da empresa, a complexidade do cenário e o grau de maturidade da gestão.</p>
+    <p class="services-footnote reveal">O prazo, a profundidade e o formato de cada serviço variam conforme o porte da empresa, a complexidade do cenário e o grau de maturidade da gestão. Investimento definido em proposta comercial fechada.</p>
   </div>
 </section>
 
