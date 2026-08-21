@@ -497,7 +497,7 @@
   .custom-briefing{margin:56px auto 0;border:1px solid rgba(90,30,45,.18);display:grid;grid-template-columns:minmax(0,1.2fr) auto;gap:36px;align-items:center;padding:34px 38px;background:#FBF8F4;}
   .custom-briefing h3{font-family:'Playfair Display',serif;color:var(--bordo);font-size:clamp(25px,3vw,36px);font-weight:500;margin:8px 0 10px;}
   .custom-briefing p{max-width:690px;line-height:1.7;color:#665E59;font-size:14px;}
-  .mapa-modal{position:fixed;inset:0;z-index:900;display:grid;place-items:center;padding:22px;background:rgba(30,11,17,.72);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s ease;}
+  body.modal-open{overflow:hidden;}\n  .mapa-modal{position:fixed;inset:0;z-index:900;display:grid;place-items:center;padding:22px;background:rgba(30,11,17,.72);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s ease;}
   .mapa-modal.is-open{opacity:1;visibility:visible;}
   .mapa-dialog{width:min(760px,100%);background:var(--marfim);display:grid;grid-template-columns:12px 1fr;position:relative;box-shadow:0 30px 90px rgba(25,8,13,.34);transform:translateY(18px) scale(.985);transition:transform .4s cubic-bezier(.22,1,.36,1);}
   .mapa-modal.is-open .mapa-dialog{transform:none;}
@@ -1047,22 +1047,20 @@
 
 <div class="mapa-modal" id="mapaModal" role="dialog" aria-modal="true" aria-labelledby="mapaModalTitle" aria-describedby="mapaModalDescription" hidden>
   <div class="mapa-dialog" role="document">
+    <div class="mapa-accent" aria-hidden="true"></div>
     <button class="mapa-close" type="button" aria-label="Fechar convite para o Mapa" data-mapa-close>×</button>
-    <div class="mapa-visual" aria-hidden="true">
-      <span class="mapa-kicker">MAPA DE PEOPLE</span>
-      <strong>Uma leitura clara do seu momento.</strong>
-      <div class="mapa-lines"><i></i><i></i><i></i></div>
-    </div>
     <div class="mapa-content">
-      <p class="mapa-eyebrow">DIAGNÓSTICO GRATUITO</p>
+      <p class="eyebrow">DIAGNÓSTICO GRATUITO</p>
       <h2 id="mapaModalTitle">Descubra como está a gestão de pessoas da sua empresa.</h2>
-      <p id="mapaModalDescription">Preencha gratuitamente o Mapa de People e receba um relatório personalizado com o resultado da análise, os principais riscos e as prioridades recomendadas.</p>
-      <ul class="mapa-benefits">
-        <li>Leitura estruturada do cenário atual</li>
-        <li>Relatório personalizado para a sua empresa</li>
-      </ul>
-      <a class="mapa-primary" id="mapaCta" href="https://mapa.calirh.com/?utm_source=calirh.com&utm_medium=site&utm_campaign=mapa_gratuito&utm_content=popup" target="_blank" rel="noopener" data-track-event="mapa_popup_click" data-track-label="fazer_mapa">Fazer o Mapa gratuitamente <span aria-hidden="true">↗</span></a>
-      <button class="mapa-later" type="button" data-mapa-close>Agora não</button>
+      <p class="mapa-lead" id="mapaModalDescription">Preencha gratuitamente o Mapa de People e receba um relatório personalizado com o resultado da análise, os principais riscos e as prioridades recomendadas.</p>
+      <div class="mapa-points" aria-label="O que você recebe">
+        <div class="mapa-point"><strong>Leitura estruturada</strong><span>Uma visão clara do cenário atual da gestão de pessoas.</span></div>
+        <div class="mapa-point"><strong>Relatório personalizado</strong><span>Resultado, riscos principais e prioridades recomendadas.</span></div>
+      </div>
+      <div class="mapa-actions">
+        <a class="btn btn-solid" id="mapaCta" href="https://mapa.calirh.com/?utm_source=calirh.com&utm_medium=site&utm_campaign=mapa_gratuito&utm_content=popup" target="_blank" rel="noopener" data-track-event="mapa_popup_click" data-track-label="fazer_mapa">Fazer o Mapa gratuitamente <span class="arrow" aria-hidden="true">↗</span></a>
+        <button class="mapa-later" type="button" data-mapa-close>Agora não</button>
+      </div>
     </div>
   </div>
 </div>
@@ -1073,8 +1071,8 @@
     <p>Este site usa apenas recursos essenciais e métricas anônimas de navegação, sem cookies publicitários. Ao acessar o Mapa ou o Portal, você verá o consentimento específico para o envio dos dados.</p>
   </div>
   <div class="privacy-actions">
-    <a href="/privacidade.html">Ler a política</a>
-    <button type="button" id="privacyAccept">Entendi</button>
+    <a class="privacy-link" href="/privacidade.html">Ler a política</a>
+    <button class="privacy-accept" type="button" id="privacyAccept">Entendi</button>
   </div>
 </div>
 
