@@ -660,6 +660,61 @@
     .mapa-close{right:12px;top:11px;}
   }
 
+  /* ---------- APROVAÇÃO FINAL: MARCAS E DELICADEZA ---------- */
+  .advisory-option .option-brand{
+    display:flex;align-items:baseline;gap:8px;
+    font-family:'Playfair Display',serif;
+    font-size:34px;line-height:1.05;font-weight:500;
+    color:var(--marfim);margin-bottom:12px;
+    letter-spacing:-.02em;
+  }
+  .advisory-option .option-brand span{
+    color:var(--dourado);font-size:.64em;letter-spacing:.12em;font-family:'Inter',sans-serif;font-weight:600;
+  }
+  .advisory-option .option-name{
+    font-family:'Inter',sans-serif;font-size:16px;line-height:1.45;
+    font-weight:600;color:#EAD9C9;margin-bottom:9px;
+  }
+
+  .mapa-dialog{width:min(540px,calc(100vw - 34px));border-radius:19px;}
+  .mapa-content{padding:38px 40px 31px;}
+  .mapa-content .eyebrow{
+    font-size:10px;letter-spacing:.2em;padding:6px 12px;
+    color:var(--bordo);border-color:rgba(181,140,82,.48);
+    box-shadow:0 5px 16px rgba(90,30,45,.05);
+    margin-bottom:15px;
+  }
+  .mapa-content h2{max-width:445px;font-size:clamp(32px,3.8vw,41px);margin-bottom:13px;}
+  .mapa-content .mapa-lead{max-width:445px;font-size:13.5px;line-height:1.62;}
+  .mapa-points{gap:9px;margin:20px 0 21px;}
+  .mapa-point{padding:12px 13px;border-radius:10px;}
+  .mapa-point strong{font-size:11.5px;margin-bottom:3px;}
+  .mapa-point span{font-size:10.5px;line-height:1.45;}
+  .mapa-actions .btn{padding:14px 21px;font-size:11.5px;}
+  .mapa-later{font-size:11px;}
+  .mapa-close{width:32px;height:32px;right:13px;top:12px;font-size:18px;}
+
+  @media (max-width:680px){
+    .advisory-option .option-brand{font-size:30px;}
+    .mapa-modal{padding:14px;}
+    .mapa-dialog{width:100%;max-height:calc(100dvh - 20px);border-radius:16px;}
+    .mapa-content{padding:36px 18px 25px;}
+    .mapa-content .eyebrow{margin-bottom:13px;}
+    .mapa-content h2{font-size:29px;line-height:1.08;max-width:340px;}
+    .mapa-content .mapa-lead{font-size:12.5px;line-height:1.58;max-width:350px;}
+    .mapa-points{grid-template-columns:1fr 1fr;gap:7px;margin:17px 0 18px;}
+    .mapa-point{padding:10px 11px;}
+    .mapa-point span{font-size:9.8px;}
+    .mapa-actions .btn{padding:13px 16px;font-size:10.8px;}
+    .mapa-close{right:10px;top:9px;}
+  }
+  @media (max-width:390px){
+    .mapa-content{padding:34px 15px 22px;}
+    .mapa-content h2{font-size:27px;}
+    .mapa-points{grid-template-columns:1fr;}
+    .mapa-point span{display:none;}
+  }
+
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:980px){
     .sobre-cali .wrap{grid-template-columns:1fr;gap:44px;}
@@ -809,7 +864,7 @@
         <p class="service-def advisory-intro">Acesso contínuo a uma liderança sênior de RH, sem o custo de uma contratação full-time. O nível de dedicação muda conforme a complexidade, o ritmo de decisão e a profundidade de execução que a empresa precisa.</p>
         <div class="advisory-compare">
           <article class="advisory-option">
-            <p class="eyebrow">Cali Partner</p>
+            <p class="option-brand"><span>CALI</span> PARTNER</p>
             <h5 class="option-name">Direção estratégica periódica</h5>
             <p class="option-for">Para empresas com a agenda de pessoas mais concentrada, que precisam de leitura sênior, direção e apoio nas decisões críticas.</p>
             <div class="option-facts">
@@ -826,7 +881,7 @@
             </ul>
           </article>
           <article class="advisory-option">
-            <p class="eyebrow">Cali Full</p>
+            <p class="option-brand"><span>CALI</span> FULL</p>
             <h5 class="option-name">Presença mais próxima e execução ampliada</h5>
             <p class="option-for">Para crescimento, reestruturação, mudança de rota ou empresas em que pessoas já são uma agenda central da diretoria.</p>
             <div class="option-facts">
@@ -1170,7 +1225,7 @@
     <div class="mapa-accent" aria-hidden="true"></div>
     <button class="mapa-close" type="button" aria-label="Fechar convite para o Mapa" data-mapa-close>×</button>
     <div class="mapa-content">
-      <p class="eyebrow">DIAGNÓSTICO GRATUITO</p>
+      <p class="eyebrow">MAPA DE PEOPLE</p>
       <h2 id="mapaModalTitle">Descubra como está a gestão de pessoas da sua empresa.</h2>
       <p class="mapa-lead" id="mapaModalDescription">Preencha gratuitamente o Mapa de People e receba um relatório personalizado com o resultado da análise, os principais riscos e as prioridades recomendadas.</p>
       <div class="mapa-points" aria-label="O que você recebe">
