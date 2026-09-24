@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cali — HR for Business | Advisory Executivo de RH</title>
-<meta name="description" content="Direção estratégica de pessoas para empresas em ritmo de crescimento. Advisory executivo de RH fracionado, ao lado da liderança.">
+<title>CALI — HR for Business | People Advisory e Estruturação de RH</title>
+<meta name="description" content="People Advisory, estruturação assistida de RH, liderança e projetos de pessoas conectados ao negócio. CALI — HR for Business.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="CALI RH - Patrícia Lima - HR FOR BUSINESS">
-<meta property="og:description" content="Advisory executivo de RH fracionado, ao lado da liderança — para empresas em ritmo de crescimento.">
+<meta property="og:description" content="People Advisory e estruturação de RH conectados ao negócio, com direção sênior e atuação sob medida.">
 <meta property="og:image" content="/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CALI RH - Patrícia Lima - HR FOR BUSINESS">
-<meta name="twitter:description" content="Advisory executivo de RH fracionado, ao lado da liderança — para empresas em ritmo de crescimento.">
+<meta name="twitter:description" content="People Advisory e estruturação de RH conectados ao negócio, com direção sênior e atuação sob medida.">
 <meta name="twitter:image" content="/og-image.jpg">
 <link rel="canonical" href="https://calirh.com/">
 <script>
@@ -817,6 +817,102 @@
     .services-block{padding-top:34px;}
     .block-head{margin-bottom:24px;}
   }
+
+
+  /* ---------- REBRAND CALI · SET/2026 ---------- */
+  .nav-platforms{display:flex;align-items:center;gap:8px;}
+  .nav-platform-link{
+    display:inline-flex;align-items:center;justify-content:center;min-height:34px;
+    padding:8px 12px;border:1px solid color-mix(in srgb,var(--nav-fg) 48%,transparent);
+    color:var(--nav-fg);font-size:9.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;
+    transition:background .3s ease,color .3s ease,border-color .3s ease;
+  }
+  .nav-platform-link-gold{border-color:var(--dourado);color:var(--dourado);}
+  header:not(.scrolled) .nav-platform-link:hover{background:rgba(247,243,238,.08);border-color:var(--dourado);color:var(--dourado);}
+  header.scrolled .nav-platform-link:hover{background:var(--bordo);border-color:var(--bordo);color:var(--marfim);}
+  header.scrolled .nav-platform-link-gold{background:rgba(181,140,82,.08);color:var(--bordo);}
+
+  .hero-content{position:relative;z-index:3;}
+  .hero::before,.hero::after,.services::after,.origem::before{
+    content:'';position:absolute;pointer-events:none;background:var(--dourado);
+    -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;
+    -webkit-mask-size:contain;mask-size:contain;
+  }
+  .hero::before{
+    width:280px;height:280px;right:5vw;top:16%;opacity:.18;
+    -webkit-mask-image:url('/assets/cali-lime-mark.svg');mask-image:url('/assets/cali-lime-mark.svg');
+  }
+  .hero::after{
+    width:210px;height:210px;left:5vw;bottom:10%;opacity:.11;transform:rotate(-14deg);
+    -webkit-mask-image:url('/assets/cali-oak-mark.svg');mask-image:url('/assets/cali-oak-mark.svg');
+  }
+  .origem{position:relative;overflow:hidden;}
+  .origem::before{
+    width:230px;height:230px;right:5vw;bottom:8%;opacity:.10;transform:rotate(9deg);
+    -webkit-mask-image:url('/assets/cali-oak-mark.svg');mask-image:url('/assets/cali-oak-mark.svg');
+  }
+  .services{position:relative;overflow:hidden;}
+  .services::after{
+    width:260px;height:260px;right:-70px;top:220px;opacity:.055;z-index:0;
+    -webkit-mask-image:url('/assets/cali-lime-mark.svg');mask-image:url('/assets/cali-lime-mark.svg');
+  }
+  .services>.wrap,.services-block{position:relative;z-index:1;}
+  .services-head{position:relative;padding-left:22px;}
+  .services-head::before{content:'';position:absolute;left:40px;top:4px;bottom:2px;width:2px;background:var(--dourado);}
+  .services-head>*{position:relative;margin-left:16px;}
+  .service-card{border-color:rgba(181,140,82,.46);}
+  .service-card h4{position:relative;padding-bottom:12px;}
+  .service-card h4::after{content:'';position:absolute;left:0;bottom:0;width:38px;height:1px;background:var(--dourado);}
+  .services-block.on-dark .service-card{border-color:rgba(181,140,82,.38);background:rgba(247,243,238,.018);}
+  .services-block.on-dark .service-card:hover{border-color:rgba(181,140,82,.62);}
+  .service-card-advisory .advisory-option{padding:24px;}
+  .service-card-advisory .option-for{min-height:0;}
+  .service-card-advisory .advisory-option li{padding-top:6px;padding-bottom:6px;}
+
+  .service-card-build{position:relative;overflow:hidden;}
+  .service-card-build::after{
+    content:'';position:absolute;right:-44px;top:-54px;width:210px;height:210px;background:var(--dourado);opacity:.08;
+    -webkit-mask:url('/assets/cali-oak-mark.svg') center/contain no-repeat;mask:url('/assets/cali-oak-mark.svg') center/contain no-repeat;
+  }
+  .build-head{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(280px,.78fr);gap:38px;align-items:start;position:relative;z-index:1;}
+  .build-signature{margin:-2px 0 14px;color:var(--dourado);font-family:'Playfair Display',serif;font-size:18px;font-style:italic;}
+  .service-card-build .service-def{margin-bottom:0;max-width:670px;}
+  .build-packages{display:grid;gap:10px;}
+  .build-package{padding:18px 18px 16px;border-top:2px solid var(--dourado);background:rgba(247,243,238,.045);}
+  .build-package span{display:block;color:var(--dourado);font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:7px;}
+  .build-package strong{display:block;color:var(--marfim);font-family:'Playfair Display',serif;font-size:22px;font-weight:500;}
+  .build-package small{display:block;margin-top:5px;color:rgba(247,243,238,.66);font-size:10px;line-height:1.45;}
+  .build-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin:28px 0 0;background:rgba(181,140,82,.32);border:1px solid rgba(181,140,82,.32);}
+  .build-flow>div{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:18px;background:rgba(77,21,35,.82);}
+  .build-flow span{color:var(--dourado);font-family:'Playfair Display',serif;font-size:18px;}
+  .build-flow p{color:#EAD9C9;font-size:12.5px;line-height:1.55;}
+  .build-flow strong{color:var(--marfim);}
+
+  .gold-rule{height:2px;background:linear-gradient(90deg,var(--dourado),rgba(181,140,82,.18),transparent);}
+  .pilar{border-top:2px solid var(--dourado);}
+
+  @media(max-width:1120px){
+    .nav-social{display:none;}
+    .nav-menu-desktop{gap:24px;}
+    .nav-utility{gap:12px;}
+  }
+  @media(max-width:860px){
+    .nav-platforms{display:none;}
+    .nav-drawer .nav-drawer-platform{width:100%;justify-content:center;border-color:var(--dourado);color:var(--bordo);margin-top:0;}
+    .services-head{padding-left:0;}
+    .services-head::before{left:24px;}
+    .services-head>*{margin-left:14px;}
+    .build-head{grid-template-columns:1fr;gap:24px;}
+    .build-packages{grid-template-columns:1fr 1fr;}
+    .build-flow{grid-template-columns:1fr;}
+    .hero::before{width:190px;height:190px;right:-45px;top:14%;}
+    .hero::after{width:150px;height:150px;left:-34px;bottom:12%;}
+  }
+  @media(max-width:560px){
+    .build-packages{grid-template-columns:1fr;}
+    .build-flow>div{padding:16px;}
+    .services-head::before{left:20px;}
+  }
 </style>
 </head>
 <body>
@@ -831,9 +927,12 @@
       <a href="#cali">A Cali</a>
       <a href="#servicos">Serviços</a>
       <a href="#sobre">Sobre</a>
-      <a href="https://portal.calirh.com" data-track-event="portal_nav" data-track-label="menu-principal">Solicitar proposta</a>
     </nav>
     <div class="nav-utility">
+      <div class="nav-platforms" aria-label="Ecossistema CALI">
+        <a href="https://portal.calirh.com" target="_blank" rel="noopener" class="nav-platform-link nav-platform-link-gold" data-track-event="portal_nav" data-track-label="menu-principal">Portal</a>
+        <a href="https://app.calirh.com" target="_blank" rel="noopener" class="nav-platform-link" data-track-event="app_nav" data-track-label="menu-principal">CALI App</a>
+      </div>
       <div class="nav-social">
         <a href="https://www.instagram.com/calirh_/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.3"/><circle cx="10" cy="10" r="3.6" stroke="currentColor" stroke-width="1.3"/><circle cx="14.3" cy="5.7" r="0.9" fill="currentColor"/></svg></a>
         <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Cali%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2.2c-4.3 0-7.8 3.4-7.8 7.6 0 1.5.4 2.9 1.2 4.1l-1.3 4 4.2-1.3c1.1.6 2.4 1 3.7 1 4.3 0 7.8-3.4 7.8-7.6S14.3 2.2 10 2.2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></a>
@@ -852,7 +951,8 @@
   <a href="#cali">A Cali</a>
   <a href="#servicos">Serviços</a>
   <a href="#sobre">Sobre</a>
-  <a href="https://portal.calirh.com" data-track-event="portal_nav" data-track-label="menu-mobile">Solicitar proposta</a>
+  <a href="https://portal.calirh.com" target="_blank" rel="noopener" class="btn nav-drawer-platform" data-track-event="portal_nav" data-track-label="menu-mobile">Portal de propostas</a>
+  <a href="https://app.calirh.com" target="_blank" rel="noopener" class="btn nav-drawer-platform" data-track-event="app_nav" data-track-label="menu-mobile">CALI App</a>
   <a href="#contato" class="btn">Fale com a Pati</a>
 </div>
 
@@ -863,7 +963,7 @@
     <div class="hero-logo-wrap">
       <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAyIiB6b29tQW5kUGFuPSJtYWduaWZ5IiB2aWV3Qm94PSI2OCAxMTYgMjUxIDEzOSIgaGVpZ2h0PSIyNzgiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiIHZlcnNpb249IjEuMCI+PGRlZnM+PGcvPjxjbGlwUGF0aCBpZD0iMGNmMGNkNDEyZSI+PHJlY3QgeD0iMCIgd2lkdGg9IjI1MSIgeT0iMCIgaGVpZ2h0PSIxMzkiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLCAwLCAwLCAxLCA2OCwgMTE2KSI+PGcgY2xpcC1wYXRoPSJ1cmwoIzBjZjBjZDQxMmUpIj48ZyBmaWxsPSIjZmFmYWZhIiBmaWxsLW9wYWNpdHk9IjEiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuNDcyMzQ4LCA5Ny41NzU4NjQpIj48Zz48cGF0aCBkPSJNIDcyLjQ4NDM3NSAtNy43NjU2MjUgQyA2Ny44NjcxODggLTUuMDM1MTU2IDYzLjA3ODEyNSAtMi45ODgyODEgNTguMTA5Mzc1IC0xLjYyNSBDIDUzLjE0ODQzOCAtMC4yNTc4MTIgNDguMTQ4NDM4IDAuNDIxODc1IDQzLjEwOTM3NSAwLjQyMTg3NSBDIDM3Ljg2NzE4OCAwLjQyMTg3NSAzMi44MTY0MDYgLTAuMzQ3NjU2IDI3Ljk1MzEyNSAtMS44OTA2MjUgQyAyMy4wOTc2NTYgLTMuNDI5Njg4IDE4LjgzMjAzMSAtNS43MzgyODEgMTUuMTU2MjUgLTguODEyNSBDIDExLjQ4ODI4MSAtMTEuODgyODEyIDguNTUwNzgxIC0xNS43MjY1NjIgNi4zNDM3NSAtMjAuMzQzNzUgQyA0LjE0NDUzMSAtMjQuOTY4NzUgMy4wNDY4NzUgLTMwLjM1MTU2MiAzLjA0Njg3NSAtMzYuNSBDIDMuMDQ2ODc1IC00Mi40NDUzMTIgNC4wNzgxMjUgLTQ3LjcyNjU2MiA2LjE0MDYyNSAtNTIuMzQzNzUgQyA4LjIwMzEyNSAtNTYuOTU3MDMxIDExLjA2NjQwNiAtNjAuODUxNTYyIDE0LjczNDM3NSAtNjQuMDMxMjUgQyAxOC40MTAxNTYgLTY3LjIxODc1IDIyLjc1IC02OS42MzI4MTIgMjcuNzUgLTcxLjI4MTI1IEMgMzIuNzUgLTcyLjkyNTc4MSAzOC4xODc1IC03My43NSA0NC4wNjI1IC03My43NSBDIDQ3Ljk3NjU2MiAtNzMuNzUgNTIuMDE1NjI1IC03My4zNjMyODEgNTYuMTcxODc1IC03Mi41OTM3NSBDIDYwLjMzNTkzOCAtNzEuODIwMzEyIDY0LjYyNSAtNzAuNjMyODEyIDY5LjAzMTI1IC02OS4wMzEyNSBMIDY1Ljg3NSAtNjIuMjAzMTI1IEMgNjIuNTE5NTMxIC02NS41NjY0MDYgNTguOTIxODc1IC02OC4wMzUxNTYgNTUuMDc4MTI1IC02OS42MDkzNzUgQyA1MS4yMzQzNzUgLTcxLjE3OTY4OCA0Ny4zMTY0MDYgLTcxLjk2ODc1IDQzLjMyODEyNSAtNzEuOTY4NzUgQyAzOS40MTAxNTYgLTcxLjk2ODc1IDM1LjYxMzI4MSAtNzEuMTc5Njg4IDMxLjkzNzUgLTY5LjYwOTM3NSBDIDI4LjI2OTUzMSAtNjguMDM1MTU2IDI1LjAxOTUzMSAtNjUuNzI2NTYyIDIyLjE4NzUgLTYyLjY4NzUgQyAxOS4zNTE1NjIgLTU5LjY0NDUzMSAxNy4wOTc2NTYgLTU1Ljg5ODQzOCAxNS40MjE4NzUgLTUxLjQ1MzEyNSBDIDEzLjc0MjE4OCAtNDcuMDE1NjI1IDEyLjkwNjI1IC00MS44OTQ1MzEgMTIuOTA2MjUgLTM2LjA5Mzc1IEMgMTIuOTA2MjUgLTMwLjk3NjU2MiAxMy43NTc4MTIgLTI2LjI2OTUzMSAxNS40Njg3NSAtMjEuOTY4NzUgQyAxNy4xODc1IC0xNy42NzU3ODEgMTkuNDkyMTg4IC0xNC4wMDc4MTIgMjIuMzkwNjI1IC0xMC45Njg3NSBDIDI1LjI5Njg3NSAtNy45MjU3ODEgMjguNjMyODEyIC01LjU0Njg3NSAzMi40MDYyNSAtMy44MjgxMjUgQyAzNi4xODc1IC0yLjExNzE4OCA0MC4xNDA2MjUgLTEuMjY1NjI1IDQ0LjI2NTYyNSAtMS4yNjU2MjUgQyA0OC4wNDY4NzUgLTEuMjY1NjI1IDUxLjg1OTM3NSAtMi4wNTA3ODEgNTUuNzAzMTI1IC0zLjYyNSBDIDU5LjU0Njg3NSAtNS4xOTUzMTIgNjMuMjUzOTA2IC03LjY2MDE1NiA2Ni44MjgxMjUgLTExLjAxNTYyNSBaIE0gNzIuNDg0Mzc1IC03Ljc2NTYyNSAiLz48L2c+PC9nPjwvZz48ZyBmaWxsPSIjZmFmYWZhIiBmaWxsLW9wYWNpdHk9IjEiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDg1Ljc2MjAzOSwgOTcuNTc1ODY0KSI+PGc+PHBhdGggZD0iTSA1Ni45Njg3NSAwIEwgNDguMjUgMCBMIDQxLjMyODEyNSAtMjIuMzQzNzUgTCAxMC4yODEyNSAtMjIuMzQzNzUgTCA2LjUgLTExLjEyNSBDIDYuMTU2MjUgLTkuOTM3NSA1LjkxMDE1NiAtOC44MzIwMzEgNS43NjU2MjUgLTcuODEyNSBDIDUuNjI4OTA2IC02LjgwMDc4MSA1LjU2MjUgLTUuODA0Njg4IDUuNTYyNSAtNC44MjgxMjUgQyA1LjU2MjUgLTMuNDI5Njg4IDUuNjY0MDYyIC0xLjgyMDMxMiA1Ljg3NSAwIEwgMC43MzQzNzUgMCBMIDI1LjE3MTg3NSAtNzMuNDM3NSBMIDM0LjI5Njg3NSAtNzMuNDM3NSBaIE0gNDAuNzAzMTI1IC0yNC40Mzc1IEwgMjYuNDM3NSAtNzAuODEyNSBMIDEwLjkwNjI1IC0yNC40Mzc1IFogTSA0MC43MDMxMjUgLTI0LjQzNzUgIi8+PC9nPjwvZz48L2c+PGcgZmlsbD0iI2ZhZmFmYSIgZmlsbC1vcGFjaXR5PSIxIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNTUuNzM1NDY5LCA5Ny41NzU4NjQpIj48Zz48cGF0aCBkPSJNIDMxLjE1NjI1IC0yLjA5Mzc1IEMgMzQuMDkzNzUgLTIuMDkzNzUgMzYuNDY4NzUgLTIuMTA5Mzc1IDM4LjI4MTI1IC0yLjE0MDYyNSBDIDQwLjEwMTU2MiAtMi4xNzk2ODggNDEuNjYwMTU2IC0yLjI1MzkwNiA0Mi45NTMxMjUgLTIuMzU5Mzc1IEMgNDQuMjUzOTA2IC0yLjQ2MDkzOCA0NS4zOTQ1MzEgLTIuNjE3MTg4IDQ2LjM3NSAtMi44MjgxMjUgQyA0Ny4zNTE1NjIgLTMuMDM1MTU2IDQ4LjQzNzUgLTMuMzUxNTYyIDQ5LjYyNSAtMy43ODEyNSBMIDQ5LjYyNSAwIEwgNi4yOTY4NzUgMCBMIDYuMjk2ODc1IC03My40Mzc1IEwgMTUgLTczLjQzNzUgTCAxNSAtMi4wOTM3NSBaIE0gMzEuMTU2MjUgLTIuMDkzNzUgIi8+PC9nPjwvZz48L2c+PGcgZmlsbD0iI2ZhZmFmYSIgZmlsbC1vcGFjaXR5PSIxIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMTcuMjExNTA5LCA5Ny41NzU4NjQpIj48Zz48cGF0aCBkPSJNIDYuMjk2ODc1IDAgTCA2LjI5Njg3NSAtNzMuNDM3NSBMIDE1IC03My40Mzc1IEwgMTUgMCBaIE0gNi4yOTY4NzUgMCAiLz48L2c+PC9nPjwvZz48L2c+PC9nPjxnIGZpbGw9IiNmYWZhZmEiIGZpbGwtb3BhY2l0eT0iMSI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAxLjQ4MzA5MiwgMjQ4LjI0Mzg5KSI+PGc+PHBhdGggZD0iTSAxLjI4MTI1IDAgTCAxLjI4MTI1IC05LjQ1MzEyNSBMIDEuODc1IC05LjQ1MzEyNSBMIDEuODc1IC01LjEwOTM3NSBMIDcuNTQ2ODc1IC01LjEwOTM3NSBMIDcuNTQ2ODc1IC05LjQ1MzEyNSBMIDguMTQwNjI1IC05LjQ1MzEyNSBMIDguMTQwNjI1IDAgTCA3LjU0Njg3NSAwIEwgNy41NDY4NzUgLTQuNTYyNSBMIDEuODc1IC00LjU2MjUgTCAxLjg3NSAwIFogTSAxLjI4MTI1IDAgIi8+PC9nPjwvZz48L2c+PGcgZmlsbD0iI2ZhZmFmYSIgZmlsbC1vcGFjaXR5PSIxIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMTUuMjI4ODg3LCAyNDguMjQzODkpIj48Zz48cGF0aCBkPSJNIDEuMjgxMjUgMCBMIDEuMjgxMjUgLTkuNDUzMTI1IEwgNC4yODEyNSAtOS40NTMxMjUgQyA0Ljg3NSAtOS40NTMxMjUgNS4zODI4MTIgLTkuMzM1OTM4IDUuODEyNSAtOS4xMDkzNzUgQyA2LjI1IC04Ljg3ODkwNiA2LjU4MjAzMSAtOC41NTQ2ODggNi44MTI1IC04LjE0MDYyNSBDIDcuMDM5MDYyIC03LjcyMjY1NiA3LjE1NjI1IC03LjIzODI4MSA3LjE1NjI1IC02LjY4NzUgQyA3LjE1NjI1IC02LjEzMjgxMiA3LjAzOTA2MiAtNS42NTYyNSA2LjgxMjUgLTUuMjUgQyA2LjU4MjAzMSAtNC44NDM3NSA2LjI1IC00LjUxOTUzMSA1LjgxMjUgLTQuMjgxMjUgQyA1LjM4MjgxMiAtNC4wNTA3ODEgNC44NzUgLTMuOTM3NSA0LjI4MTI1IC0zLjkzNzUgTCAxLjYwOTM3NSAtMy45Mzc1IEwgMS42MDkzNzUgLTQuNSBMIDQuMjY1NjI1IC00LjUgQyA0Ljc0MjE4OCAtNC41IDUuMTU2MjUgLTQuNTg1OTM4IDUuNSAtNC43NjU2MjUgQyA1Ljg0Mzc1IC00Ljk0MTQwNiA2LjEwMTU2MiAtNS4xOTUzMTIgNi4yODEyNSAtNS41MzEyNSBDIDYuNDY4NzUgLTUuODYzMjgxIDYuNTYyNSAtNi4yNSA2LjU2MjUgLTYuNjg3NSBDIDYuNTYyNSAtNy4xMzI4MTIgNi40Njg3NSAtNy41MjM0MzggNi4yODEyNSAtNy44NTkzNzUgQyA2LjEwMTU2MiAtOC4xOTE0MDYgNS44NDM3NSAtOC40NDUzMTIgNS41IC04LjYyNSBDIDUuMTU2MjUgLTguODEyNSA0Ljc0MjE4OCAtOC45MDYyNSA0LjI2NTYyNSAtOC45MDYyNSBMIDEuODc1IC04LjkwNjI1IEwgMS44NzUgMCBaIE0gNi44MjgxMjUgMCBMIDQuNTMxMjUgLTQuMjk2ODc1IEwgNS4xODc1IC00LjI5Njg3NSBMIDcuNTE1NjI1IDAgWiBNIDYuODI4MTI1IDAgIi8+PC9nPjwvZz48L2c+PGcgZmlsbD0iI2ZhZmFmYSIgZmlsbC1vcGFjaXR5PSIxIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjcuNTc4NjE3LCAyNDguMjQzODkpIj48Zy8+PC9nPjwvZz48ZyBmaWxsPSIjZmFmYWZhIiBmaWxsLW9wYWNpdHk9IjEiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzNS4zOTc0ODQsIDI0OC4yNDM4OSkiPjxnPjxwYXRoIGQ9Ik0gMS4yODEyNSAwIEwgMS4yODEyNSAtOS40NTMxMjUgTCA2LjY0MDYyNSAtOS40NTMxMjUgTCA2LjY0MDYyNSAtOC45MDYyNSBMIDEuODc1IC04LjkwNjI1IEwgMS44NzUgLTUgTCA2LjE4NzUgLTUgTCA2LjE4NzUgLTQuNDUzMTI1IEwgMS44NzUgLTQuNDUzMTI1IEwgMS44NzUgMCBaIE0gMS4yODEyNSAwICIvPjwvZz48L2c+PC9nPjxnIGZpbGw9IiNmYWZhZmEiIGZpbGwtb3BhY2l0eT0iMSI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTQ3LjE4ODc4OCwgMjQ4LjI0Mzg5KSI+PGc+PHBhdGggZD0iTSA0LjgyODEyNSAwLjEyNSBDIDQuMDM1MTU2IDAuMTI1IDMuMzM1OTM4IC0wLjA3MDMxMjUgMi43MzQzNzUgLTAuNDY4NzUgQyAyLjEyODkwNiAtMC44NzUgMS42NTYyNSAtMS40NDE0MDYgMS4zMTI1IC0yLjE3MTg3NSBDIDAuOTc2NTYyIC0yLjkxMDE1NiAwLjgxMjUgLTMuNzU3ODEyIDAuODEyNSAtNC43MTg3NSBDIDAuODEyNSAtNS42OTUzMTIgMC45NzY1NjIgLTYuNTQ2ODc1IDEuMzEyNSAtNy4yNjU2MjUgQyAxLjY1NjI1IC03Ljk5MjE4OCAyLjEyODkwNiAtOC41NjI1IDIuNzM0Mzc1IC04Ljk2ODc1IEMgMy4zMzU5MzggLTkuMzc1IDQuMDM1MTU2IC05LjU3ODEyNSA0LjgyODEyNSAtOS41NzgxMjUgQyA1LjYxNzE4OCAtOS41NzgxMjUgNi4zMTY0MDYgLTkuMzc1IDYuOTIxODc1IC04Ljk2ODc1IEMgNy41MjM0MzggLTguNTYyNSA3Ljk5MjE4OCAtNy45OTIxODggOC4zMjgxMjUgLTcuMjY1NjI1IEMgOC42NzE4NzUgLTYuNTQ2ODc1IDguODQzNzUgLTUuNjk1MzEyIDguODQzNzUgLTQuNzE4NzUgQyA4Ljg0Mzc1IC0zLjc1IDguNjcxODc1IC0yLjg5ODQzOCA4LjMyODEyNSAtMi4xNzE4NzUgQyA3Ljk5MjE4OCAtMS40NDE0MDYgNy41MjM0MzggLTAuODc1IDYuOTIxODc1IC0wLjQ2ODc1IEMgNi4zMTY0MDYgLTAuMDcwMzEyNSA1LjYxNzE4OCAwLjEyNSA0LjgyODEyNSAwLjEyNSBaIE0gNC44MjgxMjUgLTAuNDM3NSBDIDUuNDkyMTg4IC0wLjQzNzUgNi4wODIwMzEgLTAuNjA5Mzc1IDYuNTkzNzUgLTAuOTUzMTI1IEMgNy4xMTMyODEgLTEuMzA0Njg4IDcuNTE5NTMxIC0xLjgwNDY4OCA3LjgxMjUgLTIuNDUzMTI1IEMgOC4xMTMyODEgLTMuMDk3NjU2IDguMjY1NjI1IC0zLjg1MTU2MiA4LjI2NTYyNSAtNC43MTg3NSBDIDguMjY1NjI1IC01LjU5Mzc1IDguMTEzMjgxIC02LjM1MTU2MiA3LjgxMjUgLTcgQyA3LjUxOTUzMSAtNy42NDQ1MzEgNy4xMTMyODEgLTguMTQwNjI1IDYuNTkzNzUgLTguNDg0Mzc1IEMgNi4wODIwMzEgLTguODM1OTM4IDUuNDkyMTg4IC05LjAxNTYyNSA0LjgyODEyNSAtOS4wMTU2MjUgQyA0LjE2MDE1NiAtOS4wMTU2MjUgMy41NjY0MDYgLTguODM1OTM4IDMuMDQ2ODc1IC04LjQ4NDM3NSBDIDIuNTM1MTU2IC04LjE0MDYyNSAyLjEyODkwNiAtNy42NDQ1MzEgMS44MjgxMjUgLTcgQyAxLjUzNTE1NiAtNi4zNjMyODEgMS4zOTA2MjUgLTUuNjAxNTYyIDEuMzkwNjI1IC00LjcxODc1IEMgMS4zOTA2MjUgLTMuODUxNTYyIDEuNTM1MTU2IC0zLjA5NzY1NiAxLjgyODEyNSAtMi40NTMxMjUgQyAyLjExNzE4OCAtMS44MTY0MDYgMi41MjM0MzggLTEuMzIwMzEyIDMuMDQ2ODc1IC0wLjk2ODc1IEMgMy41NjY0MDYgLTAuNjEzMjgxIDQuMTYwMTU2IC0wLjQzNzUgNC44MjgxMjUgLTAuNDM3NSBaIE0gNC44MjgxMjUgLTAuNDM3NSAiLz48L2c+PC9nPjwvZz48ZyBmaWxsPSIjZmFmYWZhIiBmaWxsLW9wYWNpdHk9IjEiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE2MS4xNTY2OTEsIDI0OC4yNDM4OSkiPjxnPjxwYXRoIGQ9Ik0gMS4yODEyNSAwIEwgMS4yODEyNSAtOS40NTMxMjUgTCA0LjI4MTI1IC05LjQ1MzEyNSBDIDQuODc1IC05LjQ1MzEyNSA1LjM4MjgxMiAtOS4zMzU5MzggNS44MTI1IC05LjEwOTM3NSBDIDYuMjUgLTguODc4OTA2IDYuNTgyMDMxIC04LjU1NDY4OCA2LjgxMjUgLTguMTQwNjI1IEMgNy4wMzkwNjIgLTcuNzIyNjU2IDcuMTU2MjUgLTcuMjM4MjgxIDcuMTU2MjUgLTYuNjg3NSBDIDcuMTU2MjUgLTYuMTMyODEyIDcuMDM5MDYyIC01LjY1NjI1IDYuODEyNSAtNS4yNSBDIDYuNTgyMDMxIC00Ljg0Mzc1IDYuMjUgLTQuNTE5NTMxIDUuODEyNSAtNC4yODEyNSBDIDUuMzgyODEyIC00LjA1MDc4MSA0Ljg3NSAtMy45Mzc1IDQuMjgxMjUgLTMuOTM3NSBMIDEuNjA5Mzc1IC0zLjkzNzUgTCAxLjYwOTM3NSAtNC41IEwgNC4yNjU2MjUgLTQuNSBDIDQuNzQyMTg4IC00LjUgNS4xNTYyNSAtNC41ODU5MzggNS41IC00Ljc2NTYyNSBDIDUuODQzNzUgLTQuOTQxNDA2IDYuMTAxNTYyIC01LjE5NTMxMiA2LjI4MTI1IC01LjUzMTI1IEMgNi40Njg3NSAtNS44NjMyODEgNi41NjI1IC02LjI1IDYuNTYyNSAtNi42ODc1IEMgNi41NjI1IC03LjEzMjgxMiA2LjQ2ODc1IC03LjUyMzQzOCA2LjI4MTI1IC03Ljg1OTM3NSBDIDYuMTAxNTYyIC04LjE5MTQwNiA1Ljg0Mzc1IC04LjQ0NTMxMiA1LjUgLTguNjI1IEMgNS4xNTYyNSAtOC44MTI1IDQuNzQyMTg4IC04LjkwNjI1IDQuMjY1NjI1IC04LjkwNjI1IEwgMS44NzUgLTguOTA2MjUgTCAxLjg3NSAwIFogTSA2LjgyODEyNSAwIEwgNC41MzEyNSAtNC4yOTY4NzUgTCA1LjE4NzUgLTQuMjk2ODc1IEwgNy41MTU2MjUgMCBaIE0gNi44MjgxMjUgMCAiLz48L2c+PC9nPjwvZz48ZyBmaWxsPSIjZmFmYWZhIiBmaWxsLW9wYWNpdHk9IjEiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE3My41MDY0MjEsIDI0OC4yNDM4OSkiPjxnLz48L2c+PC9nPjxnIGZpbGw9IiNmYWZhZmEiIGZpbGwtb3BhY2l0eT0iMSI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTgxLjMyNTI4OCwgMjQ4LjI0Mzg5KSI+PGc+PHBhdGggZD0iTSAxLjI4MTI1IDAgTCAxLjI4MTI1IC05LjQ1MzEyNSBMIDQuMzc1IC05LjQ1MzEyNSBDIDQuOTQ1MzEyIC05LjQ1MzEyNSA1LjQzNzUgLTkuMzQ3NjU2IDUuODQzNzUgLTkuMTQwNjI1IEMgNi4yNSAtOC45NDE0MDYgNi41NTQ2ODggLTguNjYwMTU2IDYuNzY1NjI1IC04LjI5Njg3NSBDIDYuOTcyNjU2IC03LjkyOTY4OCA3LjA3ODEyNSAtNy41MDM5MDYgNy4wNzgxMjUgLTcuMDE1NjI1IEMgNy4wNzgxMjUgLTYuNjQwNjI1IDcuMDE1NjI1IC02LjMwMDc4MSA2Ljg5MDYyNSAtNiBDIDYuNzY1NjI1IC01LjcwNzAzMSA2LjU4NTkzOCAtNS40NjA5MzggNi4zNTkzNzUgLTUuMjY1NjI1IEMgNi4xMjg5MDYgLTUuMDc4MTI1IDUuODY3MTg4IC00Ljk0MTQwNiA1LjU3ODEyNSAtNC44NTkzNzUgTCA1LjU3ODEyNSAtNC44MTI1IEMgNS44OTA2MjUgLTQuNzg5MDYyIDYuMTg3NSAtNC42NzU3ODEgNi40Njg3NSAtNC40Njg3NSBDIDYuNzU3ODEyIC00LjI2OTUzMSA2Ljk5MjE4OCAtNCA3LjE3MTg3NSAtMy42NTYyNSBDIDcuMzU5Mzc1IC0zLjMyMDMxMiA3LjQ1MzEyNSAtMi45Mjk2ODggNy40NTMxMjUgLTIuNDg0Mzc1IEMgNy40NTMxMjUgLTEuOTkyMTg4IDcuMzQzNzUgLTEuNTYyNSA3LjEyNSAtMS4xODc1IEMgNi45MTQwNjIgLTAuODEyNSA2LjU5NzY1NiAtMC41MTk1MzEgNi4xNzE4NzUgLTAuMzEyNSBDIDUuNzUzOTA2IC0wLjEwMTU2MiA1LjIzNDM3NSAwIDQuNjA5Mzc1IDAgWiBNIDEuODc1IC0wLjU0Njg3NSBMIDQuNjA5Mzc1IC0wLjU0Njg3NSBDIDUuMzI4MTI1IC0wLjU0Njg3NSA1Ljg4MjgxMiAtMC43MjI2NTYgNi4yODEyNSAtMS4wNzgxMjUgQyA2LjY3NTc4MSAtMS40NDE0MDYgNi44NzUgLTEuOTEwMTU2IDYuODc1IC0yLjQ4NDM3NSBDIDYuODc1IC0yLjg3ODkwNiA2Ljc3MzQzOCAtMy4yMzQzNzUgNi41NzgxMjUgLTMuNTQ2ODc1IEMgNi4zOTA2MjUgLTMuODU5Mzc1IDYuMTI1IC00LjA5NzY1NiA1Ljc4MTI1IC00LjI2NTYyNSBDIDUuNDQ1MzEyIC00LjQ0MTQwNiA1LjA2MjUgLTQuNTMxMjUgNC42MjUgLTQuNTMxMjUgTCAxLjg3NSAtNC41MzEyNSBaIE0gMS44NzUgLTUuMDc4MTI1IEwgNC41NzgxMjUgLTUuMDc4MTI1IEMgNC45ODQzNzUgLTUuMDc4MTI1IDUuMzI4MTI1IC01LjE2MDE1NiA1LjYwOTM3NSAtNS4zMjgxMjUgQyA1Ljg5ODQzOCAtNS41MDM5MDYgNi4xMTcxODggLTUuNzM4MjgxIDYuMjY1NjI1IC02LjAzMTI1IEMgNi40MjE4NzUgLTYuMzIwMzEyIDYuNSAtNi42NDg0MzggNi41IC03LjAxNTYyNSBDIDYuNSAtNy41OTc2NTYgNi4zMTI1IC04LjA1NDY4OCA1LjkzNzUgLTguMzkwNjI1IEMgNS41NjI1IC04LjczNDM3NSA1LjAzOTA2MiAtOC45MDYyNSA0LjM3NSAtOC45MDYyNSBMIDEuODc1IC04LjkwNjI1IFogTSAxLjg3NSAtNS4wNzgxMjUgIi8+PC9nPjwvZz48L2c+PGcgZmlsbD0iI2ZhZmFmYSIgZmlsbC1vcGFjaXR5PSIxIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxOTMuOTM1MTk5LCAyNDguMjQzODkpIj48Zz48cGF0aCBkPSJNIDQuNjU2MjUgMC4xNDA2MjUgQyAzLjk3NjU2MiAwLjE0MDYyNSAzLjM3NSAtMC4wMDM5MDYyNSAyLjg0Mzc1IC0wLjI5Njg3NSBDIDIuMzEyNSAtMC41ODU5MzggMS44OTQ1MzEgLTAuOTg0Mzc1IDEuNTkzNzUgLTEuNDg0Mzc1IEMgMS4zMDA3ODEgLTEuOTkyMTg4IDEuMTU2MjUgLTIuNTcwMzEyIDEuMTU2MjUgLTMuMjE4NzUgTCAxLjE1NjI1IC05LjQ1MzEyNSBMIDEuNzUgLTkuNDUzMTI1IEwgMS43NSAtMy4yNSBDIDEuNzUgLTIuNzA3MDMxIDEuODY3MTg4IC0yLjIyMjY1NiAyLjEwOTM3NSAtMS43OTY4NzUgQyAyLjM1OTM3NSAtMS4zNjcxODggMi43MDMxMjUgLTEuMDMxMjUgMy4xNDA2MjUgLTAuNzgxMjUgQyAzLjU3ODEyNSAtMC41MzkwNjIgNC4wODIwMzEgLTAuNDIxODc1IDQuNjU2MjUgLTAuNDIxODc1IEMgNS4yMjY1NjIgLTAuNDIxODc1IDUuNzI2NTYyIC0wLjUzOTA2MiA2LjE1NjI1IC0wLjc4MTI1IEMgNi41OTM3NSAtMS4wMzEyNSA2LjkzNzUgLTEuMzY3MTg4IDcuMTg3NSAtMS43OTY4NzUgQyA3LjQzNzUgLTIuMjIyNjU2IDcuNTYyNSAtMi43MDcwMzEgNy41NjI1IC0zLjI1IEwgNy41NjI1IC05LjQ1MzEyNSBMIDguMTU2MjUgLTkuNDUzMTI1IEwgOC4xNTYyNSAtMy4yMTg3NSBDIDguMTU2MjUgLTIuNTcwMzEyIDguMDAzOTA2IC0xLjk5MjE4OCA3LjcwMzEyNSAtMS40ODQzNzUgQyA3LjM5ODQzOCAtMC45ODQzNzUgNi45ODQzNzUgLTAuNTg1OTM4IDYuNDUzMTI1IC0wLjI5Njg3NSBDIDUuOTI5Njg4IC0wLjAwMzkwNjI1IDUuMzMyMDMxIDAuMTQwNjI1IDQuNjU2MjUgMC4xNDA2MjUgWiBNIDQuNjU2MjUgMC4xNDA2MjUgIi8+PC9nPjwvZz48L2c+PGcgZmlsbD0iI2ZhZmFmYSIgZmlsbC1vcGFjaXR5PSIxIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMDcuNTQ3NzQsIDI0OC4yNDM4OSkiPjxnPjxwYXRoIGQ9Ik0gMy45NTMxMjUgMC4xNTYyNSBDIDMuMzM1OTM4IDAuMTU2MjUgMi44MDA3ODEgMC4wNTA3ODEyIDIuMzQzNzUgLTAuMTU2MjUgQyAxLjg4MjgxMiAtMC4zNjMyODEgMS41MjM0MzggLTAuNjU2MjUgMS4yNjU2MjUgLTEuMDMxMjUgQyAxLjAwMzkwNiAtMS40MTQwNjIgMC44NjMyODEgLTEuODUxNTYyIDAuODQzNzUgLTIuMzQzNzUgTCAxLjQzNzUgLTIuMzQzNzUgQyAxLjQ2ODc1IC0xLjk0NTMxMiAxLjU5Mzc1IC0xLjYwMTU2MiAxLjgxMjUgLTEuMzEyNSBDIDIuMDMxMjUgLTEuMDE5NTMxIDIuMzIwMzEyIC0wLjc5Njg3NSAyLjY4NzUgLTAuNjQwNjI1IEMgMy4wNTA3ODEgLTAuNDg0Mzc1IDMuNDcyNjU2IC0wLjQwNjI1IDMuOTUzMTI1IC0wLjQwNjI1IEMgNC40NjA5MzggLTAuNDA2MjUgNC45MTAxNTYgLTAuNDg4MjgxIDUuMjk2ODc1IC0wLjY1NjI1IEMgNS42Nzk2ODggLTAuODMyMDMxIDUuOTc2NTYyIC0xLjA3MDMxMiA2LjE4NzUgLTEuMzc1IEMgNi40MDYyNSAtMS42ODc1IDYuNTE1NjI1IC0yLjA1MDc4MSA2LjUxNTYyNSAtMi40Njg3NSBDIDYuNTE1NjI1IC0yLjc4OTA2MiA2LjQzNzUgLTMuMDY2NDA2IDYuMjgxMjUgLTMuMjk2ODc1IEMgNi4xMzI4MTIgLTMuNTM1MTU2IDUuOTEwMTU2IC0zLjczODI4MSA1LjYwOTM3NSAtMy45MDYyNSBDIDUuMzA0Njg4IC00LjA4MjAzMSA0LjkyMTg3NSAtNC4yNDIxODggNC40NTMxMjUgLTQuMzkwNjI1IEwgMy4zNzUgLTQuNzAzMTI1IEMgMi42MDE1NjIgLTQuOTI5Njg4IDIuMDIzNDM4IC01LjIzODI4MSAxLjY0MDYyNSAtNS42MjUgQyAxLjI1MzkwNiAtNi4wMTk1MzEgMS4wNjI1IC02LjUwMzkwNiAxLjA2MjUgLTcuMDc4MTI1IEMgMS4wNjI1IC03LjU2NjQwNiAxLjE4NzUgLTggMS40Mzc1IC04LjM3NSBDIDEuNjk1MzEyIC04Ljc1NzgxMiAyLjA1MDc4MSAtOS4wNTQ2ODggMi41IC05LjI2NTYyNSBDIDIuOTQ1MzEyIC05LjQ4NDM3NSAzLjQ1MzEyNSAtOS41OTM3NSA0LjAxNTYyNSAtOS41OTM3NSBDIDQuNTg1OTM4IC05LjU5Mzc1IDUuMDg1OTM4IC05LjQ4NDM3NSA1LjUxNTYyNSAtOS4yNjU2MjUgQyA1Ljk1MzEyNSAtOS4wNDY4NzUgNi4yOTY4NzUgLTguNzQyMTg4IDYuNTQ2ODc1IC04LjM1OTM3NSBDIDYuODA0Njg4IC03Ljk4NDM3NSA2Ljk0NTMxMiAtNy41NTA3ODEgNi45Njg3NSAtNy4wNjI1IEwgNi4zNzUgLTcuMDYyNSBDIDYuMzMyMDMxIC03LjY1NjI1IDYuMDk3NjU2IC04LjEzMjgxMiA1LjY3MTg3NSAtOC41IEMgNS4yNDIxODggLTguODYzMjgxIDQuNjg3NSAtOS4wNDY4NzUgNCAtOS4wNDY4NzUgQyAzLjU1MDc4MSAtOS4wNDY4NzUgMy4xNDQ1MzEgLTguOTYwOTM4IDIuNzgxMjUgLTguNzk2ODc1IEMgMi40MjU3ODEgLTguNjI4OTA2IDIuMTQ0NTMxIC04LjM5NDUzMSAxLjkzNzUgLTguMDkzNzUgQyAxLjczODI4MSAtNy44MDA3ODEgMS42NDA2MjUgLTcuNDY4NzUgMS42NDA2MjUgLTcuMDkzNzUgQyAxLjY0MDYyNSAtNi43ODEyNSAxLjcxODc1IC02LjUwMzkwNiAxLjg3NSAtNi4yNjU2MjUgQyAyLjAzOTA2MiAtNi4wMzUxNTYgMi4yNjk1MzEgLTUuODM1OTM4IDIuNTYyNSAtNS42NzE4NzUgQyAyLjg1MTU2MiAtNS41MDM5MDYgMy4xOTE0MDYgLTUuMzU5Mzc1IDMuNTc4MTI1IC01LjIzNDM3NSBMIDQuNjI1IC00LjkzNzUgQyA1IC00LjgyMDMxMiA1LjMzNTkzOCAtNC42OTE0MDYgNS42NDA2MjUgLTQuNTQ2ODc1IEMgNS45NDE0MDYgLTQuMzk4NDM4IDYuMjAzMTI1IC00LjIyNjU2MiA2LjQyMTg3NSAtNC4wMzEyNSBDIDYuNjQwNjI1IC0zLjgzMjAzMSA2LjgwNDY4OCAtMy42MDE1NjIgNi45MjE4NzUgLTMuMzQzNzUgQyA3LjA0Njg3NSAtMy4wODIwMzEgNy4xMDkzNzUgLTIuNzg5MDYyIDcuMTA5Mzc1IC0yLjQ2ODc1IEMgNy4xMDkzNzUgLTEuOTU3MDMxIDYuOTc2NTYyIC0xLjUwMzkwNiA2LjcxODc1IC0xLjEwOTM3NSBDIDYuNDU3MDMxIC0wLjcyMjY1NiA2LjA4NTkzOCAtMC40MTQwNjIgNS42MDkzNzUgLTAuMTg3NSBDIDUuMTQwNjI1IDAuMDM5MDYyNSA0LjU4NTkzOCAwLjE1NjI1IDMuOTUzMTI1IDAuMTU2MjUgWiBNIDMuOTUzMTI1IDAuMTU2MjUgIi8+PC9nPjwvZz48L2c+PGcgZmlsbD0iI2ZhZmFmYSIgZmlsbC1vcGFjaXR5PSIxIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMTkuODAyMjksIDI0OC4yNDM4OSkiPjxnPjxwYXRoIGQ9Ik0gMS44NzUgLTkuNDUzMTI1IEwgMS44NzUgMCBMIDEuMjgxMjUgMCBMIDEuMjgxMjUgLTkuNDUzMTI1IFogTSAxLjg3NSAtOS40NTMxMjUgIi8+PC9nPjwvZz48L2c+PGcgZmlsbD0iI2ZhZmFmYSIgZmlsbC1vcGFjaXR5PSIxIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMjcuMjg0ODM3LCAyNDguMjQzODkpIj48Zz48cGF0aCBkPSJNIDEuMjgxMjUgMCBMIDEuMjgxMjUgLTkuNDUzMTI1IEwgMS45Mzc1IC05LjQ1MzEyNSBMIDYuNzAzMTI1IC0yLjY0MDYyNSBDIDYuODQ3NjU2IC0yLjQ1MzEyNSA2Ljk5MjE4OCAtMi4yNDIxODggNy4xNDA2MjUgLTIuMDE1NjI1IEMgNy4yOTY4NzUgLTEuNzg1MTU2IDcuNDUzMTI1IC0xLjU0Njg3NSA3LjYwOTM3NSAtMS4yOTY4NzUgQyA3Ljc2NTYyNSAtMS4wNTQ2ODggNy45MjE4NzUgLTAuODEyNSA4LjA3ODEyNSAtMC41NjI1IEwgNy45NTMxMjUgLTAuNTQ2ODc1IEMgNy45NTMxMjUgLTAuNzk2ODc1IDcuOTQ1MzEyIC0xLjA0Njg3NSA3LjkzNzUgLTEuMjk2ODc1IEMgNy45MjU3ODEgLTEuNTU0Njg4IDcuOTE0MDYyIC0xLjgwNDY4OCA3LjkwNjI1IC0yLjA0Njg3NSBDIDcuOTA2MjUgLTIuMjg1MTU2IDcuOTA2MjUgLTIuNTA3ODEyIDcuOTA2MjUgLTIuNzE4NzUgTCA3LjkwNjI1IC05LjQ1MzEyNSBMIDguNSAtOS40NTMxMjUgTCA4LjUgMCBMIDcuODQzNzUgMCBMIDMuMjE4NzUgLTYuNTc4MTI1IEMgMy4wNzAzMTIgLTYuNzk2ODc1IDIuOTIxODc1IC03LjAyMzQzOCAyLjc2NTYyNSAtNy4yNjU2MjUgQyAyLjYwOTM3NSAtNy41MDM5MDYgMi40NDE0MDYgLTcuNzUzOTA2IDIuMjY1NjI1IC04LjAxNTYyNSBDIDIuMDg1OTM4IC04LjI4NTE1NiAxLjg5ODQzOCAtOC41NzgxMjUgMS43MDMxMjUgLTguODkwNjI1IEwgMS44MjgxMjUgLTguOTA2MjUgQyAxLjgzNTkzOCAtOC42MDE1NjIgMS44NDM3NSAtOC4zMTI1IDEuODQzNzUgLTguMDMxMjUgQyAxLjg1MTU2MiAtNy43NTc4MTIgMS44NTkzNzUgLTcuNSAxLjg1OTM3NSAtNy4yNSBDIDEuODY3MTg4IC03LjAwNzgxMiAxLjg3NSAtNi43ODUxNTYgMS44NzUgLTYuNTc4MTI1IEwgMS44NzUgMCBaIE0gMS4yODEyNSAwICIvPjwvZz48L2c+PC9nPjxnIGZpbGw9IiNmYWZhZmEiIGZpbGwtb3BhY2l0eT0iMSI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjQxLjM4NTk5NCwgMjQ4LjI0Mzg5KSI+PGc+PHBhdGggZD0iTSAxLjI4MTI1IDAgTCAxLjI4MTI1IC05LjQ1MzEyNSBMIDYuNzAzMTI1IC05LjQ1MzEyNSBMIDYuNzAzMTI1IC04LjkwNjI1IEwgMS44NzUgLTguOTA2MjUgTCAxLjg3NSAtNS4wNDY4NzUgTCA2LjM3NSAtNS4wNDY4NzUgTCA2LjM3NSAtNC40ODQzNzUgTCAxLjg3NSAtNC40ODQzNzUgTCAxLjg3NSAtMC41NDY4NzUgTCA2Ljc4MTI1IC0wLjU0Njg3NSBMIDYuNzgxMjUgMCBaIE0gMS4yODEyNSAwICIvPjwvZz48L2c+PC9nPjxnIGZpbGw9IiNmYWZhZmEiIGZpbGwtb3BhY2l0eT0iMSI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjUzLjI5Nzg3NCwgMjQ4LjI0Mzg5KSI+PGc+PHBhdGggZD0iTSAzLjk1MzEyNSAwLjE1NjI1IEMgMy4zMzU5MzggMC4xNTYyNSAyLjgwMDc4MSAwLjA1MDc4MTIgMi4zNDM3NSAtMC4xNTYyNSBDIDEuODgyODEyIC0wLjM2MzI4MSAxLjUyMzQzOCAtMC42NTYyNSAxLjI2NTYyNSAtMS4wMzEyNSBDIDEuMDAzOTA2IC0xLjQxNDA2MiAwLjg2MzI4MSAtMS44NTE1NjIgMC44NDM3NSAtMi4zNDM3NSBMIDEuNDM3NSAtMi4zNDM3NSBDIDEuNDY4NzUgLTEuOTQ1MzEyIDEuNTkzNzUgLTEuNjAxNTYyIDEuODEyNSAtMS4zMTI1IEMgMi4wMzEyNSAtMS4wMTk1MzEgMi4zMjAzMTIgLTAuNzk2ODc1IDIuNjg3NSAtMC42NDA2MjUgQyAzLjA1MDc4MSAtMC40ODQzNzUgMy40NzI2NTYgLTAuNDA2MjUgMy45NTMxMjUgLTAuNDA2MjUgQyA0LjQ2MDkzOCAtMC40MDYyNSA0LjkxMDE1NiAtMC40ODgyODEgNS4yOTY4NzUgLTAuNjU2MjUgQyA1LjY3OTY4OCAtMC44MzIwMzEgNS45NzY1NjIgLTEuMDcwMzEyIDYuMTg3NSAtMS4zNzUgQyA2LjQwNjI1IC0xLjY4NzUgNi41MTU2MjUgLTIuMDUwNzgxIDYuNTE1NjI1IC0yLjQ2ODc1IEMgNi41MTU2MjUgLTIuNzg5MDYyIDYuNDM3NSAtMy4wNjY0MDYgNi4yODEyNSAtMy4yOTY4NzUgQyA2LjEzMjgxMiAtMy41MzUxNTYgNS45MTAxNTYgLTMuNzM4MjgxIDUuNjA5Mzc1IC0zLjkwNjI1IEMgNS4zMDQ2ODggLTQuMDgyMDMxIDQuOTIxODc1IC00LjI0MjE4OCA0LjQ1MzEyNSAtNC4zOTA2MjUgTCAzLjM3NSAtNC43MDMxMjUgQyAyLjYwMTU2MiAtNC45Mjk2ODggMi4wMjM0MzggLTUuMjM4MjgxIDEuNjQwNjI1IC01LjYyNSBDIDEuMjUzOTA2IC02LjAxOTUzMSAxLjA2MjUgLTYuNTAzOTA2IDEuMDYyNSAtNy4wNzgxMjUgQyAxLjA2MjUgLTcuNTY2NDA2IDEuMTg3NSAtOCAxLjQzNzUgLTguMzc1IEMgMS42OTUzMTIgLTguNzU3ODEyIDIuMDUwNzgxIC05LjA1NDY4OCAyLjUgLTkuMjY1NjI1IEMgMi45NDUzMTIgLTkuNDg0Mzc1IDMuNDUzMTI1IC05LjU5Mzc1IDQuMDE1NjI1IC05LjU5Mzc1IEMgNC41ODU5MzggLTkuNTkzNzUgNS4wODU5MzggLTkuNDg0Mzc1IDUuNTE1NjI1IC05LjI2NTYyNSBDIDUuOTUzMTI1IC05LjA0Njg3NSA2LjI5Njg3NSAtOC43NDIxODggNi41NDY4NzUgLTguMzU5Mzc1IEMgNi44MDQ2ODggLTcuOTg0Mzc1IDYuOTQ1MzEyIC03LjU1MDc4MSA2Ljk2ODc1IC03LjA2MjUgTCA2LjM3NSAtNy4wNjI1IEMgNi4zMzIwMzEgLTcuNjU2MjUgNi4wOTc2NTYgLTguMTMyODEyIDUuNjcxODc1IC04LjUgQyA1LjI0MjE4OCAtOC44NjMyODEgNC42ODc1IC05LjA0Njg3NSA0IC05LjA0Njg3NSBDIDMuNTUwNzgxIC05LjA0Njg3NSAzLjE0NDUzMSAtOC45NjA5MzggMi43ODEyNSAtOC43OTY4NzUgQyAyLjQyNTc4MSAtOC42Mjg5MDYgMi4xNDQ1MzEgLTguMzk0NTMxIDEuOTM3NSAtOC4wOTM3NSBDIDEuNzM4MjgxIC03LjgwMDc4MSAxLjY0MDYyNSAtNy40Njg3NSAxLjY0MDYyNSAtNy4wOTM3NSBDIDEuNjQwNjI1IC02Ljc4MTI1IDEuNzE4NzUgLTYuNTAzOTA2IDEuODc1IC02LjI2NTYyNSBDIDIuMDM5MDYyIC02LjAzNTE1NiAyLjI2OTUzMSAtNS44MzU5MzggMi41NjI1IC01LjY3MTg3NSBDIDIuODUxNTYyIC01LjUwMzkwNiAzLjE5MTQwNiAtNS4zNTkzNzUgMy41NzgxMjUgLTUuMjM0Mzc1IEwgNC42MjUgLTQuOTM3NSBDIDUgLTQuODIwMzEyIDUuMzM1OTM4IC00LjY5MTQwNiA1LjY0MDYyNSAtNC41NDY4NzUgQyA1Ljk0MTQwNiAtNC4zOTg0MzggNi4yMDMxMjUgLTQuMjI2NTYyIDYuNDIxODc1IC00LjAzMTI1IEMgNi42NDA2MjUgLTMuODMyMDMxIDYuODA0Njg4IC0zLjYwMTU2MiA2LjkyMTg3NSAtMy4zNDM3NSBDIDcuMDQ2ODc1IC0zLjA4MjAzMSA3LjEwOTM3NSAtMi43ODkwNjIgNy4xMDkzNzUgLTIuNDY4NzUgQyA3LjEwOTM3NSAtMS45NTcwMzEgNi45NzY1NjIgLTEuNTAzOTA2IDYuNzE4NzUgLTEuMTA5Mzc1IEMgNi40NTcwMzEgLTAuNzIyNjU2IDYuMDg1OTM4IC0wLjQxNDA2MiA1LjYwOTM3NSAtMC4xODc1IEMgNS4xNDA2MjUgMC4wMzkwNjI1IDQuNTg1OTM4IDAuMTU2MjUgMy45NTMxMjUgMC4xNTYyNSBaIE0gMy45NTMxMjUgMC4xNTYyNSAiLz48L2c+PC9nPjwvZz48ZyBmaWxsPSIjZmFmYWZhIiBmaWxsLW9wYWNpdHk9IjEiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2NS41NTI0MjQsIDI0OC4yNDM4OSkiPjxnPjxwYXRoIGQ9Ik0gMy45NTMxMjUgMC4xNTYyNSBDIDMuMzM1OTM4IDAuMTU2MjUgMi44MDA3ODEgMC4wNTA3ODEyIDIuMzQzNzUgLTAuMTU2MjUgQyAxLjg4MjgxMiAtMC4zNjMyODEgMS41MjM0MzggLTAuNjU2MjUgMS4yNjU2MjUgLTEuMDMxMjUgQyAxLjAwMzkwNiAtMS40MTQwNjIgMC44NjMyODEgLTEuODUxNTYyIDAuODQzNzUgLTIuMzQzNzUgTCAxLjQzNzUgLTIuMzQzNzUgQyAxLjQ2ODc1IC0xLjk0NTMxMiAxLjU5Mzc1IC0xLjYwMTU2MiAxLjgxMjUgLTEuMzEyNSBDIDIuMDMxMjUgLTEuMDE5NTMxIDIuMzIwMzEyIC0wLjc5Njg3NSAyLjY4NzUgLTAuNjQwNjI1IEMgMy4wNTA3ODEgLTAuNDg0Mzc1IDMuNDcyNjU2IC0wLjQwNjI1IDMuOTUzMTI1IC0wLjQwNjI1IEMgNC40NjA5MzggLTAuNDA2MjUgNC45MTAxNTYgLTAuNDg4MjgxIDUuMjk2ODc1IC0wLjY1NjI1IEMgNS42Nzk2ODggLTAuODMyMDMxIDUuOTc2NTYyIC0xLjA3MDMxMiA2LjE4NzUgLTEuMzc1IEMgNi40MDYyNSAtMS42ODc1IDYuNTE1NjI1IC0yLjA1MDc4MSA2LjUxNTYyNSAtMi40Njg3NSBDIDYuNTE1NjI1IC0yLjc4OTA2MiA2LjQzNzUgLTMuMDY2NDA2IDYuMjgxMjUgLTMuMjk2ODc1IEMgNi4xMzI4MTIgLTMuNTM1MTU2IDUuOTEwMTU2IC0zLjczODI4MSA1LjYwOTM3NSAtMy45MDYyNSBDIDUuMzA0Njg4IC00LjA4MjAzMSA0LjkyMTg3NSAtNC4yNDIxODggNC40NTMxMjUgLTQuMzkwNjI1IEwgMy4zNzUgLTQuNzAzMTI1IEMgMi42MDE1NjIgLTQuOTI5Njg4IDIuMDIzNDM4IC01LjIzODI4MSAxLjY0MDYyNSAtNS42MjUgQyAxLjI1MzkwNiAtNi4wMTk1MzEgMS4wNjI1IC02LjUwMzkwNiAxLjA2MjUgLTcuMDc4MTI1IEMgMS4wNjI1IC03LjU2NjQwNiAxLjE4NzUgLTggMS40Mzc1IC04LjM3NSBDIDEuNjk1MzEyIC04Ljc1NzgxMiAyLjA1MDc4MSAtOS4wNTQ2ODggMi41IC05LjI2NTYyNSBDIDIuOTQ1MzEyIC05LjQ4NDM3NSAzLjQ1MzEyNSAtOS41OTM3NSA0LjAxNTYyNSAtOS41OTM3NSBDIDQuNTg1OTM4IC05LjU5Mzc1IDUuMDg1OTM4IC05LjQ4NDM3NSA1LjUxNTYyNSAtOS4yNjU2MjUgQyA1Ljk1MzEyNSAtOS4wNDY4NzUgNi4yOTY4NzUgLTguNzQyMTg4IDYuNTQ2ODc1IC04LjM1OTM3NSBDIDYuODA0Njg4IC03Ljk4NDM3NSA2Ljk0NTMxMiAtNy41NTA3ODEgNi45Njg3NSAtNy4wNjI1IEwgNi4zNzUgLTcuMDYyNSBDIDYuMzMyMDMxIC03LjY1NjI1IDYuMDk3NjU2IC04LjEzMjgxMiA1LjY3MTg3NSAtOC41IEMgNS4yNDIxODggLTguODYzMjgxIDQuNjg3NSAtOS4wNDY4NzUgNCAtOS4wNDY4NzUgQyAzLjU1MDc4MSAtOS4wNDY4NzUgMy4xNDQ1MzEgLTguOTYwOTM4IDIuNzgxMjUgLTguNzk2ODc1IEMgMi40MjU3ODEgLTguNjI4OTA2IDIuMTQ0NTMxIC04LjM5NDUzMSAxLjkzNzUgLTguMDkzNzUgQyAxLjczODI4MSAtNy44MDA3ODEgMS42NDA2MjUgLTcuNDY4NzUgMS42NDA2MjUgLTcuMDkzNzUgQyAxLjY0MDYyNSAtNi43ODEyNSAxLjcxODc1IC02LjUwMzkwNiAxLjg3NSAtNi4yNjU2MjUgQyAyLjAzOTA2MiAtNi4wMzUxNTYgMi4yNjk1MzEgLTUuODM1OTM4IDIuNTYyNSAtNS42NzE4NzUgQyAyLjg1MTU2MiAtNS41MDM5MDYgMy4xOTE0MDYgLTUuMzU5Mzc1IDMuNTc4MTI1IC01LjIzNDM3NSBMIDQuNjI1IC00LjkzNzUgQyA1IC00LjgyMDMxMiA1LjMzNTkzOCAtNC42OTE0MDYgNS42NDA2MjUgLTQuNTQ2ODc1IEMgNS45NDE0MDYgLTQuMzk4NDM4IDYuMjAzMTI1IC00LjIyNjU2MiA2LjQyMTg3NSAtNC4wMzEyNSBDIDYuNjQwNjI1IC0zLjgzMjAzMSA2LjgwNDY4OCAtMy42MDE1NjIgNi45MjE4NzUgLTMuMzQzNzUgQyA3LjA0Njg3NSAtMy4wODIwMzEgNy4xMDkzNzUgLTIuNzg5MDYyIDcuMTA5Mzc1IC0yLjQ2ODc1IEMgNy4xMDkzNzUgLTEuOTU3MDMxIDYuOTc2NTYyIC0xLjUwMzkwNiA2LjcxODc1IC0xLjEwOTM3NSBDIDYuNDU3MDMxIC0wLjcyMjY1NiA2LjA4NTkzOCAtMC40MTQwNjIgNS42MDkzNzUgLTAuMTg3NSBDIDUuMTQwNjI1IDAuMDM5MDYyNSA0LjU4NTkzOCAwLjE1NjI1IDMuOTUzMTI1IDAuMTU2MjUgWiBNIDMuOTUzMTI1IDAuMTU2MjUgIi8+PC9nPjwvZz48L2c+PHBhdGggc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHRyYW5zZm9ybT0ibWF0cml4KDAuNzUsIDAuMDAwMDAwMDAwMDAwMDAwMTM5LCAtMC4wMDAwMDAwMDAwMDAwMDAxMzksIDAuNzUsIDcyLjQ3OTI1MywgMjI3LjM2MTMxNCkiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIGQ9Ik0gMC4wMDE2MjA1NSAwLjQ5NzQxNSBMIDMwNi43MjAzOTEgMC40OTc0MTUgIiBzdHJva2U9IiNiNzhjNTAiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjEiIHN0cm9rZS1taXRlcmxpbWl0PSI0Ii8+PC9zdmc+" alt="Cali — HR for Business">
     </div>
-    <p class="hero-tagline">Estratégia de RH end-to-end para profissionais e empresas que desejam evoluir.</p>
+    <p class="hero-tagline">Estratégia de pessoas, liderança e governança conectadas ao negócio.</p>
     <a href="#contato" class="btn btn-solid-light">Cresça com a Cali <span class="arrow">→</span></a>
   </div>
   <div class="hero-scroll" aria-hidden="true"></div>
@@ -930,7 +1030,7 @@
   <div class="wrap services-head">
     <p class="eyebrow reveal">Serviços</p>
     <h2 class="section-title reveal reveal-d1">Como a Cali atua</h2>
-    <p class="reveal reveal-d2">Sete serviços, em dois blocos: acompanhamento recorrente e projetos de escopo fechado.</p>
+    <p class="reveal reveal-d2">Acompanhamento recorrente, estruturação assistida e projetos de escopo fechado — com profundidade proporcional ao momento do negócio.</p>
   </div>
 
   <!-- BLOCO 1 — RECORRENTES -->
@@ -941,52 +1041,82 @@
     <div class="wrap">
 
       <div class="service-card reveal service-card-advisory">
-        <p class="service-meta">Recorrente · HR as a Service · Dois níveis de acompanhamento</p>
-        <h4>Assessoria Estratégica Mensal</h4>
-        <p class="service-def advisory-intro">Acesso contínuo a uma liderança sênior de RH, sem o custo de uma contratação full-time. O nível de dedicação muda conforme a complexidade, o ritmo de decisão e a profundidade de execução que a empresa precisa.</p>
+        <p class="service-meta">Recorrente · People Advisory</p>
+        <h4>CALI Partner &amp; CALI Full</h4>
+        <p class="service-def advisory-intro">Direção sênior de RH ao lado da liderança, em dois níveis de presença. A diferença está na carga dedicada, na cadência e na quantidade de prioridades que avançam ao mesmo tempo.</p>
         <div class="advisory-compare">
           <article class="advisory-option">
             <p class="option-brand"><span>CALI</span> PARTNER</p>
-            <h5 class="option-name">Direção estratégica periódica</h5>
-            <p class="option-for">Para empresas com a agenda de pessoas mais concentrada, que precisam de leitura sênior, direção e apoio nas decisões críticas.</p>
+            <h5 class="option-name">Direção estratégica</h5>
+            <p class="option-for">Para uma agenda de pessoas mais concentrada, com uma prioridade central por ciclo e apoio sênior às decisões críticas.</p>
             <div class="option-facts">
-              <div class="option-fact"><strong>10 a 15h</strong><span>dedicação mensal</span></div>
-              <div class="option-fact"><strong>Mensal</strong><span>ritmo de reunião</span></div>
-              <div class="option-fact"><strong>Online</strong><span>presencial sob demanda</span></div>
-              <div class="option-fact"><strong>6 meses</strong><span>contrato mínimo</span></div>
+              <div class="option-fact"><strong>8 a 12h</strong><span>dedicação mensal</span></div>
+              <div class="option-fact"><strong>Mensal</strong><span>encontro executivo</span></div>
+              <div class="option-fact"><strong>Online</strong><span>atuação padrão</span></div>
+              <div class="option-fact"><strong>8 meses</strong><span>contrato mínimo</span></div>
             </div>
             <ul>
-              <li>Leitura mensal de indicadores-chave de pessoas.</li>
-              <li>Direção de pessoas e DHO, sem assumir a operação do RH.</li>
-              <li>Apoio a decisões críticas de estrutura, promoção e desligamento.</li>
-              <li>Um ajuste ou desenho de política/processo por mês, não cumulativo.</li>
+              <li>Uma prioridade central por ciclo.</li>
+              <li>Leitura de indicadores e apoio à decisão.</li>
+              <li>Direção sênior sem assumir a rotina operacional do RH.</li>
             </ul>
           </article>
           <article class="advisory-option">
             <p class="option-brand"><span>CALI</span> FULL</p>
-            <h5 class="option-name">Presença mais próxima e execução ampliada</h5>
-            <p class="option-for">Para crescimento, reestruturação, mudança de rota ou empresas em que pessoas já são uma agenda central da diretoria.</p>
+            <h5 class="option-name">Presença ampliada</h5>
+            <p class="option-for">Para empresas em crescimento, reestruturação ou momentos em que pessoas já ocupam espaço central na agenda da diretoria.</p>
             <div class="option-facts">
-              <div class="option-fact"><strong>20 a 25h</strong><span>dedicação mensal</span></div>
-              <div class="option-fact"><strong>Quinzenal</strong><span>ritmo de reunião</span></div>
-              <div class="option-fact"><strong>1 visita</strong><span>presencial por mês</span></div>
-              <div class="option-fact"><strong>8 meses</strong><span>contrato mínimo</span></div>
+              <div class="option-fact"><strong>14 a 18h</strong><span>dedicação mensal</span></div>
+              <div class="option-fact"><strong>Quinzenal</strong><span>encontros executivos</span></div>
+              <div class="option-fact"><strong>1 visita</strong><span>presencial/mês</span></div>
+              <div class="option-fact"><strong>12 meses</strong><span>contrato mínimo</span></div>
             </div>
             <ul>
-              <li>Tudo o que está previsto no Cali Partner.</li>
-              <li>Cargos e salários, People Analytics, T&amp;D e conformidade.</li>
-              <li>Acompanhamento mais próximo da liderança.</li>
-              <li>Até dois ajustes de política/processo por mês ou um projeto estrutural maior por trimestre.</li>
+              <li>Até duas prioridades simultâneas por ciclo.</li>
+              <li>Maior cadência com liderança e decisões de pessoas.</li>
+              <li>Atuação ampliada em estrutura, governança e desenvolvimento.</li>
             </ul>
           </article>
         </div>
         <div class="advisory-guide">
           <span class="guide-mark">C</span>
-          <p><strong>Você não precisa chegar sabendo qual escolher.</strong> O briefing organiza o contexto e eu recomendo o nível de acompanhamento coerente — Partner, Full ou outro desenho.</p>
+          <p><strong>Você não precisa escolher sozinho.</strong> O briefing organiza o contexto e eu confirmo qual nível — Partner ou Full — faz sentido para a empresa agora.</p>
         </div>
         <div class="service-actions">
           <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20entender%20qual%20modelo%20de%20Assessoria%20Estrat%C3%A9gica%20Mensal%20faz%20sentido%20para%20a%20minha%20empresa." target="_blank" rel="noopener" class="btn btn-small" data-track-event="whatsapp_service" data-track-label="assessoria-estrategica">Falar comigo <span class="arrow">→</span></a>
           <a href="https://portal.calirh.com/servicos/assessoria-estrategica" class="btn btn-small btn-portal" data-track-event="portal_service" data-track-label="assessoria-estrategica">Preencher briefing <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <div class="service-card reveal service-card-build">
+        <div class="build-head">
+          <div>
+            <p class="service-meta">Recorrente · Estruturação Assistida de RH</p>
+            <h4>CALI Build</h4>
+            <p class="build-signature">A CALI desenha. Seu RH constrói.</p>
+            <p class="service-def">Para empresas que já têm alguém de RH e precisam estruturar a área, um subsistema ou várias frentes com método, direção sênior e supervisão técnica — mantendo a execução com o time interno.</p>
+          </div>
+          <div class="build-packages" aria-label="Modalidades CALI Build">
+            <div class="build-package">
+              <span>Essencial</span>
+              <strong>8 a 12h/mês</strong>
+              <small>1 frente prioritária · mínimo 4 meses</small>
+            </div>
+            <div class="build-package">
+              <span>Completo</span>
+              <strong>14 a 18h/mês</strong>
+              <small>frentes conectadas · mínimo 6 meses</small>
+            </div>
+          </div>
+        </div>
+        <div class="build-flow">
+          <div><span>01</span><p><strong>A CALI define</strong> arquitetura, método, critérios e prioridades.</p></div>
+          <div><span>02</span><p><strong>O RH interno executa</strong> a construção e coloca a estrutura em prática.</p></div>
+          <div><span>03</span><p><strong>A CALI revisa</strong> tecnicamente, corrige rota e valida os marcos.</p></div>
+        </div>
+        <div class="service-actions">
+          <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20entender%20se%20o%20CALI%20Build%20faz%20sentido%20para%20a%20minha%20empresa." target="_blank" rel="noopener" class="btn btn-small" data-track-event="whatsapp_service" data-track-label="cali-build">Falar comigo <span class="arrow">→</span></a>
+          <a href="https://portal.calirh.com/servicos/cali-build" class="btn btn-small btn-portal" data-track-event="portal_service" data-track-label="cali-build">Preencher briefing <span class="arrow">→</span></a>
         </div>
       </div>
 
