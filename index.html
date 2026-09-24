@@ -1889,6 +1889,255 @@
     .service-card-compact .service-actions .btn{width:100%!important;justify-content:center!important}
   }
 
+
+  /* ---------- RECORRENTES · REBUILD PROPORCIONAL 24/09/2026 ---------- */
+  /* Corrige o vazio entre Valores e Serviços sem alterar o restante do ritmo do site. */
+  .pilares{padding-bottom:64px!important}
+  .pilares-close{margin-top:38px!important}
+  .services{padding-top:64px!important;padding-bottom:0!important}
+  .services-head{padding-top:0!important;padding-bottom:48px!important}
+
+  .recurring-v2{
+    padding:62px 0 76px!important;
+    background:
+      radial-gradient(circle at 88% 10%,rgba(181,140,82,.13),transparent 24%),
+      linear-gradient(rgba(247,243,238,.022) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(247,243,238,.022) 1px,transparent 1px),
+      linear-gradient(145deg,#651f32 0%,#5A1E2D 52%,#3b111d 100%)!important;
+    background-size:auto,52px 52px,52px 52px,auto!important;
+  }
+  .recurring-block-head{
+    display:flex;align-items:flex-end;justify-content:space-between;gap:32px;
+    margin-bottom:38px!important;padding-bottom:20px!important;
+    border-bottom:1px solid rgba(181,140,82,.34);
+  }
+  .recurring-block-head .block-num{margin:0!important;color:#d9b578!important}
+  .recurring-block-note{
+    margin:0;max-width:560px;color:rgba(247,243,238,.63);
+    font-size:13px;line-height:1.65;text-align:right;
+  }
+  .recurring-stack{display:flex!important;flex-direction:column!important;gap:0!important}
+
+  .recurring-family{
+    position:relative;padding:0 0 58px;margin:0;
+  }
+  .recurring-family + .recurring-family{
+    padding-top:56px;border-top:1px solid rgba(181,140,82,.27);
+  }
+  .recurring-family:last-child{padding-bottom:0}
+  .recurring-family-head{
+    display:grid;grid-template-columns:minmax(0,.92fr) minmax(360px,.68fr);
+    gap:54px;align-items:end;margin-bottom:28px;
+  }
+  .recurring-family-head .service-meta,
+  .mentoria-card .service-meta{margin:0 0 10px;color:#d9b578!important}
+  .recurring-family-head h4,
+  .mentoria-card h4{
+    margin:0!important;padding:0!important;color:var(--marfim)!important;
+    font:500 clamp(34px,4vw,50px)/1.06 'Playfair Display',serif!important;
+    letter-spacing:-.02em;
+  }
+  .recurring-family-head h4::after,.mentoria-card h4::after{display:none!important}
+  .recurring-family-copy{
+    margin:0;color:rgba(247,243,238,.68);
+    font-size:14px;line-height:1.72;
+  }
+  .recurring-signature{
+    margin:9px 0 0;color:#d9b578;
+    font:italic 500 19px/1.35 'Playfair Display',serif;
+  }
+
+  .recurring-grid{
+    display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:24px!important;align-items:stretch!important;
+  }
+  .recurring-card{
+    position:relative;isolation:isolate;overflow:hidden;
+    min-height:430px;padding:38px 38px 34px;
+    display:flex;flex-direction:column;
+    color:var(--bordo);background:#fffdf9;
+    border:1px solid rgba(181,140,82,.46);border-radius:26px;
+    box-shadow:0 22px 56px rgba(29,7,14,.15);
+    transition:transform .38s cubic-bezier(.22,1,.36,1),box-shadow .38s ease,border-color .38s ease;
+  }
+  .recurring-card::after{
+    content:'';position:absolute;z-index:-1;width:290px;height:290px;
+    right:-86px;bottom:-98px;background:var(--dourado);opacity:.055;
+    -webkit-mask:url('/assets/cali-oak-mark.svg') center/contain no-repeat;
+    mask:url('/assets/cali-oak-mark.svg') center/contain no-repeat;
+    transition:opacity .4s ease,transform .5s cubic-bezier(.22,1,.36,1);
+  }
+  .recurring-card:hover{
+    transform:translateY(-7px);border-color:rgba(181,140,82,.78);
+    box-shadow:0 31px 72px rgba(26,6,12,.22);
+  }
+  .recurring-card:hover::after{opacity:.13;transform:rotate(5deg) scale(1.08)}
+
+  .recurring-card-full{
+    background:linear-gradient(145deg,#fffdf9 0%,#f2e2c4 100%);
+    border:2px solid #c89c56;
+    transform:translateY(-7px);
+    box-shadow:0 28px 68px rgba(181,140,82,.18),0 18px 50px rgba(29,7,14,.14);
+  }
+  .recurring-card-full:hover{transform:translateY(-12px)}
+  .recurring-badge{
+    position:absolute;right:26px;top:26px;z-index:2;
+    display:inline-flex;align-items:center;min-height:28px;padding:0 11px;
+    border-radius:999px;background:var(--bordo);color:var(--marfim);
+    font-size:8.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  }
+  .recurring-brand{
+    margin:0 0 14px;font:500 34px/1.05 'Playfair Display',serif;
+    letter-spacing:-.02em;color:var(--bordo);
+  }
+  .recurring-brand span{
+    margin-right:7px;color:var(--dourado);font:700 17px/1 'Inter',sans-serif;
+    letter-spacing:.14em;
+  }
+  .recurring-card-subtitle{
+    margin:0 0 10px;color:var(--bordo);
+    font-size:16px;font-weight:700;line-height:1.35;
+  }
+  .recurring-card-copy{
+    margin:0;color:#6c6062;font-size:13.5px;line-height:1.68;max-width:520px;
+  }
+
+  .recurring-facts{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+    margin:28px 0 30px;border:1px solid rgba(90,30,45,.14);
+    border-radius:16px;overflow:hidden;background:rgba(90,30,45,.022);
+  }
+  .recurring-fact{
+    min-height:91px;padding:19px 20px 17px;
+    display:flex;flex-direction:column;justify-content:center;
+    border-right:1px solid rgba(90,30,45,.12);
+    border-bottom:1px solid rgba(90,30,45,.12);
+  }
+  .recurring-fact:nth-child(2n){border-right:0}
+  .recurring-fact:nth-last-child(-n+2){border-bottom:0}
+  .recurring-fact strong{
+    color:var(--bordo);font:500 23px/1.1 'Playfair Display',serif;
+  }
+  .recurring-fact span{
+    margin-top:6px;color:#85777a;font-size:9px;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;
+  }
+
+  .recurring-card-actions{margin-top:auto;display:flex;flex-direction:column;gap:10px}
+  .recurring-cta{
+    min-height:48px;width:100%;display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:0 18px;border-radius:12px;background:var(--bordo);
+    color:var(--marfim)!important;border:1px solid var(--bordo);
+    font-size:10.5px;font-weight:750;letter-spacing:.08em;text-transform:uppercase;
+    transition:transform .25s ease,background .25s ease,border-color .25s ease,color .25s ease;
+  }
+  .recurring-cta:hover{
+    transform:translateY(-2px);background:var(--dourado)!important;
+    border-color:var(--dourado)!important;color:#35131c!important;
+  }
+  .recurring-secondary{
+    align-self:center;color:var(--bordo)!important;border-bottom:1px solid rgba(90,30,45,.28);
+    padding:3px 1px;font-size:10.5px;font-weight:650;letter-spacing:.05em;
+    transition:color .25s ease,border-color .25s ease;
+  }
+  .recurring-secondary:hover{color:#8b6331!important;border-color:var(--dourado)}
+
+  .recurring-package-label{
+    margin:0 0 14px;color:var(--dourado);
+    font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  }
+  .recurring-card-build{min-height:400px}
+  .recurring-card-build-completo{
+    background:linear-gradient(145deg,#fffdf9 0%,#f6ebd8 100%);
+    border-color:rgba(181,140,82,.68);
+  }
+  .recurring-facts-build{grid-template-columns:1fr 1fr}
+  .recurring-facts-build .recurring-fact-wide{
+    grid-column:1/-1;border-right:0!important;border-bottom:0!important;min-height:78px;
+  }
+  .recurring-facts-build .recurring-fact:nth-child(2){border-right:0}
+  .recurring-facts-build .recurring-fact:nth-child(1),
+  .recurring-facts-build .recurring-fact:nth-child(2){border-bottom:1px solid rgba(90,30,45,.12)}
+
+  .recurring-method{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+    margin-top:22px;border:1px solid rgba(181,140,82,.34);
+    border-radius:18px;overflow:hidden;background:rgba(247,243,238,.025);
+  }
+  .recurring-method>div{
+    display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:center;
+    padding:20px 22px;border-right:1px solid rgba(181,140,82,.26);
+  }
+  .recurring-method>div:last-child{border-right:0}
+  .recurring-method span{color:#d9b578;font:500 18px/1 'Playfair Display',serif}
+  .recurring-method p{margin:0;color:rgba(247,243,238,.67);font-size:12px;line-height:1.55}
+  .recurring-method strong{color:var(--marfim)}
+
+  .mentoria-card{
+    position:relative;overflow:hidden;display:grid;
+    grid-template-columns:minmax(0,1.18fr) minmax(320px,.82fr);
+    gap:50px;align-items:center;min-height:310px;padding:44px 46px;
+    border:1px solid rgba(181,140,82,.58);border-radius:26px;
+    background:#fffdf9;box-shadow:0 22px 56px rgba(29,7,14,.14);
+    transition:transform .38s cubic-bezier(.22,1,.36,1),box-shadow .38s ease,border-color .38s ease;
+  }
+  .mentoria-card::after{
+    content:'';position:absolute;width:330px;height:330px;left:-92px;bottom:-145px;
+    background:var(--dourado);opacity:.05;
+    -webkit-mask:url('/assets/cali-lime-mark.svg') center/contain no-repeat;
+    mask:url('/assets/cali-lime-mark.svg') center/contain no-repeat;
+  }
+  .mentoria-card:hover{
+    transform:translateY(-6px);border-color:rgba(181,140,82,.82);
+    box-shadow:0 31px 72px rgba(26,6,12,.21);
+  }
+  .mentoria-card>*{position:relative;z-index:1}
+  .mentoria-card h4{color:var(--bordo)!important;font-size:clamp(34px,3.8vw,48px)!important}
+  .mentoria-copy>p:last-child{
+    margin:18px 0 0;color:#675c5f;font-size:14px;line-height:1.75;max-width:680px;
+  }
+  .mentoria-side{display:flex;flex-direction:column;gap:26px}
+  .mentoria-points{border-top:1px solid rgba(90,30,45,.14)}
+  .mentoria-points span{
+    display:block;padding:13px 0;border-bottom:1px solid rgba(90,30,45,.12);
+    color:var(--bordo);font-size:12px;font-weight:650;
+  }
+  .mentoria-points span::before{content:'—';margin-right:10px;color:var(--dourado)}
+
+  @media(max-width:900px){
+    .pilares{padding-bottom:52px!important}
+    .services{padding-top:52px!important}
+    .recurring-v2{padding:50px 0 60px!important}
+    .recurring-block-head{align-items:flex-start;flex-direction:column;gap:10px}
+    .recurring-block-note{text-align:left}
+    .recurring-family-head{grid-template-columns:1fr;gap:14px}
+    .recurring-grid{grid-template-columns:1fr!important}
+    .recurring-card-full,.recurring-card-full:hover{transform:none}
+    .recurring-card{min-height:0}
+    .recurring-method{grid-template-columns:1fr}
+    .recurring-method>div{border-right:0;border-bottom:1px solid rgba(181,140,82,.26)}
+    .recurring-method>div:last-child{border-bottom:0}
+    .mentoria-card{grid-template-columns:1fr;gap:28px;padding:34px}
+  }
+  @media(max-width:560px){
+    .pilares{padding-bottom:44px!important}
+    .services{padding-top:44px!important}
+    .services-head{padding-bottom:34px!important}
+    .recurring-v2{padding:42px 0 48px!important}
+    .recurring-family{padding-bottom:44px}
+    .recurring-family + .recurring-family{padding-top:42px}
+    .recurring-family-head h4{font-size:34px!important}
+    .recurring-card{padding:27px 24px 24px;border-radius:20px}
+    .recurring-brand{font-size:30px}
+    .recurring-brand span{font-size:15px}
+    .recurring-badge{position:static;align-self:flex-start;margin:0 0 15px}
+    .recurring-fact{padding:16px 14px;min-height:82px}
+    .recurring-fact strong{font-size:20px}
+    .recurring-method>div{padding:16px 18px}
+    .mentoria-card{padding:28px 24px;border-radius:20px;min-height:0}
+    .mentoria-card h4{font-size:34px!important}
+  }
+
 </style>
   <link rel="icon" type="image/svg+xml" href="/assets/cali-favicon.svg?v=20260924-leaf">
   <link rel="shortcut icon" type="image/svg+xml" href="/assets/cali-favicon.svg?v=20260924-leaf">
@@ -2008,91 +2257,146 @@
   </div>
 
   <!-- BLOCO 1 — RECORRENTES -->
-  <div class="services-block on-dark">
-    <div class="wrap block-head">
+  <div class="services-block on-dark recurring-v2">
+    <div class="wrap block-head recurring-block-head">
       <p class="block-num reveal">Recorrentes</p>
+      <p class="recurring-block-note reveal reveal-d1">Os quatro serviços centrais da CALI, organizados por nível de presença e forma de atuação.</p>
     </div>
-    <div class="wrap">
 
-      <div class="service-card reveal service-card-advisory">
-        <p class="service-meta">People Advisory</p>
-        <h4>Assessoria Estratégica Mensal</h4>
-        <p class="service-def advisory-intro">Direção sênior de RH ao lado da liderança. O nível de presença muda conforme a complexidade e a cadência que o negócio precisa.</p>
+    <div class="wrap recurring-stack">
 
-        <div class="advisory-compare">
-          <article class="advisory-option advisory-option-partner">
-            <p class="option-brand"><span>CALI</span> PARTNER</p>
-            <h5 class="option-name">Direção estratégica</h5>
-            <p class="option-for">Uma prioridade central por ciclo, com apoio sênior às decisões e leitura de indicadores.</p>
-            <div class="option-facts">
-              <div class="option-fact"><strong>8 a 12h</strong><span>por mês</span></div>
-              <div class="option-fact"><strong>Mensal</strong><span>encontro executivo</span></div>
-              <div class="option-fact"><strong>Online</strong><span>atuação padrão</span></div>
-              <div class="option-fact"><strong>8 meses</strong><span>mínimo</span></div>
-            </div>
-          </article>
-
-          <article class="advisory-option advisory-option-full">
-            <span class="option-badge">Recomendado</span>
-            <p class="option-brand"><span>CALI</span> FULL</p>
-            <h5 class="option-name">Presença ampliada</h5>
-            <p class="option-for">Até duas prioridades simultâneas e acompanhamento mais próximo da liderança.</p>
-            <div class="option-facts">
-              <div class="option-fact"><strong>14 a 18h</strong><span>por mês</span></div>
-              <div class="option-fact"><strong>Quinzenal</strong><span>encontros executivos</span></div>
-              <div class="option-fact"><strong>1 visita</strong><span>presencial/mês</span></div>
-              <div class="option-fact"><strong>12 meses</strong><span>mínimo</span></div>
-            </div>
-          </article>
+      <!-- ASSESSORIA ESTRATÉGICA MENSAL -->
+      <div class="recurring-family recurring-family-advisory reveal">
+        <div class="recurring-family-head">
+          <div>
+            <p class="service-meta">People Advisory</p>
+            <h4>Assessoria Estratégica Mensal</h4>
+          </div>
+          <p class="recurring-family-copy">Direção sênior de RH ao lado da liderança. O nível de presença muda conforme a complexidade e a cadência que o negócio precisa.</p>
         </div>
 
-        <div class="service-actions">
-          <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20entender%20qual%20modelo%20de%20Assessoria%20Estrat%C3%A9gica%20Mensal%20faz%20sentido%20para%20a%20minha%20empresa." target="_blank" rel="noopener" class="btn btn-small" data-track-event="whatsapp_service" data-track-label="assessoria-estrategica">Falar comigo <span class="arrow">→</span></a>
-          <a href="https://portal.calirh.com/servicos/assessoria-estrategica" class="btn btn-small btn-portal" data-track-event="portal_service" data-track-label="assessoria-estrategica">Solicitar proposta <span class="arrow">→</span></a>
+        <div class="recurring-grid recurring-grid-advisory">
+          <article class="recurring-card recurring-card-partner">
+            <div class="recurring-card-top">
+              <p class="recurring-brand"><span>CALI</span> PARTNER</p>
+              <p class="recurring-card-subtitle">Direção estratégica</p>
+              <p class="recurring-card-copy">Uma prioridade central por ciclo, com apoio sênior às decisões e leitura de indicadores.</p>
+            </div>
+
+            <div class="recurring-facts">
+              <div class="recurring-fact"><strong>8 a 12h</strong><span>por mês</span></div>
+              <div class="recurring-fact"><strong>Mensal</strong><span>encontro executivo</span></div>
+              <div class="recurring-fact"><strong>Online</strong><span>atuação padrão</span></div>
+              <div class="recurring-fact"><strong>8 meses</strong><span>mínimo</span></div>
+            </div>
+
+            <div class="recurring-card-actions">
+              <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20entender%20melhor%20o%20CALI%20Partner%20e%20se%20ele%20faz%20sentido%20para%20a%20minha%20empresa." target="_blank" rel="noopener" class="recurring-cta" data-track-event="whatsapp_service" data-track-label="cali-partner">Falar sobre o Partner <span>→</span></a>
+              <a href="https://portal.calirh.com/servicos/assessoria-estrategica" class="recurring-secondary" data-track-event="portal_service" data-track-label="cali-partner">Solicitar proposta</a>
+            </div>
+          </article>
+
+          <article class="recurring-card recurring-card-full">
+            <span class="recurring-badge">Recomendado</span>
+            <div class="recurring-card-top">
+              <p class="recurring-brand"><span>CALI</span> FULL</p>
+              <p class="recurring-card-subtitle">Presença ampliada</p>
+              <p class="recurring-card-copy">Até duas prioridades simultâneas e acompanhamento mais próximo da liderança.</p>
+            </div>
+
+            <div class="recurring-facts">
+              <div class="recurring-fact"><strong>14 a 18h</strong><span>por mês</span></div>
+              <div class="recurring-fact"><strong>Quinzenal</strong><span>encontros executivos</span></div>
+              <div class="recurring-fact"><strong>1 visita</strong><span>presencial/mês</span></div>
+              <div class="recurring-fact"><strong>12 meses</strong><span>mínimo</span></div>
+            </div>
+
+            <div class="recurring-card-actions">
+              <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20entender%20melhor%20o%20CALI%20Full%20e%20se%20ele%20faz%20sentido%20para%20a%20minha%20empresa." target="_blank" rel="noopener" class="recurring-cta" data-track-event="whatsapp_service" data-track-label="cali-full">Falar sobre o Full <span>→</span></a>
+              <a href="https://portal.calirh.com/servicos/assessoria-estrategica" class="recurring-secondary" data-track-event="portal_service" data-track-label="cali-full">Solicitar proposta</a>
+            </div>
+          </article>
         </div>
       </div>
 
-      <div class="service-card reveal service-card-build">
-        <div class="build-head">
+      <!-- CALI BUILD -->
+      <div class="recurring-family recurring-family-build reveal">
+        <div class="recurring-family-head">
           <div>
             <p class="service-meta">Estruturação Assistida de RH</p>
             <h4>CALI Build</h4>
-            <p class="build-signature">A CALI desenha. Seu RH constrói.</p>
-            <p class="service-def">Para empresas que já têm alguém de RH e precisam estruturar a área ou uma frente com método, direção sênior e supervisão técnica.</p>
+            <p class="recurring-signature">A CALI desenha. Seu RH constrói.</p>
           </div>
-          <div class="build-packages" aria-label="Modalidades CALI Build">
-            <div class="build-package">
-              <span>Essencial</span>
-              <strong>8 a 12h/mês</strong>
-              <small>1 frente · mínimo 4 meses</small>
-            </div>
-            <div class="build-package">
-              <span>Completo</span>
-              <strong>14 a 18h/mês</strong>
-              <small>frentes conectadas · mínimo 6 meses</small>
-            </div>
-          </div>
+          <p class="recurring-family-copy">Para empresas que já têm alguém de RH e precisam estruturar a área ou uma frente com método, direção sênior e supervisão técnica.</p>
         </div>
-        <div class="build-flow">
+
+        <div class="recurring-grid recurring-grid-build">
+          <article class="recurring-card recurring-card-build recurring-card-build-essential">
+            <div class="recurring-card-top">
+              <p class="recurring-package-label">Essencial</p>
+              <p class="recurring-card-subtitle">Uma frente prioritária</p>
+              <p class="recurring-card-copy">Para estruturar uma frente com método, orientação técnica e supervisão da CALI ao longo da construção.</p>
+            </div>
+
+            <div class="recurring-facts recurring-facts-build">
+              <div class="recurring-fact"><strong>8 a 12h</strong><span>por mês</span></div>
+              <div class="recurring-fact"><strong>1 frente</strong><span>prioritária</span></div>
+              <div class="recurring-fact recurring-fact-wide"><strong>4 meses</strong><span>mínimo</span></div>
+            </div>
+
+            <div class="recurring-card-actions">
+              <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20entender%20melhor%20o%20CALI%20Build%20Essencial." target="_blank" rel="noopener" class="recurring-cta" data-track-event="whatsapp_service" data-track-label="cali-build-essencial">Falar sobre o Essencial <span>→</span></a>
+              <a href="https://portal.calirh.com/servicos/cali-build" class="recurring-secondary" data-track-event="portal_service" data-track-label="cali-build-essencial">Abrir briefing</a>
+            </div>
+          </article>
+
+          <article class="recurring-card recurring-card-build recurring-card-build-completo">
+            <div class="recurring-card-top">
+              <p class="recurring-package-label">Completo</p>
+              <p class="recurring-card-subtitle">Frentes conectadas</p>
+              <p class="recurring-card-copy">Para estruturar frentes conectadas, mantendo método, revisão e direção sênior durante a implementação.</p>
+            </div>
+
+            <div class="recurring-facts recurring-facts-build">
+              <div class="recurring-fact"><strong>14 a 18h</strong><span>por mês</span></div>
+              <div class="recurring-fact"><strong>Frentes</strong><span>conectadas</span></div>
+              <div class="recurring-fact recurring-fact-wide"><strong>6 meses</strong><span>mínimo</span></div>
+            </div>
+
+            <div class="recurring-card-actions">
+              <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20entender%20melhor%20o%20CALI%20Build%20Completo." target="_blank" rel="noopener" class="recurring-cta" data-track-event="whatsapp_service" data-track-label="cali-build-completo">Falar sobre o Completo <span>→</span></a>
+              <a href="https://portal.calirh.com/servicos/cali-build" class="recurring-secondary" data-track-event="portal_service" data-track-label="cali-build-completo">Abrir briefing</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="recurring-method" aria-label="Como funciona o CALI Build">
           <div><span>01</span><p><strong>A CALI define</strong> método e prioridades.</p></div>
           <div><span>02</span><p><strong>O RH interno executa</strong> a construção.</p></div>
           <div><span>03</span><p><strong>A CALI revisa</strong> e valida os marcos.</p></div>
         </div>
-        <div class="service-actions">
-          <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20entender%20se%20o%20CALI%20Build%20faz%20sentido%20para%20a%20minha%20empresa." target="_blank" rel="noopener" class="btn btn-small" data-track-event="whatsapp_service" data-track-label="cali-build">Falar comigo <span class="arrow">→</span></a>
-          <a href="https://portal.calirh.com/servicos/cali-build" class="btn btn-small btn-portal" data-track-event="portal_service" data-track-label="cali-build">Solicitar proposta <span class="arrow">→</span></a>
-        </div>
       </div>
 
-      <div class="service-card reveal service-card-compact">
-        <div class="compact-service-copy">
-          <p class="service-meta">Desenvolvimento profissional</p>
-          <h4>Mentoria para Profissionais de RH</h4>
-          <p class="service-def">Casos reais, posicionamento e desenvolvimento para profissionais que querem ampliar a atuação estratégica.</p>
-        </div>
-        <div class="service-actions">
-          <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20Mentoria%20para%20Profissionais%20de%20RH%20da%20Cali." target="_blank" rel="noopener" class="btn btn-small" data-track-event="whatsapp_service" data-track-label="mentoria-rh">Falar comigo <span class="arrow">→</span></a>
-          <a href="https://portal.calirh.com/servicos/mentoria-rh" class="btn btn-small btn-portal" data-track-event="portal_service" data-track-label="mentoria-rh">Solicitar proposta <span class="arrow">→</span></a>
+      <!-- MENTORIA -->
+      <div class="recurring-family recurring-family-mentoria reveal">
+        <div class="mentoria-card">
+          <div class="mentoria-copy">
+            <p class="service-meta">Desenvolvimento profissional</p>
+            <h4>Mentoria para Profissionais de RH</h4>
+            <p>Desenvolvimento aplicado à realidade de quem atua em RH. A mentoria parte de situações e casos reais para ampliar repertório, posicionamento e capacidade de decisão — sem transformar a conversa em conteúdo genérico de carreira.</p>
+          </div>
+
+          <div class="mentoria-side">
+            <div class="mentoria-points">
+              <span>Casos reais de trabalho</span>
+              <span>Posicionamento profissional</span>
+              <span>Atuação mais estratégica</span>
+            </div>
+            <div class="recurring-card-actions">
+              <a href="https://wa.me/5541987791933?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20Mentoria%20para%20Profissionais%20de%20RH%20da%20Cali." target="_blank" rel="noopener" class="recurring-cta" data-track-event="whatsapp_service" data-track-label="mentoria-rh">Falar sobre a Mentoria <span>→</span></a>
+              <a href="https://portal.calirh.com/servicos/mentoria-rh" class="recurring-secondary" data-track-event="portal_service" data-track-label="mentoria-rh">Solicitar proposta</a>
+            </div>
+          </div>
         </div>
       </div>
 
