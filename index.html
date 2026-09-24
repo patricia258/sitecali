@@ -1891,7 +1891,7 @@
 
 
   /* ---------- RECORRENTES · REBUILD PROPORCIONAL 24/09/2026 ---------- */
-  /* Corrige o vazio entre Valores e Serviços sem alterar o restante do ritmo do site. */
+  /* Ritmo entre Valores e Serviços */
   .pilares{padding-bottom:64px!important}
   .pilares-close{margin-top:38px!important}
   .services{padding-top:64px!important;padding-bottom:0!important}
@@ -1913,14 +1913,12 @@
   }
   .recurring-block-head .block-num{margin:0!important;color:#d9b578!important}
   .recurring-block-note{
-    margin:0;max-width:560px;color:rgba(247,243,238,.63);
+    margin:0;max-width:610px;color:rgba(247,243,238,.63);
     font-size:13px;line-height:1.65;text-align:right;
   }
   .recurring-stack{display:flex!important;flex-direction:column!important;gap:0!important}
 
-  .recurring-family{
-    position:relative;padding:0 0 58px;margin:0;
-  }
+  .recurring-family{position:relative;padding:0 0 58px;margin:0}
   .recurring-family + .recurring-family{
     padding-top:56px;border-top:1px solid rgba(181,140,82,.27);
   }
@@ -1930,7 +1928,8 @@
     gap:54px;align-items:end;margin-bottom:28px;
   }
   .recurring-family-head .service-meta,
-  .mentoria-card .service-meta{margin:0 0 10px;color:#d9b578!important}
+  .mentoria-card .service-meta,
+  .build-intro .service-meta{margin:0 0 10px;color:#d9b578!important}
   .recurring-family-head h4,
   .mentoria-card h4{
     margin:0!important;padding:0!important;color:var(--marfim)!important;
@@ -1986,14 +1985,15 @@
     border-radius:999px;background:var(--bordo);color:var(--marfim);
     font-size:8.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
   }
-  .recurring-brand{
+  .recurring-brand,.recurring-build-option{
     margin:0 0 14px;font:500 34px/1.05 'Playfair Display',serif;
     letter-spacing:-.02em;color:var(--bordo);
   }
-  .recurring-brand span{
+  .recurring-brand span,.recurring-build-option span{
     margin-right:7px;color:var(--dourado);font:700 17px/1 'Inter',sans-serif;
     letter-spacing:.14em;
   }
+  .recurring-build-option{font-size:31px}
   .recurring-card-subtitle{
     margin:0 0 10px;color:var(--bordo);
     font-size:16px;font-weight:700;line-height:1.35;
@@ -2042,22 +2042,62 @@
   }
   .recurring-secondary:hover{color:#8b6331!important;border-color:var(--dourado)}
 
-  .recurring-package-label{
-    margin:0 0 14px;color:var(--dourado);
-    font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  /* Teaser do CALI Build. A área visual recebe a foto enviada pela Pati em uma próxima rodada. */
+  .build-intro{
+    display:grid;grid-template-columns:minmax(320px,.78fr) minmax(0,1.22fr);
+    gap:0;margin:0 0 58px;min-height:360px;overflow:hidden;
+    border:1px solid rgba(181,140,82,.42);border-radius:28px;
+    background:#fffdf9;box-shadow:0 24px 62px rgba(28,7,14,.14);
   }
-  .recurring-card-build{min-height:400px}
+  .build-intro-media{
+    position:relative;min-height:360px;overflow:hidden;
+    background:
+      linear-gradient(145deg,rgba(90,30,45,.90),rgba(55,13,25,.96)),
+      radial-gradient(circle at 35% 25%,rgba(181,140,82,.26),transparent 34%);
+  }
+  .build-intro-media::before{
+    content:'';position:absolute;inset:0;opacity:.10;
+    background-image:
+      linear-gradient(rgba(247,243,238,.09) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(247,243,238,.09) 1px,transparent 1px);
+    background-size:42px 42px;
+  }
+  .build-intro-mark{
+    position:absolute;width:300px;height:300px;left:50%;top:50%;
+    transform:translate(-50%,-50%) rotate(-8deg);
+    background:var(--dourado);opacity:.40;
+    -webkit-mask:url('/assets/cali-oak-mark.svg') center/contain no-repeat;
+    mask:url('/assets/cali-oak-mark.svg') center/contain no-repeat;
+  }
+  .build-intro-copy{
+    display:flex;flex-direction:column;justify-content:center;padding:48px 54px;
+  }
+  .build-intro-copy .service-meta{color:#9b6f36!important}
+  .build-intro-copy h4{
+    margin:0;color:var(--bordo);
+    font:500 clamp(31px,3.3vw,46px)/1.12 'Playfair Display',serif;
+    letter-spacing:-.018em;
+  }
+  .build-intro-copy>p:last-child{
+    margin:22px 0 0;max-width:720px;color:#655a5d;
+    font-size:14px;line-height:1.78;
+  }
+
+  .recurring-family-build{padding-top:0!important;border-top:0!important}
+  .build-family-head{padding-top:56px;border-top:1px solid rgba(181,140,82,.27)}
+  .recurring-card-build{min-height:390px}
+  .recurring-card-build-essential{
+    background:#fffdf9;border-color:rgba(181,140,82,.50);
+  }
   .recurring-card-build-completo{
-    background:linear-gradient(145deg,#fffdf9 0%,#f6ebd8 100%);
-    border-color:rgba(181,140,82,.68);
+    background:linear-gradient(145deg,#fffdf9 0%,#f2e2c4 100%);
+    border:2px solid #c89c56;
+    box-shadow:0 28px 68px rgba(181,140,82,.16),0 18px 50px rgba(29,7,14,.13);
   }
   .recurring-facts-build{grid-template-columns:1fr 1fr}
-  .recurring-facts-build .recurring-fact-wide{
-    grid-column:1/-1;border-right:0!important;border-bottom:0!important;min-height:78px;
+  .recurring-facts-build .recurring-fact{
+    border-bottom:0!important;
   }
-  .recurring-facts-build .recurring-fact:nth-child(2){border-right:0}
-  .recurring-facts-build .recurring-fact:nth-child(1),
-  .recurring-facts-build .recurring-fact:nth-child(2){border-bottom:1px solid rgba(90,30,45,.12)}
 
   .recurring-method{
     display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
@@ -2114,6 +2154,9 @@
     .recurring-grid{grid-template-columns:1fr!important}
     .recurring-card-full,.recurring-card-full:hover{transform:none}
     .recurring-card{min-height:0}
+    .build-intro{grid-template-columns:1fr}
+    .build-intro-media{min-height:250px}
+    .build-intro-copy{padding:36px 34px}
     .recurring-method{grid-template-columns:1fr}
     .recurring-method>div{border-right:0;border-bottom:1px solid rgba(181,140,82,.26)}
     .recurring-method>div:last-child{border-bottom:0}
@@ -2128,15 +2171,22 @@
     .recurring-family + .recurring-family{padding-top:42px}
     .recurring-family-head h4{font-size:34px!important}
     .recurring-card{padding:27px 24px 24px;border-radius:20px}
-    .recurring-brand{font-size:30px}
-    .recurring-brand span{font-size:15px}
+    .recurring-brand,.recurring-build-option{font-size:28px}
+    .recurring-brand span,.recurring-build-option span{display:block;margin:0 0 7px;font-size:13px}
     .recurring-badge{position:static;align-self:flex-start;margin:0 0 15px}
     .recurring-fact{padding:16px 14px;min-height:82px}
     .recurring-fact strong{font-size:20px}
+    .build-intro{margin-bottom:44px;border-radius:20px}
+    .build-intro-media{min-height:210px}
+    .build-intro-mark{width:220px;height:220px}
+    .build-intro-copy{padding:28px 24px}
+    .build-intro-copy h4{font-size:31px}
+    .build-family-head{padding-top:42px}
     .recurring-method>div{padding:16px 18px}
     .mentoria-card{padding:28px 24px;border-radius:20px;min-height:0}
     .mentoria-card h4{font-size:34px!important}
   }
+
 
 </style>
   <link rel="icon" type="image/svg+xml" href="/assets/cali-favicon.svg?v=20260924-leaf">
@@ -2260,7 +2310,7 @@
   <div class="services-block on-dark recurring-v2">
     <div class="wrap block-head recurring-block-head">
       <p class="block-num reveal">Recorrentes</p>
-      <p class="recurring-block-note reveal reveal-d1">Os quatro serviços centrais da CALI, organizados por nível de presença e forma de atuação.</p>
+      <p class="recurring-block-note reveal reveal-d1">Direção recorrente, estruturação assistida e desenvolvimento profissional — com o nível de presença adequado ao momento do negócio.</p>
     </div>
 
     <div class="wrap recurring-stack">
@@ -2284,7 +2334,7 @@
             </div>
 
             <div class="recurring-facts">
-              <div class="recurring-fact"><strong>8 a 12h</strong><span>por mês</span></div>
+              <div class="recurring-fact"><strong>10 a 15h</strong><span>por mês</span></div>
               <div class="recurring-fact"><strong>Mensal</strong><span>encontro executivo</span></div>
               <div class="recurring-fact"><strong>Online</strong><span>atuação padrão</span></div>
               <div class="recurring-fact"><strong>8 meses</strong><span>mínimo</span></div>
@@ -2301,11 +2351,11 @@
             <div class="recurring-card-top">
               <p class="recurring-brand"><span>CALI</span> FULL</p>
               <p class="recurring-card-subtitle">Presença ampliada</p>
-              <p class="recurring-card-copy">Até duas prioridades simultâneas e acompanhamento mais próximo da liderança.</p>
+              <p class="recurring-card-copy">Maior disponibilidade, acompanhamento mais próximo da liderança e uma agenda de People mais ampla.</p>
             </div>
 
             <div class="recurring-facts">
-              <div class="recurring-fact"><strong>14 a 18h</strong><span>por mês</span></div>
+              <div class="recurring-fact"><strong>20 a 25h</strong><span>por mês</span></div>
               <div class="recurring-fact"><strong>Quinzenal</strong><span>encontros executivos</span></div>
               <div class="recurring-fact"><strong>1 visita</strong><span>presencial/mês</span></div>
               <div class="recurring-fact"><strong>12 meses</strong><span>mínimo</span></div>
@@ -2319,29 +2369,40 @@
         </div>
       </div>
 
+      <!-- INTRODUÇÃO CALI BUILD -->
+      <div class="build-intro reveal">
+        <div class="build-intro-media" aria-hidden="true">
+          <div class="build-intro-mark"></div>
+        </div>
+        <div class="build-intro-copy">
+          <p class="service-meta">Para quem vai construir por dentro</p>
+          <h4>Seu RH executa. A CALI coloca método, direção e supervisão na implantação.</h4>
+          <p>Você já atua em RH, quer implantar ou estruturar uma área, processo ou disciplina e precisa conduzir essa construção com segurança — mas ainda não tem a senioridade, o método ou a experiência para fazer tudo de forma autônoma? É exatamente aí que entra o CALI Build.</p>
+        </div>
+      </div>
+
       <!-- CALI BUILD -->
       <div class="recurring-family recurring-family-build reveal">
-        <div class="recurring-family-head">
+        <div class="recurring-family-head build-family-head">
           <div>
             <p class="service-meta">Estruturação Assistida de RH</p>
             <h4>CALI Build</h4>
-            <p class="recurring-signature">A CALI desenha. Seu RH constrói.</p>
+            <p class="recurring-signature">A CALI desenha, projeta e o seu RH constrói.</p>
           </div>
-          <p class="recurring-family-copy">Para empresas que já têm alguém de RH e precisam estruturar a área ou uma frente com método, direção sênior e supervisão técnica.</p>
+          <p class="recurring-family-copy">A CALI diagnostica, define a arquitetura e o plano de implantação, orienta decisões e acompanha tecnicamente a execução. O RH interno realiza a implantação operacional com revisão, correções e direcionamento ao longo do processo.</p>
         </div>
 
         <div class="recurring-grid recurring-grid-build">
           <article class="recurring-card recurring-card-build recurring-card-build-essential">
             <div class="recurring-card-top">
-              <p class="recurring-package-label">Essencial</p>
+              <p class="recurring-build-option"><span>CALI BUILD</span> ESSENCIAL</p>
               <p class="recurring-card-subtitle">Uma frente prioritária</p>
-              <p class="recurring-card-copy">Para estruturar uma frente com método, orientação técnica e supervisão da CALI ao longo da construção.</p>
+              <p class="recurring-card-copy">Para implantar uma frente específica com método, arquitetura, acompanhamento e supervisão técnica da CALI.</p>
             </div>
 
             <div class="recurring-facts recurring-facts-build">
-              <div class="recurring-fact"><strong>8 a 12h</strong><span>por mês</span></div>
               <div class="recurring-fact"><strong>1 frente</strong><span>prioritária</span></div>
-              <div class="recurring-fact recurring-fact-wide"><strong>4 meses</strong><span>mínimo</span></div>
+              <div class="recurring-fact"><strong>6 meses</strong><span>mínimo</span></div>
             </div>
 
             <div class="recurring-card-actions">
@@ -2352,15 +2413,14 @@
 
           <article class="recurring-card recurring-card-build recurring-card-build-completo">
             <div class="recurring-card-top">
-              <p class="recurring-package-label">Completo</p>
+              <p class="recurring-build-option"><span>CALI BUILD</span> COMPLETO</p>
               <p class="recurring-card-subtitle">Frentes conectadas</p>
-              <p class="recurring-card-copy">Para estruturar frentes conectadas, mantendo método, revisão e direção sênior durante a implementação.</p>
+              <p class="recurring-card-copy">Para uma implantação mais ampla, com frentes que precisam ser construídas de forma conectada e sustentadas sob a mesma arquitetura.</p>
             </div>
 
             <div class="recurring-facts recurring-facts-build">
-              <div class="recurring-fact"><strong>14 a 18h</strong><span>por mês</span></div>
               <div class="recurring-fact"><strong>Frentes</strong><span>conectadas</span></div>
-              <div class="recurring-fact recurring-fact-wide"><strong>6 meses</strong><span>mínimo</span></div>
+              <div class="recurring-fact"><strong>8 meses</strong><span>mínimo</span></div>
             </div>
 
             <div class="recurring-card-actions">
@@ -2371,9 +2431,9 @@
         </div>
 
         <div class="recurring-method" aria-label="Como funciona o CALI Build">
-          <div><span>01</span><p><strong>A CALI define</strong> método e prioridades.</p></div>
-          <div><span>02</span><p><strong>O RH interno executa</strong> a construção.</p></div>
-          <div><span>03</span><p><strong>A CALI revisa</strong> e valida os marcos.</p></div>
+          <div><span>01</span><p><strong>A CALI diagnostica e desenha</strong> a arquitetura, o método e as prioridades.</p></div>
+          <div><span>02</span><p><strong>O RH interno executa</strong> a implantação operacional.</p></div>
+          <div><span>03</span><p><strong>A CALI supervisiona e revisa</strong> os marcos, corrige rota e desenvolve a capacidade interna.</p></div>
         </div>
       </div>
 
