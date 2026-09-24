@@ -1248,6 +1248,226 @@
     .hero-bg{animation:none!important}
     .pilar,.service-card,.project-card,.feedback{transition:none!important}
   }
+
+  /* ---------- CALI SITE · WORKSPACE-INSPIRED FINAL PASS ---------- */
+
+  /* Topbar: sempre bordô, flutuante e com o ecossistema em destaque. */
+  #site-header{
+    top:18px;left:24px;right:24px;
+    padding:0!important;
+    background:rgba(66,17,30,.96)!important;
+    border:1px solid rgba(247,243,238,.12)!important;
+    border-radius:20px;
+    box-shadow:0 18px 52px rgba(34,7,15,.20);
+    -webkit-backdrop-filter:blur(18px);
+    backdrop-filter:blur(18px);
+    --nav-fg:var(--marfim)!important;
+    --nav-fg-soft:rgba(247,243,238,.78)!important;
+  }
+  #site-header.scrolled{
+    background:rgba(66,17,30,.96)!important;
+    padding:0!important;
+    border-color:rgba(247,243,238,.12)!important;
+    --nav-fg:var(--marfim)!important;
+    --nav-fg-soft:rgba(247,243,238,.78)!important;
+  }
+  #site-header .wrap{max-width:none;padding:0 18px 0 22px}
+  #site-header .nav-row{min-height:68px}
+  #site-header .nav-menu-desktop{display:none!important}
+  #site-header .nav-logo{width:112px;height:46px;display:flex;align-items:center}
+  #site-header .nav-logo img{
+    width:112px!important;height:auto!important;max-height:42px!important;
+    object-fit:contain;object-position:left center;
+    filter:none!important;opacity:1;transform:translateZ(0);
+  }
+  #site-header .nav-logo .logo-light{opacity:1!important}
+  #site-header .nav-logo .logo-dark{opacity:0!important}
+  #site-header .nav-utility{margin-left:auto;gap:14px}
+  #site-header .nav-platforms{gap:8px}
+  #site-header .nav-platform-link{
+    min-height:40px;padding:0 15px;border-radius:11px;
+    border:1px solid rgba(247,243,238,.22);
+    background:rgba(247,243,238,.025);color:var(--marfim)!important;
+  }
+  #site-header .nav-platform-link-gold{border-color:var(--dourado)!important;color:#d9b578!important}
+  #site-header .nav-social{
+    display:flex!important;gap:0;border:1px solid rgba(247,243,238,.14);
+    border-radius:11px;overflow:hidden;
+  }
+  #site-header .nav-social a{
+    width:42px;height:40px;display:grid;place-items:center;
+    border-right:1px solid rgba(247,243,238,.11);
+    color:rgba(247,243,238,.78)!important;
+  }
+  #site-header .nav-social a:last-child{border-right:0}
+  #site-header .nav-social svg{width:16px;height:16px}
+  #site-header .nav-cta{
+    min-height:44px;display:inline-flex;align-items:center;border-radius:11px;
+    border-color:rgba(247,243,238,.72)!important;color:var(--marfim)!important;padding:0 22px;
+  }
+  #site-header .nav-cta:hover,#site-header.scrolled .nav-cta:hover{background:var(--marfim)!important;color:var(--bordo)!important}
+
+  /* Remove o "papel"/grid das demais áreas; Origem permanece intocada. */
+  .pilares,.services,.feedbacks{background:var(--marfim)!important;background-image:none!important}
+
+  /* Valores: marca grande no fundo + mudança completa no hover. */
+  .pilares-grid{gap:18px}
+  .pilar{
+    position:relative;isolation:isolate;overflow:hidden;min-height:250px;
+    padding:42px 36px;border:1px solid rgba(90,30,45,.11)!important;border-radius:22px!important;
+    background:#fffdf9!important;
+    box-shadow:0 18px 50px rgba(69,42,34,.045);
+    transition:transform .36s cubic-bezier(.22,1,.36,1),background .36s ease,color .36s ease,border-color .36s ease,box-shadow .36s ease;
+  }
+  .pilar::before{
+    content:'';position:absolute;z-index:-1;width:300px;height:300px;right:-95px;bottom:-110px;
+    background:var(--bordo);opacity:.055;
+    -webkit-mask:url('/assets/cali-oak-mark.svg') center/contain no-repeat;
+    mask:url('/assets/cali-oak-mark.svg') center/contain no-repeat;
+    transition:opacity .36s ease,transform .58s cubic-bezier(.22,1,.36,1),background .36s ease;
+  }
+  .pilar:nth-child(2)::before{
+    width:280px;height:280px;right:-80px;bottom:-90px;
+    -webkit-mask-image:url('/assets/cali-lime-mark.svg');mask-image:url('/assets/cali-lime-mark.svg');
+    transform:rotate(-12deg);
+  }
+  .pilar:nth-child(3)::before{transform:rotate(11deg) scale(1.04)}
+  .pilar h3,.pilar p{position:relative;z-index:1;transition:color .36s ease}
+  .pilar:hover{
+    transform:translateY(-7px);background:var(--bordo)!important;color:var(--marfim);
+    border-color:var(--bordo)!important;box-shadow:0 28px 68px rgba(90,30,45,.18);
+  }
+  .pilar:hover h3{color:var(--marfim)!important}
+  .pilar:hover p{color:rgba(247,243,238,.78)!important}
+  .pilar:hover::before{opacity:.17;background:var(--dourado);transform:rotate(8deg) scale(1.12)}
+
+  /* Cards de serviço: movimento e símbolos ampliados. */
+  .service-card,.project-card{
+    position:relative;isolation:isolate;overflow:hidden;border-radius:24px!important;
+    transition:transform .38s cubic-bezier(.22,1,.36,1),box-shadow .38s ease,border-color .38s ease,background .38s ease,color .38s ease;
+  }
+  .service-card::before,.project-card::before{
+    content:'';position:absolute;z-index:-1;width:380px;height:380px;right:-130px;bottom:-150px;
+    background:currentColor;opacity:.035;
+    -webkit-mask:url('/assets/cali-oak-mark.svg') center/contain no-repeat;
+    mask:url('/assets/cali-oak-mark.svg') center/contain no-repeat;
+    transition:opacity .38s ease,transform .56s cubic-bezier(.22,1,.36,1);
+  }
+  .project-card:nth-child(even)::before{
+    -webkit-mask-image:url('/assets/cali-lime-mark.svg');mask-image:url('/assets/cali-lime-mark.svg');
+    transform:rotate(-12deg);
+  }
+  .service-card:hover,.project-card:hover{transform:translateY(-6px);box-shadow:0 28px 70px rgba(62,20,30,.12)}
+  .service-card:hover::before,.project-card:hover::before{opacity:.10;transform:rotate(7deg) scale(1.10)}
+
+  /* Assessoria: Partner dourado; Full com badge recomendado. */
+  .service-card-advisory>h4{font-size:clamp(28px,3.4vw,44px)!important}
+  .service-card-advisory .advisory-intro{max-width:790px}
+  .advisory-option{border-radius:20px!important;overflow:hidden}
+  .advisory-option-partner{
+    background:linear-gradient(145deg,#c9a15f,#b58c52)!important;
+    border-color:#d7b579!important;color:#2b171d!important;
+    box-shadow:0 22px 56px rgba(181,140,82,.18);
+  }
+  .advisory-option-partner .option-brand,
+  .advisory-option-partner .option-brand span,
+  .advisory-option-partner .option-name,
+  .advisory-option-partner .option-for,
+  .advisory-option-partner .option-fact strong,
+  .advisory-option-partner .option-fact span{color:#2b171d!important}
+  .advisory-option-partner .option-facts{border-color:rgba(43,23,29,.17)!important}
+  .advisory-option-partner .option-fact{border-color:rgba(43,23,29,.14)!important}
+  .advisory-option-full{position:relative;background:rgba(247,243,238,.035)!important}
+  .advisory-option-full .option-badge{
+    display:inline-flex!important;align-items:center;min-height:28px;padding:0 11px;
+    border-radius:999px;background:rgba(181,140,82,.16);color:#dfbd87!important;
+    font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;
+  }
+
+  /* Build: protagonismo equivalente à assessoria. */
+  .service-card-build{
+    padding:clamp(38px,4.8vw,66px)!important;
+    border:1px solid rgba(181,140,82,.55)!important;border-radius:28px!important;
+    background:
+      linear-gradient(rgba(247,243,238,.028) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(247,243,238,.028) 1px,transparent 1px),
+      linear-gradient(145deg,#6b2236,#4a1624)!important;
+    background-size:52px 52px,52px 52px,auto!important;
+    box-shadow:0 30px 80px rgba(45,11,21,.20)!important;
+  }
+  .service-card-build::before{
+    width:500px;height:500px;right:-150px;bottom:-190px;background:var(--dourado);opacity:.075;
+    -webkit-mask-image:url('/assets/cali-oak-mark.svg');mask-image:url('/assets/cali-oak-mark.svg');
+  }
+  .service-card-build:hover::before{opacity:.15;transform:rotate(7deg) scale(1.08)}
+  .service-card-build h4{font-size:clamp(40px,5.1vw,68px)!important;color:var(--marfim)!important}
+  .service-card-build .build-signature{font-size:clamp(21px,2.2vw,30px)!important}
+  .service-card-build .service-def{font-size:clamp(16px,1.45vw,20px)!important;line-height:1.62!important}
+  .service-card-build .build-package{border-radius:18px;background:rgba(247,243,238,.065)!important}
+  .service-card-build .build-flow{border-radius:18px!important;overflow:hidden}
+
+  /* Feedbacks: carrossel horizontal com autoria. */
+  .feedbacks{padding-top:112px!important;padding-bottom:112px!important}
+  .feedback-track{scroll-snap-type:x mandatory;scrollbar-width:none}
+  .feedback-track::-webkit-scrollbar{display:none}
+  .feedback{
+    scroll-snap-align:start;position:relative;min-width:min(430px,78vw);min-height:250px;
+    display:flex!important;flex-direction:column;justify-content:space-between;
+    padding:32px!important;border-radius:22px!important;background:#fffdf9!important;
+    border:1px solid rgba(181,140,82,.42)!important;
+    box-shadow:0 20px 48px rgba(66,38,30,.055);
+    transition:transform .32s ease,background .32s ease,color .32s ease,border-color .32s ease;
+  }
+  .feedback::before{
+    content:'“';position:absolute;right:24px;top:12px;
+    font-family:'Playfair Display',serif;font-size:82px;line-height:1;color:rgba(181,140,82,.14);
+  }
+  .feedback p{position:relative;z-index:1;margin:0;font:italic 17px/1.62 'Playfair Display',serif}
+  .feedback-author{margin-top:34px;padding-top:16px;border-top:1px solid rgba(181,140,82,.22)}
+  .feedback-author strong,.feedback-author span{display:block}
+  .feedback-author strong{font-size:13px;color:var(--bordo);letter-spacing:.02em}
+  .feedback-author span{margin-top:4px;font-size:11px;color:#8d817b}
+  .feedback:hover{transform:translateY(-6px);background:var(--bordo)!important;color:var(--marfim);border-color:var(--bordo)!important}
+  .feedback:hover .feedback-author{border-color:rgba(247,243,238,.18)}
+  .feedback:hover .feedback-author strong{color:var(--marfim)}
+  .feedback:hover .feedback-author span{color:rgba(247,243,238,.62)}
+  .feedback:hover::before{color:rgba(247,243,238,.12)}
+
+  /* Mobile */
+  @media(max-width:980px){
+    #site-header{left:14px;right:14px;top:14px}
+    #site-header .nav-social a{width:36px;height:36px}
+    #site-header .nav-platform-link{padding:0 12px}
+    #site-header .nav-cta{display:none}
+  }
+  @media(max-width:760px){
+    #site-header{left:10px;right:10px;top:10px;border-radius:16px}
+    #site-header .wrap{padding:0 12px 0 14px}
+    #site-header .nav-row{min-height:58px}
+    #site-header .nav-logo{width:92px}
+    #site-header .nav-logo img{width:92px!important}
+    #site-header .nav-platforms{display:none}
+    #site-header .nav-social a:nth-child(3),
+    #site-header .nav-social a:nth-child(4){display:none}
+    #site-header .nav-toggle{display:flex}
+    .nav-drawer{padding-top:80px}
+    .pilares-grid{grid-template-columns:1fr!important}
+    .pilar{min-height:220px}
+    .advisory-compare{grid-template-columns:1fr!important}
+    .advisory-option{min-height:0}
+    .build-head{grid-template-columns:1fr!important}
+    .build-packages{grid-template-columns:1fr 1fr!important}
+    .build-flow{grid-template-columns:1fr!important}
+    .feedback{min-width:84vw}
+  }
+  @media(max-width:480px){
+    #site-header .nav-social{display:flex}
+    #site-header .nav-social a{width:34px;height:34px}
+    .build-packages{grid-template-columns:1fr!important}
+    .service-card-build{padding:28px 22px!important}
+    .service-card-build h4{font-size:42px!important}
+    .feedback{min-width:88vw;padding:26px!important}
+  }
 </style>
   <link rel="icon" type="image/svg+xml" href="/assets/cali-favicon.svg?v=20260924-leaf">
   <link rel="shortcut icon" type="image/svg+xml" href="/assets/cali-favicon.svg?v=20260924-leaf">
@@ -1349,9 +1569,9 @@
         <h3>Equilíbrio</h3>
         <p>Porque liderança madura precisa de critério, não excesso.</p>
       </div>
-      <div class="pilar reveal reveal-d4">
-        <h3>Perseverança</h3>
-        <p>Porque transformação organizacional não acontece por impulso, mas por consistência.</p>
+      <div class="pilar reveal reveal-d4 pilar-purpose">
+        <h3>Propósito</h3>
+        <p>Porque trabalho com sentido nasce do alinhamento entre fé, propósito de vida e responsabilidade com as pessoas.</p>
       </div>
     </div>
     <p class="pilares-close reveal reveal-d4">Esses valores não estão só no discurso. Eles moldam a forma como a Cali pensa, conduz e sustenta cada trabalho.</p>
@@ -1392,7 +1612,7 @@
           </article>
 
           <article class="advisory-option advisory-option-full">
-            <span class="option-badge">Maior cadência</span>
+            <span class="option-badge">Recomendado</span>
             <p class="option-brand"><span>CALI</span> FULL</p>
             <h5 class="option-name">Presença ampliada</h5>
             <p class="option-for">Até duas prioridades simultâneas e acompanhamento mais próximo da liderança.</p>
@@ -1578,15 +1798,30 @@
       </div>
     </div>
     <div class="feedback-track" data-feedback-track>
-      <blockquote class="feedback reveal">Graças à Patrícia agora tenho um currículo alinhado com as tendências do mercado. Obrigado pelo ótimo serviço prestado!</blockquote>
-      <blockquote class="feedback reveal">A Patrícia me ajudou na reestruturação do currículo, muito atenciosa e prática, recomendo muito os seus serviços.</blockquote>
-      <blockquote class="feedback reveal">Com uma liderança estratégica e assertiva, a Patrícia direciona suas equipes com maestria, parceria, com base em dados e visando resultados.</blockquote>
-      <blockquote class="feedback reveal">Tive a oportunidade de conhecer o trabalho da Patrícia na reestruturação curricular. Que trabalho bacana. Recomendo demais.</blockquote>
-      <blockquote class="feedback reveal">Aprendi com a Patricia a dar o meu melhor, mesmo quando o meu melhor não for muito. Ela é boa ouvinte, paciente e cobra desempenho com humanidade.</blockquote>
-      <blockquote class="feedback reveal">A Patrícia é uma excelente profissional, com boa capacidade analítica, foco em KPIs, operação e desenvolvimento de pessoas.</blockquote>
-      <blockquote class="feedback reveal">Trabalhar com ela é uma experiência transformadora: estratégica, humana, firme e inspiradora.</blockquote>
-      <blockquote class="feedback reveal">Sua trajetória sólida, conhecimento técnico e capacidade de unir RH estratégico com gestão humanizada são impressionantes.</blockquote>
-      <blockquote class="feedback reveal">São anos de parceria e aprendizado. Em todos esses anos, crescemos juntos. Você é uma profissional dedicada e gigante.</blockquote>
+      <blockquote class="feedback reveal">
+        <p>Graças à Patrícia agora tenho um currículo alinhado com as tendências do mercado. Obrigado pelo ótimo serviço prestado!</p>
+        <div class="feedback-author"><strong>Ana Luisa Santos</strong><span>TS Assessoria</span></div>
+      </blockquote>
+      <blockquote class="feedback reveal">
+        <p>A Patrícia me ajudou na reestruturação do currículo, muito atenciosa e prática, recomendo muito os seus serviços.</p>
+        <div class="feedback-author"><strong>Cassia Prado</strong><span>Prado Finanças</span></div>
+      </blockquote>
+      <blockquote class="feedback reveal">
+        <p>Com uma liderança estratégica e assertiva, a Patrícia direciona suas equipes com maestria, parceria, com base em dados e visando resultados.</p>
+        <div class="feedback-author"><strong>Claudia Cardoso</strong><span>Mota Grupo</span></div>
+      </blockquote>
+      <blockquote class="feedback reveal">
+        <p>Tive a oportunidade de conhecer o trabalho da Patrícia na reestruturação curricular. Que trabalho bacana. Recomendo demais.</p>
+        <div class="feedback-author"><strong>Aliando Pedroso</strong><span>Riachuelo</span></div>
+      </blockquote>
+      <blockquote class="feedback reveal">
+        <p>Aprendi com a Patricia a dar o meu melhor, mesmo quando o meu melhor não for muito. Ela é boa ouvinte, paciente e cobra desempenho com humanidade.</p>
+        <div class="feedback-author"><strong>Bruno Araujo</strong><span>Kaz Distribuidora</span></div>
+      </blockquote>
+      <blockquote class="feedback reveal">
+        <p>A Patrícia é uma excelente profissional, com boa capacidade analítica, foco em KPIs, operação e desenvolvimento de pessoas.</p>
+        <div class="feedback-author"><strong>Leandra Alves</strong><span>Ellos Contabilidades</span></div>
+      </blockquote>
     </div>
   </div>
 </section>
