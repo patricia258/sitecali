@@ -1,5 +1,7 @@
 # CALI RH — site institucional
 
+A identidade visual digital e a direção para a futura revisão do Portal CALI e do CALI Workspace estão em [CALI_VISUAL_ID.md](CALI_VISUAL_ID.md).
+
 Adaptação da arquitetura visual do repositório `azudoka/azumi-site-v1` para a identidade e as ofertas atuais da CALI. A navegação reúne a assessoria recorrente e o CALI Build em `/assessoria` e os projetos de escopo definido em `/projetos`.
 
 ## Mapeamento de conteúdo
