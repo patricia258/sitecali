@@ -12,7 +12,7 @@ Adaptação da arquitetura visual do repositório `azudoka/azumi-site-v1` para a
 | Quem somos | Reescrita para a história e a atuação pessoal de Patrícia Lima. |
 | Raio X, soluções para pessoa física, Team Azumi, recrutamento e depoimentos sem fonte confirmada | Removidos do fluxo CALI. O Mapa de People continua como entrada gratuita. |
 
-O conteúdo comercial foi conferido com o site CALI no `main` em 24/09/2026. O escopo detalhado e os valores continuam sujeitos à proposta; o site não promete execução ilimitada. A política de privacidade existente foi mantida. Fotos reutilizadas da referência Azumi pertencente à mesma proprietária foram otimizadas e hospedadas no próprio projeto.
+O conteúdo comercial foi conferido com o site CALI no `main` em 24/09/2026 e ajustado com o retorno da Patrícia: o Build Essencial agora cobre até duas frentes prioritárias e a descrição explica o desenvolvimento de quem executa o RH interno. O escopo detalhado e os valores continuam sujeitos à proposta; o site não promete execução ilimitada. A política de privacidade existente foi mantida. Fotos reutilizadas da referência Azumi pertencente à mesma proprietária foram otimizadas e hospedadas no próprio projeto; a foto principal em preto e branco foi recuperada do material original da CALI.
 
 ## Desenvolvimento
 
