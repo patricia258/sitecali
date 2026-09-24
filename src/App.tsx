@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, Check, ChevronDown, ChevronLeft, ChevronRight, Instagram, Linkedin, Mail, Menu, X } from 'lucide-react';
+import { ArrowRight, ArrowUp, ArrowUpRight, Check, ChevronDown, ChevronLeft, ChevronRight, Instagram, Linkedin, Mail, Menu, X } from 'lucide-react';
 
 const whatsapp = 'https://wa.me/5541987791933?text=';
 const talk = (subject = 'conversar sobre a minha empresa') => `${whatsapp}${encodeURIComponent(`Olá, Pati! Vim pelo site da CALI e gostaria de ${subject}.`)}`;
@@ -27,9 +27,11 @@ function ContactButton({ children = 'Fale com a Pati', subject, light = false }:
 }
 function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
   useEffect(() => setOpen(false), [pathname]);
-  return <header className="site-header">
+  useEffect(() => { const update = () => setScrolled(window.scrollY > 40); update(); window.addEventListener('scroll', update, { passive: true }); return () => window.removeEventListener('scroll', update); }, []);
+  return <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
     <div className="nav-shell">
       <Link to="/" className="brand" aria-label="CALI RH, ir para a página inicial"><img src="/assets/cali-logo-light.svg" alt="CALI RH" /></Link>
       <nav className={`nav-links ${open ? 'open' : ''}`} aria-label="Menu principal">
@@ -47,7 +49,50 @@ function Footer() {
 function Shell({ children }: { children: React.ReactNode }) {
   const { pathname } = useLocation();
   useEffect(() => { if (window.location.hash) { requestAnimationFrame(() => document.getElementById(window.location.hash.slice(1))?.scrollIntoView()); } else { window.scrollTo(0, 0); } }, [pathname]);
-  return <><Header/><main id="conteudo">{children}</main><Footer/></>;
+  useEffect(() => {
+    const targets = document.querySelectorAll('.section-head, .section .split > div, .image-card, .steps article, .plan, .project-card, .experience-grid article, .map-preview, .faq details');
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-revealed'); observer.unobserve(entry.target); } }), { threshold: .08, rootMargin: '0px 0px -35px 0px' });
+    targets.forEach((target, index) => { target.classList.add('scroll-reveal'); if (target instanceof HTMLElement) target.style.setProperty('--reveal-delay', `${Math.min(index % 3, 2) * 90}ms`); observer.observe(target); });
+    return () => observer.disconnect();
+  }, [pathname]);
+  return <><Header/><main id="conteudo">{children}</main><Footer/><BackToTop/><CookieNotice/><MapInvite/></>;
+}
+function BackToTop() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => { const update = () => setVisible(window.scrollY > 500); update(); window.addEventListener('scroll', update, { passive: true }); return () => window.removeEventListener('scroll', update); }, []);
+  return <button className={`back-to-top ${visible ? 'visible' : ''}`} onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })} aria-label="Voltar ao topo" tabIndex={visible ? 0 : -1}><ArrowUp size={20}/></button>;
+}
+function CookieNotice() {
+  const [visible, setVisible] = useState(() => !window.localStorage.getItem('cali_privacy_notice_v1'));
+  if (!visible) return null;
+  return <div className="privacy-banner" role="region" aria-label="Aviso de privacidade"><div><strong>Privacidade, com clareza.</strong><p>Este site usa apenas recursos essenciais e métricas anônimas de navegação, sem cookies publicitários. Ao acessar o Mapa ou o Portal, você verá o consentimento específico para o envio dos dados.</p></div><div className="privacy-actions"><a href="/privacidade.html">Ler a política</a><button onClick={() => { window.localStorage.setItem('cali_privacy_notice_v1', 'accepted'); setVisible(false); }}>Entendi</button></div></div>;
+}
+function MapInvite() {
+  const [open, setOpen] = useState(() => !window.sessionStorage.getItem('cali_mapa_popup_seen'));
+  const dialog = useRef<HTMLDivElement>(null);
+  const previousFocus = useRef<HTMLElement | null>(null);
+  const close = () => { window.sessionStorage.setItem('cali_mapa_popup_seen', '1'); setOpen(false); previousFocus.current?.focus(); };
+  useEffect(() => {
+    if (!open) return;
+    previousFocus.current = document.activeElement as HTMLElement;
+    const oldOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    dialog.current?.querySelector<HTMLElement>('.map-invite-close')?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') close();
+      if (event.key !== 'Tab' || !dialog.current) return;
+      const items = Array.from(dialog.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'));
+      if (!items.length) return;
+      const first = items[0], last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => { document.body.style.overflow = oldOverflow; document.removeEventListener('keydown', onKey); };
+  }, [open]);
+  if (!open) return null;
+  return <div className="modal-backdrop map-invite-backdrop" onMouseDown={event => { if (event.target === event.currentTarget) close(); }}><div className="map-invite" role="dialog" aria-modal="true" aria-labelledby="map-invite-title" ref={dialog}><button className="map-invite-close" onClick={close} aria-label="Fechar convite"><X size={21}/></button><div className="map-invite-copy"><span className="eyebrow gold">MAPA DE PEOPLE · GRATUITO</span><h2 id="map-invite-title">Onde a gestão de pessoas pede atenção na sua empresa?</h2><p>Responda às perguntas e receba uma leitura do seu cenário, com riscos e prioridades para começar.</p><a className="button button-light" href="https://mapa.calirh.com/?utm_source=calirh.com&utm_medium=site&utm_campaign=mapa_gratuito&utm_content=popup" target="_blank" rel="noopener noreferrer" onClick={close}>Fazer o Mapa gratuitamente <ArrowUpRight size={18}/></a><button className="map-invite-later" onClick={close}>Agora não</button></div><div className="map-invite-visual"><img src="/images/mapa-de-people-mockup.png" alt="Exemplo visual das páginas do relatório Mapa de People da CALI"/></div></div></div>;
 }
 function SectionHead({ tag, title, copy }: { tag: string; title: string; copy?: string }) {
   return <div className="section-head"><span className="eyebrow">{tag}</span><h2>{title}</h2>{copy && <p>{copy}</p>}</div>;
@@ -123,7 +168,7 @@ function FounderCarousel() {
 function About() {
   return <><section className="page-hero about-hero"><div className="container page-hero-grid"><div><span className="pill">A CALI RH</span><h1>Sou Patrícia Lima. A CALI é o meu jeito de fazer RH para o negócio.</h1><p>Trabalho com empresas que precisam organizar o RH, desenvolver lideranças e tomar decisões de pessoas com critério.</p><ContactButton>Fale comigo</ContactButton></div><FounderCarousel/></div></section>
     <section className="section"><div className="container split"><div><span className="eyebrow">QUEM ESTÁ DO OUTRO LADO</span><h2>Minha trajetória começou dentro das empresas.</h2></div><div className="body-copy"><p>Minha trajetória reúne mais de 15 anos de atuação em RH, da construção de áreas do zero à direção de equipes e decisões estratégicas. Trabalhei com empresas de diferentes portes e contextos, sempre conectando gestão de pessoas ao que o negócio precisa realizar.</p><p>Na CALI, participo diretamente da leitura, da direção e da condução do trabalho. O objetivo é ajudar a liderança a tomar decisões melhores e dar consistência ao que precisa avançar.</p></div></div></section>
-    <section className="section dark-band"><div className="container split"><div><span className="eyebrow gold">DE ONDE VEM O NOME</span><h2>A CALI carrega minha história.</h2></div><div className="body-copy"><p>O nome nasce da minha origem e da homenagem à minha família. Ele reúne a força das minhas raízes em Belém do Pará com a forma como escolhi atuar: dedicação, equilíbrio e perseverança.</p><p>Essa base aparece no trabalho com cada empresa: escutar de perto, dizer o que precisa ser dito e sustentar a direção combinada.</p></div></div></section>
+    <section className="section dark-band origin-band"><div className="container split"><div><span className="eyebrow gold">DE ONDE VEM O NOME</span><h2>A CALI carrega minha história.</h2></div><div className="body-copy"><p>O nome nasce da minha origem e da homenagem à minha família. Ele reúne a força das minhas raízes em Belém do Pará com a forma como escolhi atuar: dedicação, equilíbrio e perseverança.</p><p>Essa base aparece no trabalho com cada empresa: escutar de perto, dizer o que precisa ser dito e sustentar a direção combinada.</p></div></div></section>
     <section className="section about-experience"><div className="container"><SectionHead tag="MINHA ATUAÇÃO" title="O que levo para dentro do projeto."/><div className="experience-grid"><article><span>01</span><h3>Estrutura de RH</h3><p>Desenho de áreas, papéis, processos e formas de acompanhar o trabalho.</p></article><article><span>02</span><h3>Liderança</h3><p>Desenvolvimento de gestores e apoio em decisões concretas sobre pessoas.</p></article><article><span>03</span><h3>Leitura do negócio</h3><p>Mais de 15 anos em contextos diferentes, conectando o que acontece com as equipes ao que a empresa precisa decidir.</p></article></div><Link to="/assessoria" className="text-link">Veja como podemos trabalhar <ArrowRight size={17}/></Link></div></section></>;
 }
 function NotFound() { return <section className="section not-found container"><span className="eyebrow">PÁGINA NÃO ENCONTRADA</span><h1>Vamos voltar ao caminho?</h1><Link to="/" className="button button-primary">Voltar ao início <ArrowRight size={18}/></Link></section>; }
