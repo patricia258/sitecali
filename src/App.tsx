@@ -52,7 +52,7 @@ function Shell({ children }: { children: React.ReactNode }) {
   const { pathname } = useLocation();
   useEffect(() => { if (window.location.hash) { requestAnimationFrame(() => document.getElementById(window.location.hash.slice(1))?.scrollIntoView()); } else { window.scrollTo(0, 0); } }, [pathname]);
   useEffect(() => {
-    const targets = document.querySelectorAll('.page-hero-grid > *, .section-head, .section .split > div, .section .split > button, .image-card, .steps article, .plan, .project-card, .experience-grid article, .map-preview, .faq details, .recurring-aside');
+    const targets = document.querySelectorAll('.page-hero-grid > *, .section-head, .section .split > div, .section .split > button, .image-card, .steps article, .plan, .project-card, .experience-grid article, .map-preview, .faq details, .recurring-aside, .feedback-heading, .feedback-card');
     if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-revealed'); observer.unobserve(entry.target); } }), { threshold: .08, rootMargin: '0px 0px -35px 0px' });
     targets.forEach((target, index) => { target.classList.add('scroll-reveal'); if (target instanceof HTMLElement) target.style.setProperty('--reveal-delay', `${Math.min(index % 3, 2) * 90}ms`); observer.observe(target); });
@@ -102,6 +102,49 @@ function SectionHead({ tag, title, copy }: { tag: string; title: string; copy?: 
 function CardLink({ to, number, title, copy, image }: { to: string; number: string; title: string; copy: string; image: string }) {
   return <Link to={to} className="image-card"><img src={image} alt="" loading="lazy"/><div className="image-card-content"><span>{number}</span><h3>{title}</h3><p>{copy}</p><span className="round-arrow" aria-hidden="true"><ArrowUpRight size={22}/></span></div></Link>;
 }
+
+const feedbacks = [
+  { quote: 'Graças à Patrícia agora tenho um currículo alinhado com as tendências do mercado. Obrigado pelo ótimo serviço prestado!', name: 'Ana Luisa Santos', company: 'TS Assessoria' },
+  { quote: 'A Patrícia me ajudou na reestruturação do currículo, muito atenciosa e prática, recomendo muito os seus serviços.', name: 'Cassia Prado', company: 'Prado Finanças' },
+  { quote: 'Com uma liderança estratégica e assertiva, a Patrícia direciona suas equipes com maestria, parceria, com base em dados e visando resultados.', name: 'Claudia Cardoso', company: 'Mota Grupo' },
+  { quote: 'Tive a oportunidade de conhecer o trabalho da Patrícia na reestruturação curricular. Que trabalho bacana. Recomendo demais.', name: 'Aliando Pedroso', company: 'Riachuelo' },
+  { quote: 'Aprendi com a Patricia a dar o meu melhor, mesmo quando o meu melhor não for muito. Ela é boa ouvinte, paciente e cobra desempenho com humanidade.', name: 'Bruno Araujo', company: 'Kaz Distribuidora' },
+  { quote: 'A Patrícia é uma excelente profissional, com boa capacidade analítica, foco em KPIs, operação e desenvolvimento de pessoas.', name: 'Leandra Alves', company: 'Ellos Contabilidades' },
+];
+
+function FeedbackSection() {
+  const track = useRef<HTMLDivElement>(null);
+  const move = (direction: -1 | 1) => {
+    const element = track.current;
+    if (!element) return;
+    const card = element.querySelector<HTMLElement>('.feedback-card');
+    const distance = (card?.offsetWidth ?? 360) + 18;
+    element.scrollBy({ left: direction * distance, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  };
+
+  return <section className="section feedback-section" id="feedbacks">
+    <div className="container">
+      <div className="feedback-heading">
+        <div>
+          <span className="eyebrow">FEEDBACKS</span>
+          <h2>O que fica depois do trabalho.</h2>
+          <p>Algumas percepções de pessoas que já trabalharam comigo em diferentes momentos da minha trajetória.</p>
+        </div>
+        <div className="feedback-controls" aria-label="Navegação dos feedbacks">
+          <button type="button" onClick={() => move(-1)} aria-label="Feedback anterior"><ChevronLeft size={19}/></button>
+          <button type="button" onClick={() => move(1)} aria-label="Próximo feedback"><ChevronRight size={19}/></button>
+        </div>
+      </div>
+      <div className="feedback-track" ref={track}>
+        {feedbacks.map(item => <blockquote className="feedback-card" key={item.name}>
+          <span className="feedback-mark" aria-hidden="true">“</span>
+          <p>{item.quote}</p>
+          <footer><strong>{item.name}</strong><span>{item.company}</span></footer>
+        </blockquote>)}
+      </div>
+    </div>
+  </section>;
+}
 function Home() {
   return <>
     <section className="hero"><div className="hero-glow glow-one"/><div className="hero-glow glow-two"/><div className="container hero-content"><span className="pill"><span/>HRB · RH PARA O NEGÓCIO</span><h1>RH sênior para a sua empresa, <em>na medida do que ela precisa.</em></h1><p>Assessoria mensal, implantação com o seu RH ou projetos para resolver desafios específicos de pessoas e liderança.</p><div className="hero-actions"><Link className="button button-primary" to="/assessoria">Conheça a assessoria <ArrowRight size={18}/></Link><Link className="text-link light" to="/projetos">Explore os projetos <ArrowUpRight size={17}/></Link></div></div></section>
@@ -109,6 +152,7 @@ function Home() {
     <section className="section pathways" id="servicos"><div className="container"><SectionHead tag="COMO PODEMOS ATUAR" title="Escolha como a CALI entra na sua empresa." copy="A necessidade pode pedir direção contínua, implantação com o RH interno ou um projeto com objetivo definido."/><div className="pathway-grid three"><CardLink to="/assessoria" number="01 · ATUAÇÃO RECORRENTE" title="Assessoria Estratégica Mensal" copy="Direção sênior de RH ao lado da liderança para acompanhar decisões e prioridades." image={images.leadership}/><CardLink to="/assessoria#build" number="02 · IMPLANTAÇÃO ASSISTIDA" title="CALI Build" copy="Desenhamos o caminho com a empresa, orientamos e desenvolvemos o RH interno durante a implantação." image={images.culture}/><CardLink to="/projetos" number="03 · SOLUÇÕES POR PROJETO" title="Projetos especializados" copy="Um problema específico tratado com objetivo, escopo e entregas definidos." image={images.hero}/></div></div></section>
     <section className="section dark-band"><div className="container"><SectionHead tag="NA PRÁTICA" title="Do primeiro diagnóstico ao trabalho combinado."/><div className="steps"><article><b>01</b><h3>Ouvir e examinar</h3><p>Você traz a situação. Eu olho os fatos, as pessoas envolvidas e as decisões que já foram tomadas.</p></article><article><b>02</b><h3>Definir o escopo</h3><p>Combinamos o que será feito, quem participa, as entregas e o ritmo de acompanhamento.</p></article><article><b>03</b><h3>Trabalhar junto</h3><p>Conduzo a parte da CALI e mostro à liderança o que avançou e o que ainda depende dela.</p></article></div></div></section>
     <section className="section founder-preview"><div className="container split"><div className="founder-image"><img src={images.founder} alt="Patrícia Lima, fundadora da CALI RH" loading="lazy"/></div><div><span className="eyebrow">QUEM CONDUZ</span><h2>Você fala <em>direto comigo,</em> Patrícia.</h2><p>Há mais de 15 anos construo áreas de RH, desenvolvo líderes e apoio empresas em decisões de pessoas. Na CALI, participo da leitura do problema e da condução do trabalho.</p><Link to="/sobre" className="text-link">Conheça minha trajetória <ArrowRight size={17}/></Link></div></div></section>
+    <FeedbackSection/>
     <section className="section map-cta"><div className="container map-inner"><div><span className="eyebrow">MAPA DE PEOPLE · GRATUITO</span><h2>Descubra onde o seu RH <em>precisa de atenção.</em></h2><p>Responda às perguntas sobre a gestão de pessoas da sua empresa e receba um relatório com os riscos identificados e as prioridades recomendadas.</p><a className="button button-primary" href="https://mapa.calirh.com" target="_blank" rel="noopener noreferrer">Fazer o Mapa de People <ArrowUpRight size={18}/></a></div><div className="map-preview" aria-label="O que você recebe"><span>NO SEU RELATÓRIO</span><ol><li>Leitura do cenário atual</li><li>Principais riscos de pessoas</li><li>Prioridades para começar</li></ol><img src="/assets/cali-lime-mark.svg" alt=""/></div></div></section>
   </>;
 }
