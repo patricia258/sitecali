@@ -113,30 +113,24 @@ const feedbacks = [
 ];
 
 function FeedbackSection() {
-  const track = useRef<HTMLDivElement>(null);
-  const move = (direction: -1 | 1) => {
-    const element = track.current;
-    if (!element) return;
-    const card = element.querySelector<HTMLElement>('.feedback-card');
-    const distance = (card?.offsetWidth ?? 360) + 18;
-    element.scrollBy({ left: direction * distance, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-  };
+  const loop = [...feedbacks, ...feedbacks];
 
   return <section className="section feedback-section" id="feedbacks">
-    <div className="container">
-      <div className="feedback-heading">
-        <div>
-          <span className="eyebrow">FEEDBACKS</span>
-          <h2>O que fica depois do trabalho.</h2>
-          <p>Algumas percepções de pessoas que já trabalharam comigo em diferentes momentos da minha trajetória.</p>
+    <div className="container feedback-heading">
+      <div>
+        <span className="eyebrow">FEEDBACKS</span>
+        <h2>O que meus <em>clientes</em> dizem.</h2>
+        <div className="feedback-intro">
+          <p className="feedback-quote">“Meu propósito é sempre entregar <strong>acima do esperado</strong>. Quando isso é alcançado, fica a sensação de <strong>dever cumprido</strong>.”</p>
+          <span>— Patrícia Lima</span>
         </div>
-        <div className="feedback-controls" aria-label="Navegação dos feedbacks">
-          <button type="button" onClick={() => move(-1)} aria-label="Feedback anterior"><ChevronLeft size={19}/></button>
-          <button type="button" onClick={() => move(1)} aria-label="Próximo feedback"><ChevronRight size={19}/></button>
-        </div>
+        <p className="feedback-context">Algumas pessoas que já trabalharam comigo em diferentes momentos da minha trajetória.</p>
       </div>
-      <div className="feedback-track" ref={track}>
-        {feedbacks.map(item => <blockquote className="feedback-card" key={item.name}>
+    </div>
+
+    <div className="feedback-marquee" aria-label="Feedbacks de clientes">
+      <div className="feedback-marquee-track">
+        {loop.map((item, index) => <blockquote className="feedback-card" key={`${item.name}-${index}`} aria-hidden={index >= feedbacks.length}>
           <span className="feedback-mark" aria-hidden="true">“</span>
           <p>{item.quote}</p>
           <footer><strong>{item.name}</strong><span>{item.company}</span></footer>
@@ -145,6 +139,7 @@ function FeedbackSection() {
     </div>
   </section>;
 }
+
 function Home() {
   return <>
     <section className="hero"><div className="hero-glow glow-one"/><div className="hero-glow glow-two"/><div className="container hero-content"><span className="pill"><span/>HRB · RH PARA O NEGÓCIO</span><h1>RH sênior para a sua empresa, <em>na medida do que ela precisa.</em></h1><p>Assessoria mensal, implantação com o seu RH ou projetos para resolver desafios específicos de pessoas e liderança.</p><div className="hero-actions"><Link className="button button-primary" to="/assessoria">Conheça a assessoria <ArrowRight size={18}/></Link><Link className="text-link light" to="/projetos">Explore os projetos <ArrowUpRight size={17}/></Link></div></div></section>
