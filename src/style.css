@@ -61,3 +61,141 @@ main{background:#f7f3ee}
   .map-invite-copy .button{width:100%;justify-content:center}
   .map-invite-later{margin-top:15px}
 }
+
+
+/* CALI feedbacks · restored 2026-10 */
+.feedback-section{
+  background:#f7f3ee;
+  border-top:1px solid #5a1e2d12;
+  overflow:hidden;
+}
+.feedback-heading{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:36px;
+  margin-bottom:34px;
+}
+.feedback-heading>div:first-child{max-width:760px}
+.feedback-heading h2{
+  font:500 clamp(34px,4vw,54px)/1.12 'Playfair Display',Georgia,serif;
+  color:#5a1e2d;
+  margin:0;
+  letter-spacing:-.035em;
+}
+.feedback-heading p{
+  margin:17px 0 0;
+  max-width:660px;
+  color:#6a605c;
+  font-size:15px;
+  line-height:1.7;
+}
+.feedback-controls{
+  display:flex;
+  gap:9px;
+  flex:none;
+}
+.feedback-controls button{
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  border:1px solid #5a1e2d2b;
+  background:transparent;
+  color:#5a1e2d;
+  transition:background .22s ease,border-color .22s ease,transform .22s ease;
+}
+.feedback-controls button:hover{
+  background:#5a1e2d;
+  border-color:#5a1e2d;
+  color:#fff;
+  transform:translateY(-2px);
+}
+.feedback-track{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+  overscroll-behavior-inline:contain;
+  padding:2px 1px 8px;
+}
+.feedback-track::-webkit-scrollbar{display:none}
+.feedback-card{
+  position:relative;
+  flex:0 0 min(390px,78vw);
+  min-height:258px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  scroll-snap-align:start;
+  margin:0;
+  padding:32px 30px 27px;
+  border:1px solid #5a1e2d14;
+  border-radius:18px;
+  background:#fffdf9;
+  box-shadow:0 14px 38px #35121f08;
+}
+.feedback-card::after{
+  content:"";
+  position:absolute;
+  right:-48px;
+  bottom:-58px;
+  width:150px;
+  height:150px;
+  background:url('/assets/cali-lime-mark.svg') center/contain no-repeat;
+  opacity:.035;
+  pointer-events:none;
+}
+.feedback-mark{
+  display:block;
+  height:28px;
+  color:#b58c52;
+  font:500 42px/1 'Playfair Display',Georgia,serif;
+}
+.feedback-card p{
+  margin:17px 0 28px;
+  color:#3f3936;
+  font:400 16px/1.72 'Playfair Display',Georgia,serif;
+}
+.feedback-card footer{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding-top:17px;
+  border-top:1px solid #5a1e2d13;
+}
+.feedback-card footer strong{
+  color:#5a1e2d;
+  font-size:13px;
+  font-weight:700;
+}
+.feedback-card footer span{
+  color:#8a7e77;
+  font-size:11px;
+  letter-spacing:.045em;
+}
+@media(max-width:800px){
+  .feedback-heading{align-items:flex-start}
+  .feedback-card{flex-basis:min(360px,82vw)}
+}
+@media(max-width:560px){
+  .feedback-heading{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:18px;
+    margin-bottom:27px;
+  }
+  .feedback-heading>div:first-child{grid-column:1/-1}
+  .feedback-heading h2{font-size:37px}
+  .feedback-heading p{font-size:14px}
+  .feedback-controls{grid-column:2;justify-self:end}
+  .feedback-controls button{width:40px;height:40px}
+  .feedback-card{
+    flex-basis:86vw;
+    min-height:245px;
+    padding:27px 24px 24px;
+  }
+  .feedback-card p{font-size:15px}
+}
