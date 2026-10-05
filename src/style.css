@@ -530,3 +530,119 @@ main{background:#f7f3ee}
   }
   .client-logo-viewport::-webkit-scrollbar{display:none}
 }
+
+
+/* Patricia imagery refinement · 2026-10 */
+.founder-preview{
+  padding-block:clamp(52px,6vw,82px);
+}
+.founder-preview-grid{
+  grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);
+  gap:clamp(46px,7vw,96px);
+}
+.founder-image-editorial{
+  position:relative;
+  width:min(100%,430px);
+  max-height:none;
+  aspect-ratio:4/5;
+  border-radius:18px 112px 18px 18px;
+  overflow:hidden;
+  border:1px solid #b58c526e;
+  box-shadow:18px 18px 0 #b58c5218;
+  background:#e9dfd2;
+}
+.founder-image-editorial::after{
+  content:"";
+  position:absolute;
+  inset:12px;
+  border:1px solid #ffffff55;
+  border-radius:11px 92px 11px 11px;
+  pointer-events:none;
+}
+.founder-image-editorial img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 22%;
+  filter:none;
+}
+.founder-preview h2{
+  font-size:clamp(34px,3.6vw,52px);
+  margin-bottom:20px;
+}
+.founder-preview p{
+  max-width:610px;
+  font-size:16px;
+}
+.founder-preview .eyebrow{
+  margin-bottom:16px;
+}
+.founder-preview .text-link{
+  margin-top:10px;
+}
+
+.founder-portrait{
+  position:relative;
+  width:100%;
+  height:490px;
+  overflow:hidden;
+  border-radius:260px 260px 18px 18px;
+  background:#2b2b2b;
+}
+.page-hero .founder-portrait img,
+.about-hero .founder-portrait img{
+  width:100%;
+  height:100%;
+  max-height:none;
+  object-fit:cover;
+  object-position:center 25%;
+  border-radius:0;
+  filter:none;
+}
+
+@media(max-width:800px){
+  .founder-preview{
+    padding-block:56px;
+  }
+  .founder-preview-grid{
+    grid-template-columns:1fr;
+    gap:34px;
+  }
+  .founder-image-editorial{
+    width:min(78vw,430px);
+    justify-self:start;
+  }
+  .founder-portrait{
+    height:360px;
+    width:min(100%,560px);
+    justify-self:center;
+  }
+}
+@media(max-width:560px){
+  .founder-preview{
+    padding-block:48px;
+  }
+  .founder-preview-grid{
+    gap:28px;
+  }
+  .founder-image-editorial{
+    width:min(88vw,360px);
+    aspect-ratio:4/4.7;
+    border-radius:14px 76px 14px 14px;
+    box-shadow:12px 12px 0 #b58c5218;
+  }
+  .founder-image-editorial::after{
+    inset:9px;
+    border-radius:9px 62px 9px 9px;
+  }
+  .founder-preview h2{
+    font-size:35px;
+  }
+  .founder-preview p{
+    font-size:15px;
+  }
+  .founder-portrait{
+    height:310px;
+    border-radius:170px 170px 14px 14px;
+  }
+}
