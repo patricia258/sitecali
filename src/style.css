@@ -412,66 +412,121 @@ main{background:#f7f3ee}
 
 
 /* CALI client logos · homepage rail 2026-10 */
-.hero-content{padding-bottom:245px}
+.hero-content{
+  padding-top:145px;
+  padding-bottom:275px;
+}
 .client-logo-rail{
   position:absolute;
   z-index:4;
   left:0;
   right:0;
-  bottom:0;
-  height:118px;
+  bottom:18px;
+  height:104px;
   display:flex;
   align-items:center;
   overflow:hidden;
-  border-top:1px solid #ffffff16;
-  background:linear-gradient(180deg,#35121f08 0%,#35121f48 100%);
+  pointer-events:auto;
 }
 .client-logo-viewport{
   width:100%;
   overflow:hidden;
-  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%);
-  mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 4.5%,#000 95.5%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 4.5%,#000 95.5%,transparent 100%);
 }
 .client-logo-track{
   display:flex;
   width:max-content;
   align-items:center;
-  animation:caliClientLogoRail 32s linear infinite;
+  gap:26px;
+  padding-inline:13px;
+  animation:caliClientLogoRail 30s linear infinite;
   will-change:transform;
 }
-.client-logo-strip{
-  width:1440px;
-  height:84px;
-  max-width:none;
-  flex:none;
+.client-logo-item{
+  flex:0 0 205px;
+  width:205px;
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.client-logo-item img{
+  display:block;
+  width:100%;
+  height:100%;
   object-fit:contain;
-  opacity:.88;
+  object-position:center;
+  opacity:.82;
+  filter:none;
 }
 .client-logo-rail:hover .client-logo-track{animation-play-state:paused}
 @keyframes caliClientLogoRail{
   from{transform:translate3d(0,0,0)}
-  to{transform:translate3d(-50%,0,0)}
+  to{transform:translate3d(calc(-50% - 13px),0,0)}
 }
 @media(max-width:800px){
-  .hero-content{padding-bottom:190px}
-  .client-logo-rail{height:96px}
-  .client-logo-strip{width:1140px;height:68px}
-  .client-logo-track{animation-duration:27s}
+  .hero{min-height:760px}
+  .hero-content{
+    padding-top:145px;
+    padding-bottom:210px;
+  }
+  .client-logo-rail{
+    bottom:12px;
+    height:90px;
+  }
+  .client-logo-track{
+    gap:18px;
+    padding-inline:9px;
+    animation-duration:26s;
+  }
+  .client-logo-item{
+    flex-basis:168px;
+    width:168px;
+    height:64px;
+  }
   .client-logo-viewport{
     -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 3%,#000 97%,transparent 100%);
     mask-image:linear-gradient(90deg,transparent 0,#000 3%,#000 97%,transparent 100%);
   }
+  @keyframes caliClientLogoRail{
+    from{transform:translate3d(0,0,0)}
+    to{transform:translate3d(calc(-50% - 9px),0,0)}
+  }
 }
 @media(max-width:560px){
   .hero{min-height:760px}
-  .hero-content{padding-top:160px;padding-bottom:175px}
-  .hero-actions{margin-top:28px}
-  .client-logo-rail{height:88px}
-  .client-logo-strip{width:1020px;height:62px}
-  .client-logo-track{animation-duration:24s}
+  .hero-content{
+    padding-top:145px;
+    padding-bottom:175px;
+  }
+  .hero-actions{margin-top:26px}
+  .client-logo-rail{
+    bottom:8px;
+    height:78px;
+  }
+  .client-logo-track{
+    gap:12px;
+    padding-inline:6px;
+    animation-duration:23s;
+  }
+  .client-logo-item{
+    flex-basis:142px;
+    width:142px;
+    height:54px;
+  }
+  @keyframes caliClientLogoRail{
+    from{transform:translate3d(0,0,0)}
+    to{transform:translate3d(calc(-50% - 6px),0,0)}
+  }
 }
 @media(prefers-reduced-motion:reduce){
   .client-logo-track{animation:none}
-  .client-logo-viewport{overflow-x:auto;scrollbar-width:none;-webkit-mask-image:none;mask-image:none}
+  .client-logo-viewport{
+    overflow-x:auto;
+    scrollbar-width:none;
+    -webkit-mask-image:none;
+    mask-image:none;
+  }
   .client-logo-viewport::-webkit-scrollbar{display:none}
 }
