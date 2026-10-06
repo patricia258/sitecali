@@ -14,3 +14,10 @@
 - Recriei os cinco desenhos da referência enviada como um único recurso transparente e troquei os ícones da seção por esses símbolos, na mesma ordem.
 - Os cinco valores agora aparecem lado a lado, sem molduras. Em telas estreitas, permanecem em uma fileira com deslizamento horizontal; a barra de rolagem fica oculta.
 - Conteúdo, posição da seção e animação sequencial foram mantidos.
+
+## 2026-10-05 · Codex · Minha atuação, aguardando avaliação da Pati
+
+- A seção “Minha atuação” da página `/sobre` foi refeita após aprovação da fileira de valores.
+- Os três cards genéricos foram substituídos por três linhas editoriais, com título e conteúdo específico sobre estrutura de RH, liderança e visão de negócio.
+- O CTA agora descreve o destino real: assessoria mensal. A composição se reorganiza em uma coluna no mobile.
+- A fileira de valores, seu texto e seus símbolos não foram alterados nesta rodada.

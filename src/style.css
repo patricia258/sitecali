@@ -740,3 +740,91 @@ main{background:#f7f3ee}
   .values-grid{grid-auto-columns:minmax(240px,78%);gap:20px}
   .values-card p{font-size:14px}
 }
+
+/* Sobre · atuação em composição editorial */
+.about-experience{
+  background:
+    radial-gradient(ellipse at 0 100%,rgba(181,140,82,.095),transparent 42%),
+    #f2ede6;
+}
+.about-experience-layout{
+  display:grid;
+  grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
+  grid-template-rows:auto 1fr;
+  column-gap:clamp(50px,7vw,112px);
+  align-items:start;
+}
+.about-experience-intro{grid-column:1;grid-row:1}
+.about-experience-intro h2{
+  max-width:11ch;
+  margin:0 0 24px;
+  color:#5a1e2d;
+  font-size:clamp(42px,4.7vw,64px);
+  line-height:1.12;
+}
+.about-experience-intro h2 span{color:#9c7149}
+.about-experience-intro p{
+  max-width:38ch;
+  margin:0;
+  color:#544946;
+  font-size:clamp(16px,1.4vw,18px);
+  line-height:1.68;
+}
+.about-experience-link{
+  grid-column:1;
+  grid-row:2;
+  justify-self:start;
+  align-self:start;
+  margin-top:35px;
+}
+.experience-list{
+  grid-column:2;
+  grid-row:1 / span 2;
+  border-top:1px solid rgba(90,30,45,.25);
+}
+.experience-list article{
+  display:grid;
+  grid-template-columns:45px minmax(0,1fr);
+  gap:24px;
+  padding:30px 0 32px;
+  border-bottom:1px solid rgba(90,30,45,.25);
+}
+.experience-number{
+  padding-top:8px;
+  color:#a17a50;
+  font:600 13px/1.3 'DM Sans',sans-serif;
+  letter-spacing:.12em;
+}
+.experience-list h3{
+  margin:0 0 10px;
+  color:#5a1e2d;
+  font:500 clamp(27px,2.7vw,35px)/1.18 'Playfair Display',Georgia,serif;
+  letter-spacing:-.03em;
+}
+.experience-list p{
+  margin:0;
+  max-width:56ch;
+  color:#544946;
+  font-size:15px;
+  line-height:1.7;
+}
+@media(max-width:850px){
+  .about-experience-layout{
+    grid-template-columns:1fr;
+    grid-template-rows:none;
+    gap:0;
+  }
+  .about-experience-intro,
+  .experience-list,
+  .about-experience-link{grid-column:1;grid-row:auto}
+  .about-experience-intro{margin-bottom:38px}
+  .about-experience-intro h2{max-width:15ch}
+  .about-experience-intro p{max-width:58ch}
+  .about-experience-link{margin-top:30px}
+}
+@media(max-width:560px){
+  .about-experience-intro h2{font-size:clamp(38px,10vw,49px)}
+  .experience-list article{grid-template-columns:32px minmax(0,1fr);gap:14px;padding:25px 0}
+  .experience-list h3{font-size:27px}
+  .experience-list p{font-size:14px}
+}
