@@ -646,3 +646,119 @@ main{background:#f7f3ee}
     border-radius:170px 170px 14px 14px;
   }
 }
+
+/* A CALI · valores pessoais e prática */
+.values-band{
+  color:#f7f3ee;
+  background-color:#481827;
+  background-image:
+    radial-gradient(ellipse at 90% 4%,rgba(139,74,83,.26),transparent 42%),
+    linear-gradient(rgba(244,219,187,.075) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(244,219,187,.075) 1px,transparent 1px);
+  background-size:auto,76px 76px,76px 76px;
+  overflow:hidden;
+}
+.values-inner{position:relative}
+.values-heading{
+  max-width:870px;
+  margin:0 auto clamp(42px,5vw,68px);
+  text-align:center;
+}
+.values-heading .eyebrow{display:block;margin-bottom:20px}
+.values-heading h2{
+  color:#f7f3ee;
+  max-width:none;
+  margin:0 0 22px;
+  font-size:clamp(40px,5vw,70px);
+  line-height:1.1;
+}
+.values-heading h2 span{color:#e5bc82}
+.values-heading p{
+  color:#ecded8;
+  max-width:710px;
+  margin:0 auto;
+  font-size:clamp(16px,1.4vw,19px);
+  line-height:1.68;
+}
+.values-grid{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:16px;
+}
+.values-card{
+  grid-column:span 2;
+  min-width:0;
+  padding:clamp(25px,3vw,36px);
+  border:1px solid rgba(229,188,130,.24);
+  border-radius:18px;
+  background:linear-gradient(145deg,rgba(101,42,59,.76),rgba(63,21,35,.83));
+  box-shadow:0 16px 40px rgba(32,9,19,.13);
+}
+.values-card:nth-child(n+4){grid-column:span 3}
+.values-icon{
+  display:inline-flex;
+  width:76px;
+  height:76px;
+  align-items:center;
+  justify-content:center;
+  color:#e8bc78;
+  margin-bottom:21px;
+  position:relative;
+}
+.values-icon svg{
+  width:66px;
+  height:66px;
+  stroke-width:1.35;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.values-icon-purpose svg:first-child{width:63px;height:63px;align-self:flex-end}
+.values-icon-purpose svg:last-child{
+  position:absolute;
+  width:34px;
+  height:34px;
+  right:-4px;
+  top:-4px;
+}
+.values-icon-heart::before,
+.values-icon-heart::after{
+  content:"";
+  position:absolute;
+  width:18px;
+  border-top:2px solid currentColor;
+  top:17px;
+}
+.values-icon-heart::before{left:-4px;transform:rotate(48deg)}
+.values-icon-heart::after{right:-4px;transform:rotate(-48deg)}
+.values-card h3{
+  color:#f8f2eb;
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:clamp(25px,2.1vw,33px);
+  line-height:1.18;
+  font-weight:500;
+  margin:0 0 14px;
+}
+.values-card p{
+  color:#eadbd8;
+  font-size:15px;
+  line-height:1.7;
+  margin:0;
+  max-width:55ch;
+}
+@media(max-width:900px){
+  .values-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .values-card,.values-card:nth-child(n+4){grid-column:span 1}
+  .values-card:last-child{grid-column:1/-1}
+}
+@media(max-width:620px){
+  .values-band{background-size:auto,52px 52px,52px 52px}
+  .values-heading{text-align:left;margin-bottom:32px}
+  .values-heading p{font-size:16px}
+  .values-grid{grid-template-columns:1fr;gap:12px}
+  .values-card,.values-card:nth-child(n+4),.values-card:last-child{grid-column:1}
+  .values-card{padding:25px}
+  .values-icon{width:62px;height:62px;margin-bottom:15px}
+  .values-icon svg{width:54px;height:54px}
+  .values-icon-purpose svg:first-child{width:52px;height:52px}
+  .values-icon-purpose svg:last-child{width:28px;height:28px}
+}
