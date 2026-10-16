@@ -1,5 +1,15 @@
 # Registro de alterações · site CALI
 
+## 2026-10-15 · Claude · valores em roda, pedido da Pati
+
+- Página `/sobre`, seção dos cinco valores: a fileira virou um carrossel em roda. O card do centro fica maior e em
+  destaque; os vizinhos aparecem menores dos lados. Setas, bolinhas, teclado (← →) e deslizar no celular trazem o
+  próximo valor para o centro.
+- Ao passar o mouse (ou tocar, no celular) no card do centro, ele vira e mostra o texto completo em fundo claro, com as
+  frases-chave em negrito. O texto é o mesmo de antes; nada foi cortado.
+- Fundo bordô, ícones e títulos mantidos. Escopo: `src/App.tsx` (componente `ValuesCarousel`) e `src/style.css`
+  (bloco "Valores em roda"). Verificação: `npm run build` e capturas em 1440 e 390 px.
+
 ## 2026-10-06 · Codex · aguardando avaliação da Pati
 
 - Página `/sobre`: inseri a seção dos cinco valores entre “Quem está do outro lado” e “De onde vem o nome”.

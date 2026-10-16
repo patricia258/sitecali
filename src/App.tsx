@@ -218,16 +218,68 @@ function FounderPortrait() {
     <img src="/images/patricia-cali-original.jpg" alt="Patrícia Lima em retrato preto e branco" loading="eager"/>
   </div>;
 }
+// Valores em roda (pedido da Pati, 15/10/2026): o card do centro fica em destaque; ao passar o mouse ou tocar,
+// ele vira e mostra o texto completo em fundo claro, com as frases-chave em negrito. Setas, bolinhas, teclado e
+// deslizar trazem o próximo valor para o centro. O texto é o mesmo de antes.
+const VALUES = [
+  { name: 'Integridade', body: <>Lido com dados sensíveis e decisões que podem mudar vidas. Por isso, <strong>digo a verdade com responsabilidade</strong>, <strong>protejo a confiança de quem me procura</strong> e respeito a cultura da empresa e a individualidade de cada pessoa.</> },
+  { name: 'Propósito', body: <><strong>Deus me deu um dom para servir.</strong> Quero que o meu trabalho chegue aos céus e agrade a Ele. Isso me chama a usar o que sei para <strong>transformar, de forma concreta, a vida das pessoas e o caminho das empresas.</strong></> },
+  { name: 'Amor pelo que faço', body: <><strong>Eu amo o que faço</strong> e cuido de cada interação e entrega. Meu mínimo precisa carregar o meu máximo: <strong>preparo, atenção e compromisso.</strong> É assim que o amor pelo trabalho se torna <strong>qualidade perceptível para quem está comigo.</strong></> },
+  { name: 'Colaboração', body: <><strong>Nada importante é feito por uma pessoa só.</strong> Trabalho com a liderança e com as equipes, com papéis claros e <strong>responsabilidade compartilhada.</strong> Celebramos os bons resultados juntos e também assumimos o que precisa ser corrigido.</> },
+  { name: 'Excelência técnica', body: <><strong>Estudo, método e profundidade</strong> sustentam minhas recomendações. Acompanho o que muda em gestão de pessoas e capital humano para entender a expectativa de cada cliente e <strong>entregar respostas à altura do seu contexto.</strong></> },
+];
+
+function ValuesCarousel() {
+  const [active, setActive] = useState(0);
+  const [flipped, setFlipped] = useState(false);
+  const touchX = useRef<number | null>(null);
+  const total = VALUES.length;
+  const go = (next: number) => { setActive(((next % total) + total) % total); setFlipped(false); };
+  const offsetOf = (index: number) => { let offset = index - active; if (offset > total / 2) offset -= total; if (offset < -total / 2) offset += total; return offset; };
+  return (
+    <div className="values-wheel" role="region" aria-roledescription="carrossel" aria-label="Os cinco valores da CALI"
+      onKeyDown={event => { if (event.key === 'ArrowRight') go(active + 1); if (event.key === 'ArrowLeft') go(active - 1); }}
+      onTouchStart={event => { touchX.current = event.touches[0].clientX; }}
+      onTouchEnd={event => { if (touchX.current === null) return; const delta = event.changedTouches[0].clientX - touchX.current; touchX.current = null; if (Math.abs(delta) > 40) go(active + (delta < 0 ? 1 : -1)); }}>
+      <div className="values-wheel-stage">
+        {VALUES.map((value, index) => {
+          const offset = offsetOf(index);
+          const center = offset === 0;
+          return (
+            <article key={value.name} className={`values-wheel-card${center ? ' is-center' : ''}${center && flipped ? ' is-flipped' : ''}`} data-offset={offset}
+              style={{ ['--offset' as string]: offset, ['--abs' as string]: Math.abs(offset) }}
+              aria-hidden={Math.abs(offset) > 1}
+              onClick={() => { if (!center) { go(index); return; } if (window.matchMedia('(hover: hover)').matches) setFlipped(true); else setFlipped(current => !current); }}
+              onMouseEnter={() => { if (center && window.matchMedia('(hover: hover)').matches) setFlipped(true); }}
+              onMouseLeave={() => { if (center && window.matchMedia('(hover: hover)').matches) setFlipped(false); }}>
+              <div className="values-wheel-inner">
+                <div className="values-wheel-face values-wheel-front">
+                  <span className={`values-icon values-icon-${index + 1}`} aria-hidden="true" />
+                  <h3>{value.name}</h3>
+                  {center && <small>Passe o mouse ou toque para ler</small>}
+                </div>
+                <div className="values-wheel-face values-wheel-back">
+                  <h3>{value.name}</h3>
+                  <p>{value.body}</p>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+      <div className="values-wheel-controls">
+        <button type="button" onClick={() => go(active - 1)} aria-label="Valor anterior"><ArrowRight size={18} style={{ transform: 'rotate(180deg)' }} /></button>
+        <div className="values-wheel-dots">{VALUES.map((value, index) => <button key={value.name} type="button" className={index === active ? 'is-active' : ''} aria-label={value.name} aria-current={index === active} onClick={() => go(index)} />)}</div>
+        <button type="button" onClick={() => go(active + 1)} aria-label="Próximo valor"><ArrowRight size={18} /></button>
+      </div>
+    </div>
+  );
+}
+
 function About() {
   return <><section className="page-hero about-hero"><div className="container page-hero-grid"><div><span className="pill">A CALI RH</span><h1>Sou Patrícia Lima. A CALI <em>é o meu jeito de fazer RH</em> para o negócio.</h1><p>Trabalho com empresas que precisam organizar o RH, desenvolver lideranças e tomar decisões de pessoas com critério.</p><ContactButton>Fale comigo</ContactButton></div><FounderPortrait/></div></section>
     <section className="section"><div className="container split"><div><span className="eyebrow">QUEM ESTÁ DO OUTRO LADO</span><h2>Minha trajetória começou <em>dentro das empresas.</em></h2></div><div className="body-copy"><p>Minha trajetória reúne mais de 15 anos de atuação em RH, da construção de áreas do zero à direção de equipes e decisões estratégicas. Trabalhei com empresas de diferentes portes e contextos, sempre conectando gestão de pessoas ao que o negócio precisa realizar.</p><p>Na CALI, participo diretamente da leitura, da direção e da condução do trabalho. O objetivo é ajudar a liderança a tomar decisões melhores e dar consistência ao que precisa avançar.</p></div></div></section>
-    <section className="section values-band" aria-labelledby="values-title"><div className="container values-inner"><div className="values-heading"><span className="eyebrow gold">O QUE SUSTENTA A CALI</span><h2 id="values-title">Meus valores estão em <span>cada decisão.</span></h2><p>A CALI é enraizada na minha fé cristã. Amo Jesus e quero honrar, com o meu trabalho, o dom que Deus me deu. É dessa base que vem meu compromisso de servir com responsabilidade e resultado.</p></div><div className="values-grid" tabIndex={0} aria-label="Os cinco valores da CALI; deslize para ver todos">
-      <article className="values-card"><span className="values-icon values-icon-1" aria-hidden="true"/><h3>Integridade</h3><p>Lido com dados sensíveis e decisões que podem mudar vidas. Por isso, digo a verdade com responsabilidade, protejo a confiança de quem me procura e respeito a cultura da empresa e a individualidade de cada pessoa.</p></article>
-      <article className="values-card"><span className="values-icon values-icon-2" aria-hidden="true"/><h3>Propósito</h3><p>Deus me deu um dom para servir. Quero que o meu trabalho chegue aos céus e agrade a Ele. Isso me chama a usar o que sei para transformar, de forma concreta, a vida das pessoas e o caminho das empresas.</p></article>
-      <article className="values-card"><span className="values-icon values-icon-3" aria-hidden="true"/><h3>Amor pelo que faço</h3><p>Eu amo o que faço e cuido de cada interação e entrega. Meu mínimo precisa carregar o meu máximo: preparo, atenção e compromisso. É assim que o amor pelo trabalho se torna qualidade perceptível para quem está comigo.</p></article>
-      <article className="values-card"><span className="values-icon values-icon-4" aria-hidden="true"/><h3>Colaboração</h3><p>Nada importante é feito por uma pessoa só. Trabalho com a liderança e com as equipes, com papéis claros e responsabilidade compartilhada. Celebramos os bons resultados juntos e também assumimos o que precisa ser corrigido.</p></article>
-      <article className="values-card"><span className="values-icon values-icon-5" aria-hidden="true"/><h3>Excelência técnica</h3><p>Estudo, método e profundidade sustentam minhas recomendações. Acompanho o que muda em gestão de pessoas e capital humano para entender a expectativa de cada cliente e entregar respostas à altura do seu contexto.</p></article>
-    </div></div></section>
+    <section className="section values-band" aria-labelledby="values-title"><div className="container values-inner"><div className="values-heading"><span className="eyebrow gold">O QUE SUSTENTA A CALI</span><h2 id="values-title">Meus valores estão em <span>cada decisão.</span></h2><p>A CALI é enraizada na minha fé cristã. Amo Jesus e quero honrar, com o meu trabalho, o dom que Deus me deu. É dessa base que vem meu compromisso de servir com responsabilidade e resultado.</p></div><ValuesCarousel /></div></section>
     <section className="section dark-band origin-band"><div className="container split"><div><span className="eyebrow gold">DE ONDE VEM O NOME</span><h2>A CALI carrega minha <em>história e minha fé.</em></h2></div><div className="body-copy"><p>O nome é uma homenagem à minha família e às minhas raízes em Belém do Pará. <strong>Dedicação, equilíbrio e propósito</strong> são os pilares que levo comigo.</p><p><strong>Deus está no centro de tudo o que faço.</strong> É por Ele que a CALI existe. Essa direção aparece na forma como escuto cada empresa, digo o que precisa ser dito e sustento o trabalho combinado.</p></div></div></section>
     <section className="section about-experience" aria-labelledby="experience-title"><div className="container about-experience-layout"><div className="about-experience-intro"><span className="eyebrow">MINHA ATUAÇÃO</span><h2 id="experience-title">Meu trabalho começa onde o RH encontra <span>o negócio.</span></h2><p>Minha experiência dentro das empresas me ensinou a olhar para a operação antes de propor uma resposta. É desse contexto que nasce o trabalho com cada liderança.</p></div><div className="experience-list">
       <article><span className="experience-number">01</span><div><h3>Estrutura de RH</h3><p>Desenho áreas, responsabilidades, processos e indicadores que possam ser usados na rotina. A empresa passa a saber quem decide, o que acompanhar e onde agir quando algo sai do rumo.</p></div></article>
