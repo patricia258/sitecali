@@ -876,3 +876,24 @@ main{background:#f7f3ee}
   .experience-list h3{font-size:27px}
   .experience-list p{font-size:14px}
 }
+/* Assessoria mensal: cards concisos, sem blocos de texto repetidos. */
+.plans .section-head{max-width:760px}
+.plans .plan-grid{max-width:1120px;margin-inline:auto;gap:24px}
+.plans .plan{min-height:500px;align-items:stretch;padding:clamp(30px,3vw,42px);border-radius:24px;background:#fffdf9;box-shadow:none}
+.plans .plan.featured{background:#4b1928;color:#f7f3ee;border-color:#4b1928}
+.plans .plan .eyebrow{margin-bottom:21px}
+.plans .plan h3{margin:0;font-size:clamp(35px,3.4vw,49px);line-height:1.15}
+.plans .plan-intro{min-height:3.2em;margin:21px 0 0;font-size:16px;line-height:1.6;color:#625653}
+.plans .plan.featured .plan-intro{color:#f7f3eedb}
+.plans .plan-capacity{display:flex;align-items:baseline;gap:13px;margin:30px 0 0}
+.plans .plan-capacity strong{font:700 clamp(37px,4vw,55px)/1 'DM Sans',sans-serif;letter-spacing:-.055em;color:#5a1e2d;white-space:nowrap}
+.plans .plan-capacity span{font-size:14px;line-height:1.4;color:#625653}
+.plans .plan.featured .plan-capacity strong{color:#fffdf9}
+.plans .plan.featured .plan-capacity span{color:#f7f3eedb}
+.plans .plan-details{display:flex;flex-wrap:wrap;gap:8px 24px;padding:20px 0;margin:23px 0 0;border-top:1px solid #e2d7cc;border-bottom:1px solid #e2d7cc;color:#695e58;font-size:13px}
+.plans .plan.featured .plan-details{border-color:#f7f3ee38;color:#f7f3eedb}
+.plans .plan ul{margin:24px 0 32px;gap:14px}
+.plans .plan li{font-size:15px;line-height:1.5}
+.plans .plan .button{width:100%;margin-top:auto}
+@media(max-width:800px){.plans .plan{min-height:0}.plans .plan-intro{min-height:0}}
+@media(max-width:560px){.plans .plan{padding:28px 24px}.plans .plan-capacity{flex-wrap:wrap;gap:8px}.plans .plan-details{gap:8px 14px}}

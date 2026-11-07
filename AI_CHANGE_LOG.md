@@ -32,8 +32,15 @@
 - O CTA agora descreve o destino real: assessoria mensal. A composição se reorganiza em uma coluna no mobile.
 - A fileira de valores, seu texto e seus símbolos não foram alterados nesta rodada.
 
-## 2026-11-07 · Codex · acesso à CommuniCALI
+## 2026-11-07 · Codex · acesso à ComuniCALI
 
-- Adicionado o endereço oficial `https://comuni.calirh.com/` ao menu principal e ao rodapé do site CALI, com o nome oficial CommuniCALI. O mesmo acesso foi incluído na LP pública do Workspace.
+- Adicionado o endereço oficial `https://comuni.calirh.com/` ao menu principal e ao rodapé do site CALI, com o nome oficial ComuniCALI. O mesmo acesso foi incluído na LP pública do Workspace.
 - O menu passa à composição compacta em larguras menores, preservando o acesso à comunidade também no mobile.
 - `npm run build` e `npx tsc --noEmit` passaram. Revisão visual pela Pati: pendente. Autor: Codex.
+
+## 2026-11-07 · Codex · correção dos planos e nome da comunidade
+
+- Nome corrigido para ComuniCALI em todos os acessos públicos. A orientação expressa da Pati substitui a grafia usada anteriormente.
+- A seção de assessoria recebeu a mensagem sobre prevenção: observar liderança, estrutura, cultura, processos e indicadores para reconhecer sinais antes da urgência.
+- Partner e Full ganharam cards mais curtos e comparáveis, sem blocos redundantes. Removida a promessa de um ajuste de processo por mês; entregas de políticas, processos e projetos dependem do escopo e da complexidade.
+- Nenhum preço publicado nos cards. Revisão visual pela Pati: pendente. Autor: Codex.
