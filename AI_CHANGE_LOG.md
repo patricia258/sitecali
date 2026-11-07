@@ -31,3 +31,9 @@
 - Os três cards genéricos foram substituídos por três linhas editoriais, com título e conteúdo específico sobre estrutura de RH, liderança e visão de negócio.
 - O CTA agora descreve o destino real: assessoria mensal. A composição se reorganiza em uma coluna no mobile.
 - A fileira de valores, seu texto e seus símbolos não foram alterados nesta rodada.
+
+## 2026-11-07 · Codex · acesso à CommuniCALI
+
+- Adicionado o endereço oficial `https://comuni.calirh.com/` ao menu principal e ao rodapé do site CALI, com o nome oficial CommuniCALI. O mesmo acesso foi incluído na LP pública do Workspace.
+- O menu passa à composição compacta em larguras menores, preservando o acesso à comunidade também no mobile.
+- `npm run build` e `npx tsc --noEmit` passaram. Revisão visual pela Pati: pendente. Autor: Codex.
