@@ -897,3 +897,23 @@ main{background:#f7f3ee}
 .plans .plan .button{width:100%;margin-top:auto}
 @media(max-width:800px){.plans .plan{min-height:0}.plans .plan-intro{min-height:0}}
 @media(max-width:560px){.plans .plan{padding:28px 24px}.plans .plan-capacity{flex-wrap:wrap;gap:8px}.plans .plan-details{gap:8px 14px}}
+
+/* Retrato da fundadora: moldura editorial retangular, sem arco. */
+.about-hero .founder-portrait{
+  border:1px solid rgba(230,191,138,.58);
+  border-radius:24px;
+  background:#2b2b2b;
+  box-shadow:0 22px 52px rgba(28,8,17,.2);
+}
+.about-hero .founder-portrait::after{
+  content:'';
+  position:absolute;
+  inset:11px;
+  border:1px solid rgba(247,243,238,.24);
+  border-radius:14px;
+  pointer-events:none;
+}
+@media(max-width:560px){
+  .about-hero .founder-portrait{border-radius:18px}
+  .about-hero .founder-portrait::after{inset:8px;border-radius:11px}
+}
