@@ -44,3 +44,9 @@
 - A seção de assessoria recebeu a mensagem sobre prevenção: observar liderança, estrutura, cultura, processos e indicadores para reconhecer sinais antes da urgência.
 - Partner e Full ganharam cards mais curtos e comparáveis, sem blocos redundantes. Removida a promessa de um ajuste de processo por mês; entregas de políticas, processos e projetos dependem do escopo e da complexidade.
 - Nenhum preço publicado nos cards. Revisão visual pela Pati: pendente. Autor: Codex.
+
+## 2026-11-16 · Codex · moldura do retrato em /sobre
+
+- A moldura em arco do retrato principal foi substituída por retângulo de cantos suaves, contorno dourado discreto e linha interna sutil, com ajuste para mobile.
+- A imagem atual permanece temporariamente porque o ambiente de arquivos anexados ficou indisponível nesta sessão; o novo retrato fornecido pela Pati ainda precisa ser incorporado ao repositório.
+- Build e conferência visual pendentes até o retorno do ambiente de execução. Aprovação da Pati: pendente.
